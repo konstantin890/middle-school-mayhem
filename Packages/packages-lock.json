@@ -13,12 +13,6 @@
       "source": "builtin",
       "dependencies": {}
     },
-    "com.unity.2d.tilemap": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {}
-    },
     "com.unity.burst": {
       "version": "1.6.0-pre.2",
       "depth": 1,
