@@ -6,7 +6,15 @@ public class Student : MonoBehaviour
 {
     [Header("Debug values")]
     public bool isLeader;
-    public float fearLevel;
+    [Range(0,1)] public float fearLevel;
 
+    private void Update()
+    {
+        if (fearLevel == 1)
+        {
+            // leave group?
+        }
 
+        // Handle movement
+    }
 }
