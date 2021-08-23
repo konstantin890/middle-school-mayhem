@@ -9,6 +9,7 @@ public class StudentLeader : MonoBehaviour
 
     private float speed = 1f;
     public InputHandler inputHandler;
+    public Rigidbody2D rigidBody;
 
     public void InitiateStudent()
     {
@@ -18,7 +19,7 @@ public class StudentLeader : MonoBehaviour
         //isLeader = (inputHandler != null);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         // Handle movement
         if (inputHandler != null)
@@ -26,9 +27,7 @@ public class StudentLeader : MonoBehaviour
             Vector2 movementAxis = inputHandler.GetMovement();
             speed = inputHandler.IsSprinting() ? sprintSpeed : walkingSpeed;
 
-            //this is for - should not chnage transform in update
-            //also does not check for collisions...
-            transform.position += new Vector3(movementAxis.x * speed * Time.deltaTime, movementAxis.y * Time.deltaTime * speed, 0);
+            rigidBody.MovePosition(rigidBody.position + movementAxis * speed * Time.fixedDeltaTime);
         }
     }
 }

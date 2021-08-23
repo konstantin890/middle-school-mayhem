@@ -15,6 +15,7 @@ public class InputHandler : MonoBehaviour
         //result = right - left   or   result = up - down
         horizontalMovement = ((Input.GetAxis("Horizontal") > joysticSensitivityMargin) ? 1 : 0) - ((Input.GetAxis("Horizontal") < -joysticSensitivityMargin) ? 1 : 0);
         verticalMovement = ((Input.GetAxis("Vertical") > joysticSensitivityMargin) ? 1 : 0) - ((Input.GetAxis("Vertical") < -joysticSensitivityMargin) ? 1 : 0);
+        
         isSprinting = Input.GetAxis("Fire1") > joysticSensitivityMargin;
     }
 
