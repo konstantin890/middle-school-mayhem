@@ -5,15 +5,19 @@ using TMPro;
 
 public class StudentManager : MonoBehaviour
 {
+    public static StudentManager instance;
+
     public Transform studentPrefab;
 
-    public List<Student> students = new List<Student>();
+    public List<StudentNPC> attractedStudents = new List<StudentNPC>();
 
     public TMP_Text studentNumberText;
 
     private void Awake()
     {
-        SpawnLeader();
+        instance = this;
+
+        //SpawnLeader();
     }
 
     private void Update()
@@ -21,19 +25,19 @@ public class StudentManager : MonoBehaviour
 
     }
 
-    private void SpawnLeader()
+    /*private void SpawnLeader()
     {
         Transform studentToAdd = Instantiate(studentPrefab, Vector3.zero, Quaternion.identity);
         studentToAdd.gameObject.AddComponent(typeof(InputHandler)); //add input handler to the leader
-        AddStudent(studentToAdd.GetComponent<Student>());
-    }
+        AddStudent(studentToAdd.GetComponent<StudentNPC>());
+    }*/
 
-    private void AddStudent(Student student)
+    private void AddStudent(StudentNPC student)
     {
-        student.InitiateStudent(); //initialize the student
-        students.Add(student);
+        student.InitStudent(); //initialize the student
+        attractedStudents.Add(student);
         studentNumberText.text = $"Students: {GetStudentCount()}";
     }
 
-    public int GetStudentCount() => students.Count;
+    public int GetStudentCount() => attractedStudents.Count;
 }
