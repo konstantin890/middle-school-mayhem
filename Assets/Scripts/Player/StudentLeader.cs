@@ -13,6 +13,8 @@ public class StudentLeader : MonoBehaviour
     public InputHandler inputHandler;
     public Rigidbody2D rigidBody;
 
+    public StudentManager studentManager;
+
     private void Awake()
     {
         instance = this;
@@ -35,6 +37,19 @@ public class StudentLeader : MonoBehaviour
             speed = inputHandler.IsSprinting() ? sprintSpeed : walkingSpeed;
 
             rigidBody.MovePosition(rigidBody.position + movementAxis * speed * Time.fixedDeltaTime);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        StudentNPC collStudent = collision.gameObject.GetComponent<StudentNPC>();
+        if (collStudent != null) 
+        {
+            if (!collStudent.IsAttracted())
+            {
+                studentManager.AddStudent(collStudent);
+                //Debug.Log("Added Student to group");
+            }
         }
     }
 }

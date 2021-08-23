@@ -13,7 +13,7 @@ public class StudentNPC : MonoBehaviour
 
     private void Start()
     {
-        InitStudent(StudentLeader.instance.transform);
+        //InitStudent(StudentLeader.instance.transform);
     }
 
     public void InitStudent(Transform leader)
@@ -21,4 +21,6 @@ public class StudentNPC : MonoBehaviour
         isAttracted = true;
         aiTargetter.target = leader;
     }
+
+    public bool IsAttracted() => isAttracted;
 }

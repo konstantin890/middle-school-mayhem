@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 3104819809394358500}
   - component: {fileID: 328027495907184166}
   - component: {fileID: 3131900137400336019}
+  - component: {fileID: -5601653478268657346}
   m_Layer: 0
   m_Name: Student
   m_TagString: Untagged
@@ -210,3 +211,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fearLevel: 0
   aiTargetter: {fileID: 328027495907184166}
+--- !u!58 &-5601653478268657346
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6660672982962828942}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

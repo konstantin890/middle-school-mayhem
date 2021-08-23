@@ -33,7 +33,7 @@ public class StudentManager : MonoBehaviour
         AddStudent(studentToAdd.GetComponent<StudentNPC>());
     }*/
 
-    private void AddStudent(StudentNPC student)
+    public void AddStudent(StudentNPC student)
     {
         student.InitStudent(studentLeader); //initialize the student
         attractedStudents.Add(student);
