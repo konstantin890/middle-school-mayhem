@@ -351,6 +351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   studentPrefab: {fileID: 4651700735324157135, guid: 19684b64d64c16f40aee61f3fd51d7c4, type: 3}
   students: []
+  studentNumberText: {fileID: 767656005}
 --- !u!1 &767656003
 GameObject:
   m_ObjectHideFlags: 0

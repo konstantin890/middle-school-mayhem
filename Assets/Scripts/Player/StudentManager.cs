@@ -24,11 +24,13 @@ public class StudentManager : MonoBehaviour
     private void SpawnLeader()
     {
         Transform studentToAdd = Instantiate(studentPrefab, Vector3.zero, Quaternion.identity);
+        studentToAdd.gameObject.AddComponent(typeof(InputHandler)); //add input handler to the leader
         AddStudent(studentToAdd.GetComponent<Student>());
     }
 
     private void AddStudent(Student student)
     {
+        student.InitiateStudent(); //initialize the student
         students.Add(student);
         studentNumberText.text = $"Students: {GetStudentCount()}";
     }
