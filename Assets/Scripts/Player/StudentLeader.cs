@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class StudentLeader : MonoBehaviour
 {
+    public static StudentLeader instance;
+
     public float walkingSpeed = 1f;
     public float sprintSpeed = 2f;
 
     private float speed = 1f;
     public InputHandler inputHandler;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     public void InitiateStudent()
     {

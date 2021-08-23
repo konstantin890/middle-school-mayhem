@@ -8,6 +8,7 @@ public class StudentManager : MonoBehaviour
     public static StudentManager instance;
 
     public Transform studentPrefab;
+    public Transform studentLeader;
 
     public List<StudentNPC> attractedStudents = new List<StudentNPC>();
 
@@ -34,7 +35,7 @@ public class StudentManager : MonoBehaviour
 
     private void AddStudent(StudentNPC student)
     {
-        student.InitStudent(); //initialize the student
+        student.InitStudent(studentLeader); //initialize the student
         attractedStudents.Add(student);
         studentNumberText.text = $"Students: {GetStudentCount()}";
     }
