@@ -41,4 +41,17 @@ public class StudentManager : MonoBehaviour
     }
 
     public int GetStudentCount() => attractedStudents.Count;
+
+    public int GetStudentCountByClass (StudentClass sClass)
+    {
+        int count = 0;
+
+        foreach (StudentNPC npc in attractedStudents)
+        {
+            if (npc.sClass == sClass)
+                count++;
+        }
+
+        return count;
+    }
 }

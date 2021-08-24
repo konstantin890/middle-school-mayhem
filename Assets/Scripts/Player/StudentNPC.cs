@@ -7,6 +7,8 @@ public enum StudentClass { Jock, Nerd, Prankster }
 
 public class StudentNPC : MonoBehaviour
 {
+    public StudentClass sClass;
+
     [Header("Debug values")]
     [Range(0, 1)] public float fearLevel;
     private bool isAttracted;
