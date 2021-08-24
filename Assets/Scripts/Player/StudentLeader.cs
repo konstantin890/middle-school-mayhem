@@ -36,7 +36,12 @@ public class StudentLeader : MonoBehaviour
             Vector2 movementAxis = inputHandler.GetMovement();
             speed = inputHandler.IsSprinting() ? sprintSpeed : walkingSpeed;
 
-            rigidBody.MovePosition(rigidBody.position + movementAxis * speed * Time.fixedDeltaTime);
+            if (movementAxis.x >= 0.01f)
+                transform.localScale = new Vector3(1f, 1f, 1f);
+            else if (movementAxis.x <= -0.01f)
+                transform.localScale = new Vector3(-1f, 1f, 1f);
+
+            rigidBody.MovePosition(rigidBody.position + movementAxis * speed * Time.deltaTime);
         }
     }
 

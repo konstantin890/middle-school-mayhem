@@ -1045,7 +1045,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 356631997}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1088,7 +1088,7 @@ GameObject:
   m_Component:
   - component: {fileID: 360333882}
   - component: {fileID: 360333883}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider1 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1166,7 +1166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAQIeyk8NFmSgIAAPEEAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VEtz2jAQ/iuMzqXDa0jSW2sI6YHAhGZy8UVIa6xBljx6hNfw37uSbezQ6Yllv293v33IFyKULYE5bRZG8KXmQH70SLDJt14LvsCR7rTaiDM0nA/BXR5INHLeqBMa/cMQZnUBzgj2U+1kIA/Q6ZXItCnmfAeJts6iO6PSAkJGuxCt0HXpkSP+9J9CyAmt0UOwzmg9DXpXNBkoB6alNsSGVrG8YpIWJfAguSWPbmkrmsJmakYQzrSUwtZKiDuVsdOEltZjH0jggmJnsXzg5yB2uQvpusGrLLPgakmGnmbC4ICqrOSXrqZWULuvdH1S6UOd6SRKqnIu/4H7wwhnRhcvTdnhIJRwuWD7N3pi1LrOVLvu2VfdXh2o3NOthI8c1KteGO0VR9AZH0K9hdGs/XvrLMmB7Vt/JfXO6cv/7yb0cI3NHxMpim2Avk8qx0bqOO64eTC4mN8oON6FrVOgN6h4t/CH7roHVAPPwliHUN2lCvK22ptAJfM4s9CNd4k2CqK7Fl2CotKd1pjG3W/wDuuUvUOeaXgqdfEaa17AXUh0t/zB4A5a68NtWTbXhyXYfOWdFApa0QF4xTklWqnqwLozacI23mSUdcJ2XvCvp0W2Dxk8TiejMR2z0XA67U+HY86mkA3Y0yQbZY8k3p5Q2CeV60poPR7cmmqTK7yz5gvSWxhaxmPnhh4W4lzozsiFyvSGGQC1qjLchIPBIvgo+ZwLHNAGnBMq7ptcUiI12wNPb4nS2On86AxN2ywpKcWndsGTkiR+MlJyJde/UEsDBBQAAAgIAAAQIew86gembQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM01VFQSi9KLMgoBooYgjilmSkgdrRSknlaqoWZiZFxonGykaGZma6ZoXFKsllqmkGypUmaUZqFUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAAAQIeyk8NFmSgIAAPEEAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAQIew86gembQAAAHgAAAAJACQAAAAAAAAAAAAAAJcCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAATwMAAAAA
+    dataString: UEsDBBQAAAgIAAAQIeydAZrKUgIAAPcEAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMziVjE0KS3lqHkB4ImdBOLr4IaY01yJJHHwGS4b93JdvYodMTYt/b1Xu7K38SoWwNzGmzMIIvNQfyfUTCmXwb9eATHOhWq7X4gI7zJrgrA4lGzit1QmM8DWlWV+CMYD/UVgZygkGvRKFNNedbyLR1FsMFlRYQMtqFbIWhzxE54M/4PqQc8TS5DacPPN0noxMeGSgHpqd2xI7WsLxiklY18CC5J6d3VzctP02ubiJVoaGWlUSUaSmFbfUQd6yj34zW1qMbJHBB0V8UEeyWILalC1qHyauisOBaYYYeH4TBNjVVyU/d9K6idteoe6fSh3tm0yiqqbn8Bx6nES6Mrp66a9MkXOFKwXav9MiodYPeDsMPX3V7tadyRzcS3kpQz3phtFccQWd8SPUWJg/937OzrAS26+ON1Iugr/8/oeDhFM0fMimqTWz8tAmspY7tjvMHg6P5hYLjdti2BEaDij8WftPtcI1a4FEY6xBqXaogb6O9CVQyjz0LbrzLtFEQw63oGhSV7viCZdzlBC+wwbUXyCMND6a9vMW6d3CREsM9P0kuoBe9Pw/Llnq/BFuuvJNCQS86AM/Yp0wr1SzYsCdd2tqbgrJB2tYL/nW1yOa2gLvZdHJNr9kknc3Gs/SasxkUCbufFpPijsTdEwp9UvnSCG3bg1NTfXGFe9Z9R0YLQ+u47NzQ/UJ8VHrQcqEKvWYGQK2aCmfhYPASfJZ8zgU2aA3OCRXnTT5zIjXbAc/PhfLodH5whuZ9lZzU4l27EMlJFj8cOTmR019QSwMEFAAACAgAABAh7DzqB6ZtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTVUVBKL0osyCgGihiCOKWZKSB2tFKSeVqqhZmJkXGicbKRoZmZrpmhcUqyWWqaQbKlSZpRmoVSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAABAh7J0BmspSAgAA9wQAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAABAh7DzqB6ZtAAAAeAAAAAkAJAAAAAAAAAAAAAAAnwIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABXAwAAAAA=
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -1432,7 +1432,7 @@ GameObject:
   m_Component:
   - component: {fileID: 468058823}
   - component: {fileID: 468058824}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider1 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1580,7 +1580,7 @@ GameObject:
   m_Component:
   - component: {fileID: 716545756}
   - component: {fileID: 716545757}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5253,7 +5253,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1089315094}
   - component: {fileID: 1089315095}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider1 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5310,7 +5310,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1166990643}
   - component: {fileID: 1166990644}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5367,7 +5367,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1203853218}
   - component: {fileID: 1203853219}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider1 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5490,7 +5490,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1277866885}
   - component: {fileID: 1277866886}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider1 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5552,7 +5552,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1327559054}
   - component: {fileID: 1327559055}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5749,7 +5749,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1611774034}
   - component: {fileID: 1611774035}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider1 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5953,7 +5953,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1913153305}
   - component: {fileID: 1913153306}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider1 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8409,7 +8409,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2043523203}
   - component: {fileID: 2043523204}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider1 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8502,7 +8502,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9463723, y: 1}
+    m_SensorSize: {x: 1.8911672, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -8537,7 +8537,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2080784220}
   - component: {fileID: 2080784221}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Collider1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

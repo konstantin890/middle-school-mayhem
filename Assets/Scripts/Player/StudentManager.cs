@@ -48,7 +48,7 @@ public class StudentManager : MonoBehaviour
 
         foreach (StudentNPC npc in attractedStudents)
         {
-            if (npc.sClass == sClass)
+            if (npc.studentClass == sClass)
                 count++;
         }
 
