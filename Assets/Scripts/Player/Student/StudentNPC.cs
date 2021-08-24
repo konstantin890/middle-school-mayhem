@@ -3,8 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum StudentClass { Jock, Nerd, Prankster }
-
 public class StudentNPC : MonoBehaviour
 {
     public StudentClass studentClass;
