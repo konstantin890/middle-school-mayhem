@@ -15,9 +15,18 @@ public class StudentLeader : MonoBehaviour
 
     public StudentManager studentManager;
 
+    private Inventory inventory;
+
+    //0: Small Explosive, 1: Itching Powder, 2: Stink Bomb
+    public bool[] touchingCraftingStations = { false, false, false };
+
     private void Awake()
     {
         instance = this;
+
+        inventory = this.GetComponent<Inventory>();
+        if (inventory == null)
+            Debug.LogError("StudentLeader needs Inventory to work properly.");
     }
 
     public void InitiateStudent()
@@ -45,6 +54,8 @@ public class StudentLeader : MonoBehaviour
         }
     }
 
+    public bool[] GetToucingCraftingStations() => touchingCraftingStations;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         StudentNPC collStudent = collision.gameObject.GetComponent<StudentNPC>();
@@ -56,5 +67,30 @@ public class StudentLeader : MonoBehaviour
                 //Debug.Log("Added Student to group");
             }
         }
+
+        if (collision.gameObject.CompareTag("Chemical")) 
+        {
+            inventory.PickupChemical();
+            //idk if this is optimal...
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("SmallExplosiveCraftingStation"))
+            touchingCraftingStations[0] = true;
+        if (collision.gameObject.CompareTag("ItchingPowderCraftingStation"))
+            touchingCraftingStations[1] = true;
+        if (collision.gameObject.CompareTag("StinkBombCraftingStation"))
+            touchingCraftingStations[2] = true;
+
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("SmallExplosiveCraftingStation"))
+            touchingCraftingStations[0] = false;
+        if (collision.gameObject.CompareTag("ItchingPowderCraftingStation"))
+            touchingCraftingStations[1] = false;
+        if (collision.gameObject.CompareTag("StinkBombCraftingStation"))
+            touchingCraftingStations[2] = false;
     }
 }

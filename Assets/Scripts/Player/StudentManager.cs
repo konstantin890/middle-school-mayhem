@@ -42,7 +42,7 @@ public class StudentManager : MonoBehaviour
 
     public int GetStudentCount() => attractedStudents.Count;
 
-    public int GetStudentCountByClass (StudentClass sClass)
+    public int GetStudentCountByClass(StudentClass sClass)
     {
         int count = 0;
 

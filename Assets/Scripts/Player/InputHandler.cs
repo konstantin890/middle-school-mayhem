@@ -12,6 +12,15 @@ public class InputHandler : MonoBehaviour
 
     private bool[] buttonsHeld = { false, false, false, false };
 
+    private Inventory inventory;
+
+    void Awake()
+    {
+        inventory = this.GetComponent<Inventory>();
+        if (inventory == null)
+            Debug.LogError("InputHandler needs Inventory to work properly.");
+    }
+
     void Update()
     {
         //result = right - left   or   result = up - down
@@ -22,25 +31,28 @@ public class InputHandler : MonoBehaviour
         //Action = Interact with something OR craft
         if (CheckIfButtonPressed("Action", 0))
         {
-            Debug.Log("Action Pressed!");
+            //Debug.Log("Action Pressed!");
+            inventory.MaybeCraftItems();
+            //add other possible actions here
         }
 
         //Item1 = Small Explosive
         if (CheckIfButtonPressed("Item1", 1))
         {
-            Debug.Log("Item1 Used!");
+            //Debug.Log("Item1 Used!");
+            inventory.UseSmallExplosive();
         }
 
         //Item2 = Itching Powder
         if (CheckIfButtonPressed("Item2", 2))
         {
-            Debug.Log("Item2 Used!");
+            inventory.UseItchingPowder();
         }
 
         //Item3 = Stink Bomb
         if (CheckIfButtonPressed("Item3", 3))
         {
-            Debug.Log("Item3 Used!");
+            inventory.UseStinkBomb();
         }
 
 
@@ -48,8 +60,6 @@ public class InputHandler : MonoBehaviour
         {
             Debug.Log("Game paused!");
         }*/
-
-        Debug.Log(buttonsHeld);
     }
 
     public Vector2 GetMovement() => new Vector2(horizontalMovement, verticalMovement);
