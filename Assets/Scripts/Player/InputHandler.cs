@@ -16,12 +16,12 @@ public class InputHandler : MonoBehaviour
 
     void Awake()
     {
-        inventory = this.GetComponent<Inventory>();
+        inventory = GetComponent<Inventory>();
         if (inventory == null)
             Debug.LogError("InputHandler needs Inventory to work properly.");
     }
 
-    void Update()
+    private void Update()
     {
         //result = right - left   or   result = up - down
         horizontalMovement = ((Input.GetAxis("Horizontal") >= inputSensitivity) ? 1 : 0) - ((Input.GetAxis("Horizontal") < -inputSensitivity) ? 1 : 0);
@@ -83,5 +83,4 @@ public class InputHandler : MonoBehaviour
 
         return false;
     }
-
 }
