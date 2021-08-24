@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum StudentClass { Jock, Nerd, Prankster }
+
 public class StudentNPC : MonoBehaviour
 {
     [Header("Debug values")]
     [Range(0, 1)] public float fearLevel;
     private bool isAttracted;
 
+    public AIPath aiPath;
     public AIDestinationSetter aiTargetter;
 
     private void Start()

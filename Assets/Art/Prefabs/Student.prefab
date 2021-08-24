@@ -160,8 +160,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 2
-  radius: 1
-  height: 2
+  radius: 0.75
+  height: 5
   repathRate: 0.5
   canSearch: 1
   canMove: 1
@@ -178,7 +178,7 @@ MonoBehaviour:
   rotationSpeed: 360
   slowdownDistance: 0.6
   pickNextWaypointDist: 2
-  endReachedDistance: 0.2
+  endReachedDistance: 1
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 0
   whenCloseToDestination: 0
@@ -210,6 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fearLevel: 0
+  aiPath: {fileID: 3104819809394358500}
   aiTargetter: {fileID: 328027495907184166}
 --- !u!58 &-5601653478268657346
 CircleCollider2D:
