@@ -25,9 +25,9 @@ public class Inventory : MonoBehaviour
 
     private StudentLeader studentLeader;
 
-    void Awake()
+    private void Awake()
     {
-        studentLeader = this.GetComponent<StudentLeader>();
+        studentLeader = GetComponent<StudentLeader>();
         if (studentLeader == null)
             Debug.LogError("Inventory needs StudentLeader to work properly.");
     }
@@ -78,7 +78,7 @@ public class Inventory : MonoBehaviour
         if (items[1] > 0)
         {
             items[1]--;
-            Instantiate(smallExplosivePrefab, this.transform.position, this.transform.rotation); //I have no clue if this is the correct rotation...
+            Instantiate(smallExplosivePrefab, transform.position, transform.rotation); //I have no clue if this is the correct rotation...
             smallExplosiveCountDisplay.text = $"{items[1]}";
         }
         else
@@ -97,7 +97,7 @@ public class Inventory : MonoBehaviour
         if (items[2] > 0)
         {
             items[2]--;
-            Instantiate(itchingPowderPrefab, this.transform.position, this.transform.rotation);
+            Instantiate(itchingPowderPrefab, transform.position, transform.rotation);
             itchingPowderCountDisplay.text = $"{items[2]}";
         }
         else
@@ -114,7 +114,7 @@ public class Inventory : MonoBehaviour
         if (items[3] > 0)
         {
             items[3]--;
-            Instantiate(stinkBombPrefab, this.transform.position, this.transform.rotation);
+            Instantiate(stinkBombPrefab, transform.position, transform.rotation);
             stinkBombCountDisplay.text = $"{items[3]}";
         }
         else
