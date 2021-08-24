@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class StudentNPC : MonoBehaviour
 {
-    public StudentClass studentClass;
+    public StudentData data;
 
     [Header("Debug values")]
     [Range(0, 1)] public float fearLevel;
