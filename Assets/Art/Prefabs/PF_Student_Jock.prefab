@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f21874428da6047926b39130115e11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 0}
+  data: {fileID: 11400000, guid: 645a6f1a9d550444d8b7a30032057548, type: 2}
   fearLevel: 0
   aiPath: {fileID: 3104819809394358500}
   aiTargetter: {fileID: 328027495907184166}
