@@ -13,6 +13,7 @@ public class StudentManager : MonoBehaviour
     public List<StudentNPC> attractedStudents = new List<StudentNPC>();
 
     public TMP_Text studentNumberText;
+    public TMP_Text nerdNumberText;
 
     private void Awake()
     {
@@ -37,7 +38,8 @@ public class StudentManager : MonoBehaviour
     {
         student.InitStudent(studentLeader); //initialize the student
         attractedStudents.Add(student);
-        studentNumberText.text = $"Students: {GetStudentCount()}";
+        studentNumberText.text = $"x {GetStudentCount()}";
+        nerdNumberText.text = $"x {GetStudentCountByClass(StudentClass.Nerd)}";
     }
 
     public int GetStudentCount() => attractedStudents.Count;
