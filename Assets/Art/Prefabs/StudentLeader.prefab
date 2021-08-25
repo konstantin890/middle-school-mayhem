@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7704542321746894112}
   - component: {fileID: 4792211793509376849}
   - component: {fileID: 7461331093635827218}
+  - component: {fileID: 3714927552467003814}
   m_Layer: 0
   m_Name: StudentLeader
   m_TagString: Untagged
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: -836624779
   m_SortingLayer: 5
   m_SortingOrder: 2
-  m_Sprite: {fileID: -7437924615612380687, guid: d70a8f25d2fcc6647b11072f9365f866, type: 3}
+  m_Sprite: {fileID: -3950057059519903610, guid: 5132160c318aa1a4293c7fcd53c779fa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,6 +106,7 @@ MonoBehaviour:
   inputHandler: {fileID: 3345564150713626570}
   rigidBody: {fileID: 4792211793509376849}
   studentManager: {fileID: 0}
+  touchingCraftingStations: 000000
 --- !u!114 &3345564150713626570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,6 +132,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6f4862690738fa40a9e02bf9638ed69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canUseItems: 1
+  canCraftItems: 1
+  items: 00000000000000000000000000000000
+  smallExplosivePrefab: {fileID: 0}
+  itchingPowderPrefab: {fileID: 0}
+  stinkBombPrefab: {fileID: 0}
+  chemicalsCountDisplay: {fileID: 0}
+  smallExplosiveCountDisplay: {fileID: 0}
+  itchingPowderCountDisplay: {fileID: 0}
+  stinkBombCountDisplay: {fileID: 0}
 --- !u!50 &4792211793509376849
 Rigidbody2D:
   serializedVersion: 4
@@ -177,3 +189,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.75}
   m_EdgeRadius: 0
+--- !u!95 &3714927552467003814
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6660672982962828942}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ad77c7c29d0cebb4da1255292cf2beea, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

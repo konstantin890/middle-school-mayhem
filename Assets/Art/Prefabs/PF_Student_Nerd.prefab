@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: -836624779
   m_SortingLayer: 5
   m_SortingOrder: 2
-  m_Sprite: {fileID: -7437924615612380687, guid: d70a8f25d2fcc6647b11072f9365f866, type: 3}
+  m_Sprite: {fileID: 94711503687753992, guid: fd22e2614209dce4389232653518fa88, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,8 +97,9 @@ GameObject:
   - component: {fileID: 328027495907184166}
   - component: {fileID: 3131900137400336019}
   - component: {fileID: -5601653478268657346}
+  - component: {fileID: 6311773328942622112}
   m_Layer: 0
-  m_Name: Student
+  m_Name: PF_Student_Nerd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -209,7 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f21874428da6047926b39130115e11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  studentClass: 0
+  data: {fileID: 0}
   fearLevel: 0
   aiPath: {fileID: 3104819809394358500}
   aiTargetter: {fileID: 328027495907184166}
@@ -229,3 +230,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!95 &6311773328942622112
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6660672982962828942}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: e344be6cb1e74c6488e04ced4cea5f14, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
