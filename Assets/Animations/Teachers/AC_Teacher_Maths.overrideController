@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AC_Teacher_Maths
+  m_Controller: {fileID: 9100000, guid: 113838d7480c1bc47a2657f3fdbe816d, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: f678db681df680642a769f0c4ffa5425, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a6b557ac26c049248ba84eaa7552a2e1, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 50c0a4d9b251b2d4291763842ff74f2d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 440cf02bdf7493a4fb2b39ec34b5e2e9, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 665239a7f98b5274d8b87fe30cecd4d7, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a3bc6b39b6f9b1b42bd64d16fa410d01, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d784b4fc52381ef4ab7a0e5345a56fc5, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 9e70e566cc5050e4fbdbff277a9ee1e6, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 6327ed7dbcfc1454fb6ec6a3dbc56336, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e7cee91a64cada14691a820f85a689bd, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: a075e223c7b9368499e79053022b6dbd, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 30f4e873d60e1cc4fb77cb9f25b5a941, type: 2}
