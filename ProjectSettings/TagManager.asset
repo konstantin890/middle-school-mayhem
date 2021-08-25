@@ -8,6 +8,8 @@ TagManager:
   - ItchingPowderCraftingStation
   - StinkBombCraftingStation
   - Chemical
+  - Student
+  - Teacher
   layers:
   - Default
   - TransparentFX
