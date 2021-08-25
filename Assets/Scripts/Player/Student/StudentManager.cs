@@ -37,6 +37,17 @@ public class StudentManager : MonoBehaviour
     {
         student.InitStudent(studentLeader); //initialize the student
         attractedStudents.Add(student);
+        UpdateAttractedStudentsUI();
+    }
+
+    public void RemoveStudent(StudentNPC student)
+    {
+        attractedStudents.Remove(student);
+        UpdateAttractedStudentsUI();
+    }
+
+    public void UpdateAttractedStudentsUI()
+    {
         studentNumberText.text = $"Students: {GetStudentCount()}";
     }
 

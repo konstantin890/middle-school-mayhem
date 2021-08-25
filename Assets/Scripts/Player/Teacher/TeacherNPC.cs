@@ -17,4 +17,12 @@ public class TeacherNPC : MonoBehaviour
     {
         // AI to door, corroutine, after that, disapear (animation?)
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Student"))
+        {
+            Debug.Log("A Student entered AoE");
+        }
+    }
 }

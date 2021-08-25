@@ -15,9 +15,10 @@ public class StudentNPC : MonoBehaviour
     public AIDestinationSetter aiTargetter;
     public Animator animator;
 
-    private void Start()
+    private void Awake()
     {
-        //InitStudent(StudentLeader.instance.transform);
+        aiPath.maxSpeed *= data.speedMultiplier;
+
     }
 
     private void Update()
@@ -36,5 +37,21 @@ public class StudentNPC : MonoBehaviour
         aiTargetter.target = leader;
     }
 
+    public void LeaveGroup()
+    {
+        isAttracted = false;
+        aiTargetter.target = null;
+
+        StudentManager.instance.RemoveStudent(this);
+    }
+
     public bool IsAttracted() => isAttracted;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Teacher"))
+        {
+            Debug.Log("A Teacher entered AoE");
+        }
+    }
 }
