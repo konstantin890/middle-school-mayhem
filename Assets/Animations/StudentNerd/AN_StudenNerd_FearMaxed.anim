@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AN_StudentLeader_Interact
+  m_Name: AN_StudenNerd_FearMaxed
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,11 +20,9 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -1569315863988623443, guid: 5132160c318aa1a4293c7fcd53c779fa, type: 3}
+      value: {fileID: 7589690727016342889, guid: fd22e2614209dce4389232653518fa88, type: 3}
     - time: 0.1
-      value: {fileID: 4271802700305755399, guid: 5132160c318aa1a4293c7fcd53c779fa, type: 3}
-    - time: 0.2
-      value: {fileID: 1232509056094774829, guid: 5132160c318aa1a4293c7fcd53c779fa, type: 3}
+      value: {fileID: 4539693489759936084, guid: fd22e2614209dce4389232653518fa88, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,15 +42,14 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -1569315863988623443, guid: 5132160c318aa1a4293c7fcd53c779fa, type: 3}
-    - {fileID: 4271802700305755399, guid: 5132160c318aa1a4293c7fcd53c779fa, type: 3}
-    - {fileID: 1232509056094774829, guid: 5132160c318aa1a4293c7fcd53c779fa, type: 3}
+    - {fileID: 7589690727016342889, guid: fd22e2614209dce4389232653518fa88, type: 3}
+    - {fileID: 4539693489759936084, guid: fd22e2614209dce4389232653518fa88, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.3
+    m_StopTime: 0.2
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
