@@ -12,6 +12,7 @@ public class StudentLeader : MonoBehaviour
     private float speed = 1f;
     public InputHandler inputHandler;
     public Rigidbody2D rigidBody;
+    public Animator animator;
 
     public StudentManager studentManager;
 
@@ -24,7 +25,7 @@ public class StudentLeader : MonoBehaviour
     {
         instance = this;
 
-        inventory = this.GetComponent<Inventory>();
+        inventory = GetComponent<Inventory>();
         if (inventory == null)
             Debug.LogError("StudentLeader needs Inventory to work properly.");
     }
@@ -43,6 +44,8 @@ public class StudentLeader : MonoBehaviour
         if (inputHandler != null)
         {
             Vector2 movementAxis = inputHandler.GetMovement();
+            animator.SetFloat("Speed", Mathf.Abs(movementAxis.x) + Mathf.Abs(movementAxis.y));
+
             speed = inputHandler.IsSprinting() ? sprintSpeed : walkingSpeed;
 
             if (movementAxis.x >= 0.01f)

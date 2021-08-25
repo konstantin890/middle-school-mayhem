@@ -13,6 +13,7 @@ public class StudentNPC : MonoBehaviour
 
     public AIPath aiPath;
     public AIDestinationSetter aiTargetter;
+    public Animator animator;
 
     private void Start()
     {
@@ -25,6 +26,8 @@ public class StudentNPC : MonoBehaviour
             transform.localScale = new Vector3(1f, 1f, 1f);
         else if (aiPath.desiredVelocity.x <= -0.01f)
             transform.localScale = new Vector3(-1f, 1f, 1f);
+
+        animator.SetFloat("Speed", Mathf.Abs(aiPath.desiredVelocity.x) + Mathf.Abs(aiPath.desiredVelocity.y));
     }
 
     public void InitStudent(Transform leader)

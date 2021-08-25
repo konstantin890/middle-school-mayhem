@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7461331093635827218}
   - component: {fileID: 3714927552467003814}
   m_Layer: 0
-  m_Name: StudentLeader
+  m_Name: PF_StudentLeader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,6 +105,7 @@ MonoBehaviour:
   sprintSpeed: 4
   inputHandler: {fileID: 3345564150713626570}
   rigidBody: {fileID: 4792211793509376849}
+  animator: {fileID: 3714927552467003814}
   studentManager: {fileID: 0}
   touchingCraftingStations: 000000
 --- !u!114 &3345564150713626570
