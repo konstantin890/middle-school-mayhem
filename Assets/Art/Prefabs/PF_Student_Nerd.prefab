@@ -233,6 +233,7 @@ MonoBehaviour:
   fearLevel: 0
   aiPath: {fileID: 3104819809394358500}
   aiTargetter: {fileID: 328027495907184166}
+  animator: {fileID: 1641529851066988931}
 --- !u!58 &-5601653478268657346
 CircleCollider2D:
   m_ObjectHideFlags: 0

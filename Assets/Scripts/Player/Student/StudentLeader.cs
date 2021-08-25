@@ -44,7 +44,7 @@ public class StudentLeader : MonoBehaviour
         if (inputHandler != null)
         {
             Vector2 movementAxis = inputHandler.GetMovement();
-            animator.SetFloat("Speed", Mathf.Abs((movementAxis.x) * sprintSpeed));
+            animator.SetFloat("Speed", Mathf.Abs(movementAxis.x) + Mathf.Abs(movementAxis.y));
 
             speed = inputHandler.IsSprinting() ? sprintSpeed : walkingSpeed;
 
