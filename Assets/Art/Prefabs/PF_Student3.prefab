@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2685877518783498945}
   - component: {fileID: 1413775027066631701}
-  - component: {fileID: 1641529851066988931}
+  - component: {fileID: 7963743449138202806}
   m_Layer: 0
   m_Name: StudentGFX
   m_TagString: Untagged
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: -836624779
   m_SortingLayer: 5
   m_SortingOrder: 2
-  m_Sprite: {fileID: 94711503687753992, guid: fd22e2614209dce4389232653518fa88, type: 3}
+  m_Sprite: {fileID: 2328878736598899110, guid: 5ca2bfbf473486c4a84363c3b5766295, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &1641529851066988931
+--- !u!95 &7963743449138202806
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -94,7 +94,7 @@ Animator:
   m_GameObject: {fileID: 6118027115167315297}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: e344be6cb1e74c6488e04ced4cea5f14, type: 2}
+  m_Controller: {fileID: 22100000, guid: 660ffd36b3bf1e446bca820d33254536, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 3131900137400336019}
   - component: {fileID: -5601653478268657346}
   m_Layer: 0
-  m_Name: PF_Student_Nerd
+  m_Name: PF_Student3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -6,18 +6,18 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AOC_Student1
+  m_Name: AOC_StudentNerd
   m_Controller: {fileID: 9100000, guid: ad77c7c29d0cebb4da1255292cf2beea, type: 2}
   m_Clips:
-  - m_OriginalClip: {fileID: 7400000, guid: 27c9bc2d867a365468ab9ee17ca82233, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 4c83651989fb5d54a9d3c417221ed740, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: 2f540f269c5d9534c8acf7b828ee7f89, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 5244ba37bc7d2d044af1a010095f003c, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 9ff1887c5801b3048bfefb8425ee126b, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: e928e2c74d2963a449abf0bdfc417171, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 11df02e142aa0cd43a88e586120f374f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 27c9bc2d867a365468ab9ee17ca82233, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 47912e052c85078469c2d90cb107899a, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 2f540f269c5d9534c8acf7b828ee7f89, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3415d43b4ebc9814381c31da221ed1a7, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 2f157a28fea1458448c481a1888494e8, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 9feb1b1b66b2f6248a0a8a30716f0c34, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2d21c82b63c5c5b418768eb281ced851, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 4b40e7f95852061409495bc73f7a57b2, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 669d7791cba323a43a4c7c84858ae17c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2d3a0375ffe0ad24599c390b19f2a365, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: c493a908fbe1f8444bf7fc255ce28d29, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: be5ce0392909b0f47a5065f7ec5e576b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a9335226c26080845bff88ff6d3cbe09, type: 2}

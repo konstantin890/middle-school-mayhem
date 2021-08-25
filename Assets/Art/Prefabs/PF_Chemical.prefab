@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4679131642047705281}
   - component: {fileID: 7373001787301009808}
   m_Layer: 6
-  m_Name: Chemical
+  m_Name: PF_Chemical
   m_TagString: Chemical
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
