@@ -53,7 +53,7 @@ public class StudentLeader : MonoBehaviour
             else if (movementAxis.x <= -0.01f)
                 transform.localScale = new Vector3(-1f, 1f, 1f);
 
-            rigidBody.MovePosition(rigidBody.position + movementAxis * speed * Time.deltaTime);
+            rigidBody.MovePosition(rigidBody.position + movementAxis * speed * Time.fixedDeltaTime);
         }
     }
 
