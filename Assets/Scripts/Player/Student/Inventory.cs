@@ -88,7 +88,7 @@ public class Inventory : MonoBehaviour
         if (nerds < craftingRecepies[item].y)
             actionPopupText.text += $"\n<color=#ff0000>Nerds {nerds}/{craftingRecepies[item].y}</color>";
         else
-            actionPopupText.text += $"\n<color=#00ff00>Chemicals {nerds}/{craftingRecepies[item].y}</color>";
+            actionPopupText.text += $"\n<color=#00ff00>Nerds {nerds}/{craftingRecepies[item].y}</color>";
 
     }
 
