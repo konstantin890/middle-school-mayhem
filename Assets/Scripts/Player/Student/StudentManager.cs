@@ -14,6 +14,7 @@ public class StudentManager : MonoBehaviour
 
     public TMP_Text studentNumberText;
     public TMP_Text nerdNumberText;
+    public TMP_Text jockNumberText;
 
     private void Awake()
     {
@@ -51,6 +52,7 @@ public class StudentManager : MonoBehaviour
     {
         studentNumberText.text = $"x{GetStudentCount()}";
         nerdNumberText.text = $"x{GetStudentCountByClass(StudentClass.Nerd)}";
+        jockNumberText.text = $"x{GetStudentCountByClass(StudentClass.Jock)}";
     }
 
     public int GetStudentCount() => attractedStudents.Count;
