@@ -75,9 +75,9 @@ public class StudentLeader : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Chemical")) 
         {
-            inventory.PickupChemical();
-            //idk if this is optimal...
+            collision.gameObject.tag = "Untagged"; //"Destroy" takes a bit and player could pick up twice a chemical if collided with many at once
             Destroy(collision.gameObject);
+            inventory.PickupChemical();
         }
 
         for (int i = 0; i < craftingStationTags.Length; i++)
