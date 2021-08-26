@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7373001787301009808}
   - component: {fileID: 6473813538245497393}
   m_Layer: 6
-  m_Name: PF_Chemical
+  m_Name: PF_ItchBomb
   m_TagString: Chemical
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: -836624779
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: -318911390704657791, guid: 2a85b38a83f422c43ae7a55262dec8c8, type: 3}
-  m_Color: {r: 0.45231205, g: 0.8666667, b: 0.44705883, a: 1}
+  m_Sprite: {fileID: -734402932439531960, guid: 2810632112c92564092b25414da632f2, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -111,7 +111,7 @@ Animator:
   m_GameObject: {fileID: 6082554781107185790}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 230e133ca5f2a324c886f351deffac6c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 018bfef47ec17834fadbcfe909bc2fd9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
