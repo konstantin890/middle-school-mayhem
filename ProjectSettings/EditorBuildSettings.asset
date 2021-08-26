@@ -15,21 +15,21 @@ EditorBuildSettings:
     path: Assets/Scenes/Floor 1/Floor1_Class1.unity
     guid: efb022d7730a7fb4f8d586cf6551b750
   - enabled: 1
-    path: Assets/Scenes/Floor2/Floor2_Hall.unity
+    path: Assets/Scenes/Floor 2/Floor2_Hall.unity
     guid: 1c244f01409bffe48886c25144ba9e55
   - enabled: 1
-    path: Assets/Scenes/Floor2/Floor2_Class1.unity
+    path: Assets/Scenes/Floor 2/Floor2_Class1.unity
     guid: 339e12cab70bdfa40bd74bbbeb569c8c
   - enabled: 1
-    path: Assets/Scenes/Floor2/Floor2_Class2.unity
+    path: Assets/Scenes/Floor 2/Floor2_Class2.unity
     guid: 00facaf83644d9c4e8f539e8cbb5b071
   - enabled: 1
-    path: Assets/Scenes/Floor2/Floor2_Class3.unity
+    path: Assets/Scenes/Floor 2/Floor2_Class3.unity
     guid: 36fddc127f14d5540b908042b61dac41
   - enabled: 1
-    path: Assets/Scenes/Floor2/Floor2_Class4.unity
+    path: Assets/Scenes/Floor 2/Floor2_Class4.unity
     guid: c4ae529b116e2c645b4f261c38dbef20
   - enabled: 1
-    path: Assets/Scenes/Floor2/Floor2_Storage.unity
+    path: Assets/Scenes/Floor 2/Floor2_Storage.unity
     guid: 23a67fa236fdf4d41a8385dc9a115d8c
   m_configObjects: {}

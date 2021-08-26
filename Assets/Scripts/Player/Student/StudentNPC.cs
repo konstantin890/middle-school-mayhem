@@ -15,6 +15,7 @@ public class StudentNPC : MonoBehaviour
     public AIPath aiPath;
     public AIDestinationSetter aiTargetter;
     public Animator animator;
+    public SpriteRenderer spriteRenderer;
 
     public float FearLevel 
     {
@@ -42,6 +43,8 @@ public class StudentNPC : MonoBehaviour
             transform.localScale = new Vector3(-1f, 1f, 1f);
 
         animator.SetFloat("Speed", Mathf.Abs(aiPath.desiredVelocity.x) + Mathf.Abs(aiPath.desiredVelocity.y));
+
+        spriteRenderer.sortingOrder = Mathf.FloorToInt(-transform.position.y);
     }
 
     public void InitStudent(Transform leader)

@@ -13,6 +13,7 @@ public class StudentLeader : MonoBehaviour
     public InputHandler inputHandler;
     public Rigidbody2D rigidBody;
     public Animator animator;
+    public SpriteRenderer spriteRenderer;
 
     public StudentManager studentManager;
 
@@ -56,6 +57,7 @@ public class StudentLeader : MonoBehaviour
                 transform.localScale = new Vector3(-1f, 1f, 1f);
 
             rigidBody.MovePosition(rigidBody.position + movementAxis * speed * Time.fixedDeltaTime);
+            spriteRenderer.sortingOrder = Mathf.FloorToInt(-transform.position.y);
         }
     }
 
