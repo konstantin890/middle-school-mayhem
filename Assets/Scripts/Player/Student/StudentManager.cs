@@ -67,4 +67,11 @@ public class StudentManager : MonoBehaviour
 
         return count;
     }
+
+    public Transform GetRandomStudent()
+    {
+        int listPos = Random.Range(0, attractedStudents.Count);
+
+        return attractedStudents[listPos].transform;
+    }
 }

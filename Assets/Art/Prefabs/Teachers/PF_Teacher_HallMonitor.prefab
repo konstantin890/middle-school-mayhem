@@ -231,6 +231,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: {fileID: 11400000, guid: 15dc9766e9719e54195135f4b3bfd0eb, type: 2}
+  animator: {fileID: 7963743449138202806}
+  chalkPrefab: {fileID: 9031800416664423403, guid: b42f5bf46d464784681daf2b64ba8f70, type: 3}
+  chalkSpeed: 5
   patianceLevel: 0
 --- !u!58 &-5601653478268657346
 CircleCollider2D:

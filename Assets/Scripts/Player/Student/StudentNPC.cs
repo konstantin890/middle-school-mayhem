@@ -8,17 +8,30 @@ public class StudentNPC : MonoBehaviour
     public StudentData data;
 
     [Header("Debug values")]
-    [Range(0, 1)] public float fearLevel;
+    [Range(0, 1)] private float fearLevel = 0f;
+    public float maxFear = 100;
     private bool isAttracted;
 
     public AIPath aiPath;
     public AIDestinationSetter aiTargetter;
     public Animator animator;
 
+    public float FearLevel 
+    {
+        get => fearLevel;
+        set
+        {
+            if (value >= maxFear)
+                LeaveGroup();
+
+            fearLevel = value;
+        }
+    }
+
     private void Awake()
     {
         aiPath.maxSpeed *= data.speedMultiplier;
-
+        maxFear /= data.braveryMultiplier;
     }
 
     private void Update()
@@ -42,7 +55,15 @@ public class StudentNPC : MonoBehaviour
         isAttracted = false;
         aiTargetter.target = null;
 
+        animator.SetBool("FearMaxed", true);
         StudentManager.instance.RemoveStudent(this);
+    }
+
+    public void ApplyFear(float fearValue)
+    {
+        FearLevel += fearValue / data.braveryMultiplier;
+        // play hurt animation
+        animator.SetTrigger("Hurt");
     }
 
     public bool IsAttracted() => isAttracted;
