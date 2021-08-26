@@ -231,10 +231,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 67058a832a000f44197974fe4061f25c, type: 2}
-  fearLevel: 0
+  maxFear: 100
   aiPath: {fileID: 3104819809394358500}
   aiTargetter: {fileID: 328027495907184166}
   animator: {fileID: 7963743449138202806}
+  spriteRenderer: {fileID: 1413775027066631701}
 --- !u!58 &-5601653478268657346
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -106,8 +106,12 @@ MonoBehaviour:
   inputHandler: {fileID: 3345564150713626570}
   rigidBody: {fileID: 4792211793509376849}
   animator: {fileID: 3714927552467003814}
+  spriteRenderer: {fileID: 5027213095577642711}
   studentManager: {fileID: 0}
-  touchingCraftingStations: 000000
+  craftingStationTags:
+  - SmallExplosiveCraftingStation
+  - ItchingPowderCraftingStation
+  - StinkBombCraftingStation
 --- !u!114 &3345564150713626570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,6 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canUseItems: 1
   canCraftItems: 1
+  chemicalCount: 0
   items: 00000000000000000000000000000000
   smallExplosivePrefab: {fileID: 0}
   itchingPowderPrefab: {fileID: 0}
@@ -143,6 +148,15 @@ MonoBehaviour:
   smallExplosiveCountDisplay: {fileID: 0}
   itchingPowderCountDisplay: {fileID: 0}
   stinkBombCountDisplay: {fileID: 0}
+  actionPopupText: {fileID: 0}
+  itemNames:
+  - Small Explosive
+  - Itching Powder
+  - Stink Bomb
+  craftingRecepies:
+  - {x: 3, y: 3}
+  - {x: 1, y: 2}
+  - {x: 1, y: 1}
 --- !u!50 &4792211793509376849
 Rigidbody2D:
   serializedVersion: 4
