@@ -178,10 +178,6 @@ PrefabInstance:
       propertyPath: studentManager
       value: 
       objectReference: {fileID: 1664698709}
-    - target: {fileID: 4792211793509376849, guid: 1c1bef5b44c48c8478ea752090d46e31, type: 3}
-      propertyPath: m_Interpolate
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6660672982962828942, guid: 1c1bef5b44c48c8478ea752090d46e31, type: 3}
       propertyPath: m_Name
       value: StudentLeader
@@ -1913,7 +1909,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7248322, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
