@@ -16,10 +16,12 @@ public class StudentLeader : MonoBehaviour
 
     public StudentManager studentManager;
 
+    public string[] craftingStationTags = { "SmallExplosiveCraftingStation", "ItchingPowderCraftingStation", "StinkBombCraftingStation" };
+
     private Inventory inventory;
 
-    //0: Small Explosive, 1: Itching Powder, 2: Stink Bomb
-    public bool[] touchingCraftingStations = { false, false, false };
+    //-1=none, 0=Small Explosive, 1=Itching Powder, 2=Stink Bomb
+    private int touchingCraftingStation = 0;
 
     private void Awake()
     {
@@ -57,7 +59,7 @@ public class StudentLeader : MonoBehaviour
         }
     }
 
-    public bool[] GetToucingCraftingStations() => touchingCraftingStations;
+    public int GetToucingCraftingStation() => touchingCraftingStation;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -78,22 +80,28 @@ public class StudentLeader : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
-        if (collision.gameObject.CompareTag("SmallExplosiveCraftingStation"))
-            touchingCraftingStations[0] = true;
-        if (collision.gameObject.CompareTag("ItchingPowderCraftingStation"))
-            touchingCraftingStations[1] = true;
-        if (collision.gameObject.CompareTag("StinkBombCraftingStation"))
-            touchingCraftingStations[2] = true;
+        for (int i = 0; i < craftingStationTags.Length; i++)
+        {
+            if (collision.gameObject.CompareTag(craftingStationTags[i]))
+            {
+                touchingCraftingStation = i;
+                inventory.UpdateCraftingPopup(i, studentManager.GetStudentCountByClass(StudentClass.Nerd));
+                break;
+            }
+        }
 
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("SmallExplosiveCraftingStation"))
-            touchingCraftingStations[0] = false;
-        if (collision.gameObject.CompareTag("ItchingPowderCraftingStation"))
-            touchingCraftingStations[1] = false;
-        if (collision.gameObject.CompareTag("StinkBombCraftingStation"))
-            touchingCraftingStations[2] = false;
+        for (int i = 0; i < craftingStationTags.Length; i++)
+        {
+            if (collision.gameObject.CompareTag(craftingStationTags[i]) && touchingCraftingStation == i)
+            {
+                touchingCraftingStation = -1;
+                inventory.UpdateCraftingPopup(-1, -1);
+                break;
+            }
+        }
     }
 }
