@@ -49,8 +49,8 @@ public class StudentManager : MonoBehaviour
 
     public void UpdateAttractedStudentsUI()
     {
-        studentNumberText.text = $"x {GetStudentCount()}";
-        nerdNumberText.text = $"x {GetStudentCountByClass(StudentClass.Nerd)}";
+        studentNumberText.text = $"x{GetStudentCount()}";
+        nerdNumberText.text = $"x{GetStudentCountByClass(StudentClass.Nerd)}";
     }
 
     public int GetStudentCount() => attractedStudents.Count;
