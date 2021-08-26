@@ -10,6 +10,7 @@ TagManager:
   - Chemical
   - Student
   - Teacher
+  - StudentLeader
   layers:
   - Default
   - TransparentFX
