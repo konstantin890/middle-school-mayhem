@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6473813538245497393}
   m_Layer: 6
   m_Name: PF_FartBomb
-  m_TagString: Chemical
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -836624779
-  m_SortingLayer: 5
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 5943315280407724368, guid: b2ea2cc85a6be4b42adbb96d8327db9f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

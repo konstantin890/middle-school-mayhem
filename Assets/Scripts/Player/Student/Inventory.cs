@@ -35,7 +35,8 @@ public class Inventory : MonoBehaviour
     //Vector2: Chemicals, Nerds
     public Vector2Int[] craftingRecepies = { new Vector2Int(3,3), new Vector2Int(1, 2), new Vector2Int(1, 1) };
 
-    private StudentLeader studentLeader;
+    [HideInInspector]
+    public StudentLeader studentLeader;
 
     private void Awake()
     {
@@ -90,6 +91,11 @@ public class Inventory : MonoBehaviour
         else
             actionPopupText.text += $"\n<color=#00ff00>Nerds {nerds}/{craftingRecepies[item].y}</color>";
 
+    }
+
+    public void SetPopupText(string text)
+    {
+        actionPopupText.text = $"{text}";
     }
 
     public void PickupChemical()

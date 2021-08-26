@@ -33,6 +33,7 @@ public class InputHandler : MonoBehaviour
         {
             //Debug.Log("Action Pressed!");
             inventory.MaybeCraftItems();
+            inventory.studentLeader.MaybeShowNextText();
             //add other possible actions here
         }
 

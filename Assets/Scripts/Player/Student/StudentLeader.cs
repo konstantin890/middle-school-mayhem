@@ -24,6 +24,9 @@ public class StudentLeader : MonoBehaviour
     //-1=none, 0=Small Explosive, 1=Itching Powder, 2=Stink Bomb
     private int touchingCraftingStation = 0;
 
+    private TextArea textShown = null;
+    private bool canPlayerMove = true;
+
     private void Awake()
     {
         instance = this;
@@ -44,7 +47,7 @@ public class StudentLeader : MonoBehaviour
     private void FixedUpdate()
     {
         // Handle movement
-        if (inputHandler != null)
+        if (inputHandler != null && canPlayerMove)
         {
             Vector2 movementAxis = inputHandler.GetMovement();
             animator.SetFloat("Speed", Mathf.Abs(movementAxis.x) + Mathf.Abs(movementAxis.y));
@@ -63,6 +66,23 @@ public class StudentLeader : MonoBehaviour
 
     public int GetToucingCraftingStation() => touchingCraftingStation;
 
+    public void MaybeShowNextText() 
+    {
+        if (textShown == null)
+            return;
+
+        string text = textShown.GetNextText();
+
+        if (text == "") 
+        {
+            UnpausePlayer();
+            inventory.SetPopupText("");
+            textShown = null;
+        }
+
+        inventory.SetPopupText(text);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         StudentNPC collStudent = collision.gameObject.GetComponent<StudentNPC>();
@@ -73,6 +93,27 @@ public class StudentLeader : MonoBehaviour
                 studentManager.AddStudent(collStudent);
                 //Debug.Log("Added Student to group");
             }
+
+            return;
+        }
+
+        TextArea collText = collision.gameObject.GetComponent<TextArea>();
+        if (collText != null)
+        {
+            string text = collText.GetFirstText();
+            
+            if (text == "")
+                return;
+
+            //pause movement before showing text!
+            bool pause = collText.ShouldGamePause();
+            if (pause)
+                StartCoroutine(PausePlayer());
+
+            inventory.SetPopupText(text);
+            textShown = collText;
+
+            return;
         }
 
         if (collision.gameObject.CompareTag("Chemical")) 
@@ -96,6 +137,14 @@ public class StudentLeader : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        TextArea collText = collision.gameObject.GetComponent<TextArea>();
+        if (collText != null && collText == textShown) 
+        {
+            textShown = null;
+            inventory.SetPopupText("");
+            UnpausePlayer();
+        }
+
         for (int i = 0; i < craftingStationTags.Length; i++)
         {
             if (collision.gameObject.CompareTag(craftingStationTags[i]) && touchingCraftingStation == i)
@@ -105,5 +154,25 @@ public class StudentLeader : MonoBehaviour
                 break;
             }
         }
+    }
+
+    IEnumerator PausePlayer()
+    {
+        yield return new WaitForSeconds(0.1f);
+
+        if (textShown != null) //player may exit text area...
+        {
+            canPlayerMove = false;
+            animator.SetFloat("Speed", 0f);
+            inventory.canUseItems = false;
+            inventory.canCraftItems = false;
+        }
+    }
+
+    private void UnpausePlayer()
+    {
+        canPlayerMove = true;
+        inventory.canUseItems = true; //we needed it later!
+        inventory.canCraftItems = true;
     }
 }
