@@ -9,46 +9,61 @@ public class SceneHandler : MonoBehaviour
     public static SceneHandler instance;
 
     private string currentlyLoadedLevelName;
+    private string pendingLoadLevelName;
 
     public string initialSceneName;
 
-    public int floorOneHallSceneId;
-    public int[] floorOneSceneIds;
-    public int floorTwoHallSceneId;
-    public int[] floorTwoSceneIds;
-
-    public float fadeMultiplier;
-
     public Animator fadeAnimator;
+    public Transform studentLeader;
 
     private void Awake()
     {
         instance = this;
 
+        SceneManager.LoadScene(initialSceneName, LoadSceneMode.Additive);
         currentlyLoadedLevelName = initialSceneName;
-        SceneManager.LoadScene(initialSceneName);
     }
 
     public void GoToScene(string sceneName)
     {
-        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneName);
         fadeAnimator.SetTrigger("FadeOut");
-        currentlyLoadedLevelName = sceneName;
+        pendingLoadLevelName = sceneName;
     }
 
     public void OnFadeOutComplete()
     {
-        StartCoroutine(LoadSceneAsync());
+        if (currentlyLoadedLevelName != null)
+            StartCoroutine(UnloadPastScene());
+        else
+            LoadNextScene();
     }
 
-    IEnumerator LoadSceneAsync()
+    private IEnumerator UnloadPastScene()
     {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(currentlyLoadedLevelName); // in this case currentlyLoadedLevelName is the scene to be loaded next
+        AsyncOperation asyncOperation = SceneManager.UnloadSceneAsync(currentlyLoadedLevelName);
 
-        // Wait until the asynchronous scene fully loads
-        while (!asyncLoad.isDone)
+        while (!asyncOperation.isDone)
         {
             yield return null;
         }
+
+        LoadNextScene();
+    }
+
+    private void LoadNextScene()
+    {
+        SceneManager.LoadScene(pendingLoadLevelName, LoadSceneMode.Additive);
+
+        currentlyLoadedLevelName = pendingLoadLevelName;
+
+        PostLevelLoad();
+    }
+
+    private void PostLevelLoad()
+    {
+        // Post-load set-up
+
+        //studentLeader.transform.position = GameObject.FindGameObjectWithTag("StudentLeaderSpawnPoint").transform.position;
+
     }
 }

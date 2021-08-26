@@ -10,7 +10,6 @@ public class ClassroomDoor : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("StudentLeader"))
         {
-            Debug.Log("Student Enter!");
             SceneHandler.instance.GoToScene(sceneNameEnter);
         }
     }

@@ -11,6 +11,7 @@ TagManager:
   - Student
   - Teacher
   - StudentLeader
+  - StudentLeaderSpawnPoint
   layers:
   - Default
   - TransparentFX

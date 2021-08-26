@@ -768,7 +768,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 424604528}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 05856bcb0e8f93449abc8a04914f140d, type: 2}
   m_CullingMode: 0
@@ -791,13 +791,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14712624fd798984eacfd4ff1ea7fc75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialSceneName: 
-  floorOneHallSceneId: 0
-  floorOneSceneIds: 
-  floorTwoHallSceneId: 0
-  floorTwoSceneIds: 
-  fadeMultiplier: 0
-  fadeAnimator: {fileID: 0}
+  initialSceneName: Floor1_Class1
+  fadeAnimator: {fileID: 424604530}
+  studentLeader: {fileID: 1299436813}
 --- !u!1 &501345510
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,7 +811,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &501345511
 RectTransform:
   m_ObjectHideFlags: 0
@@ -848,7 +844,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2563,7 +2559,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 999
   m_TargetDisplay: 0
 --- !u!1 &1914230856
 GameObject:
