@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4850724533199972410}
   - component: {fileID: 4850724533199972412}
   - component: {fileID: 4850724533199972411}
+  - component: {fileID: 1250198755100455513}
   m_Layer: 0
   m_Name: Table_Small
   m_TagString: Untagged
@@ -71,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -836624779
-  m_SortingLayer: 5
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a9771d07467062847bf8fcc4ae3ab71a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -110,3 +111,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.75, y: 1.3125}
   m_EdgeRadius: 0
+--- !u!95 &1250198755100455513
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4850724533199972409}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8591715a29d834a4ba9fb3bf98d24ca9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

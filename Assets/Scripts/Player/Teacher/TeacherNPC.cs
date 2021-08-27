@@ -7,12 +7,17 @@ public class TeacherNPC : MonoBehaviour
     public TeacherData type;
     public Animator animator;
 
+    [Header("Hall Teacher")]
+    public float secondsBetweenAttackMin;
+    public float secondsBetweenAttackMax;
+
     [Header("Subs Teacher")]
     public Transform chalkPrefab;
     private Transform thrownChalk;
     public float chalkSpeed;
 
     [Range(0, 1)] public float patianceLevel;
+    private List<StudentNPC> studentsInsideArea = new List<StudentNPC>();
 
     private bool isAngry;
     public bool IsAngry
@@ -36,16 +41,26 @@ public class TeacherNPC : MonoBehaviour
         }
     }
 
-    public void ExecuteAttack()
+    private void Awake()
+    {
+        // Attack loop
+        ExecuteAttackLoop();
+    }
+
+    public void ExecuteAttackLoop()
     {
         switch (type.variation)
         {
-            case TeacherVariation.Sub:
-                SubAttack_Chalk();
+            case TeacherVariation.HallMonitor:
+                AttackLoopHall();
                 break;
 
-            case TeacherVariation.Math:
-                MathsAttack_FPaper();
+            case TeacherVariation.Sub:
+                //SpecialAttack_Subs_Chalk();
+                break;
+
+            case TeacherVariation.Science:
+                //MathsAttack_FPaper();
                 break;
 
             default:
@@ -53,7 +68,33 @@ public class TeacherNPC : MonoBehaviour
         }
     }
 
-    private void SubAttack_Chalk()
+
+    private IEnumerator AttackLoopHall()
+    {
+        yield return new WaitUntil(() => studentsInsideArea.Count > 1);
+        yield return new WaitForSeconds(Random.Range(secondsBetweenAttackMin, secondsBetweenAttackMax));
+        RegularAttack_HallMonitor();
+        StartCoroutine(AttackLoopHall());
+    }
+
+    private void RegularAttack_HallMonitor()
+    {
+        /*thrownChalk = Instantiate(chalkPrefab, transform.position, Quaternion.identity);
+        Rigidbody2D chalkRb = thrownChalk.GetComponent<Rigidbody2D>();
+        Transform target = StudentManager.instance.GetRandomStudent();
+        chalkRb.AddForce((target.position - transform.position) * chalkSpeed, ForceMode2D.Impulse);
+        animator.SetTrigger("Subs_ThrowChalk");
+        Destroy(thrownChalk.gameObject, 3f);*/
+
+        animator.SetBool("Scold", true);
+
+        foreach (StudentNPC student in studentsInsideArea)
+        {
+            student.ApplyFear(10f);
+        }
+    }
+
+    private void SpecialAttack_Subs_Chalk()
     {
         thrownChalk = Instantiate(chalkPrefab, transform.position, Quaternion.identity);
         Rigidbody2D chalkRb = thrownChalk.GetComponent<Rigidbody2D>();
@@ -83,7 +124,18 @@ public class TeacherNPC : MonoBehaviour
         if (collision.gameObject.CompareTag("Student"))
         {
             Debug.Log("A Student entered AoE");
-            ExecuteAttack();
+            studentsInsideArea.Add(collision.gameObject.GetComponent<StudentNPC>());
+        }
+    }
+
+    private void OnTriggerExit(Collider collision)
+    {
+        if (collision.gameObject.CompareTag("Student"))
+        {
+            StudentNPC npc = collision.gameObject.GetComponent<StudentNPC>();
+            Debug.Log("A Student entered AoE");
+            if (studentsInsideArea.Contains(npc))
+                studentsInsideArea.Remove(npc);
         }
     }
 }
