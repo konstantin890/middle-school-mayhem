@@ -20,7 +20,7 @@ public class StudentLeader : MonoBehaviour
 
     public string[] craftingStationTags = { "SmallExplosiveCraftingStation", "ItchingPowderCraftingStation", "StinkBombCraftingStation" };
 
-    private Inventory inventory;
+    public Inventory inventory;
 
     //-1=none, 0=Small Explosive, 1=Itching Powder, 2=Stink Bomb
     private int touchingCraftingStation = 0;
@@ -90,7 +90,7 @@ public class StudentLeader : MonoBehaviour
         if (collision.gameObject.CompareTag("EnterArea"))
         {
             // Show text
-            classroomEnterText.gameObject.SetActive(true);
+            inventory.SetPopupText("Enter room? \n(spacebar/controller?");
             collision.gameObject.GetComponent<ClassroomDoor>().isFocused = true;
         }
 
@@ -150,6 +150,8 @@ public class StudentLeader : MonoBehaviour
         {
             // Hide text
             classroomEnterText.gameObject.SetActive(false);
+            inventory.SetPopupText("");
+
             collision.gameObject.GetComponent<ClassroomDoor>().isFocused = false;
         }
 

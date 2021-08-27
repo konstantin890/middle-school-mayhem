@@ -13,6 +13,7 @@ public class ClassroomDoor : MonoBehaviour
         {
             isFocused = false;
             SceneHandler.instance.GoToScene(sceneNameEnter);
+            StudentLeader.instance.inventory.SetPopupText("");
         }
     }
 }
