@@ -5,11 +5,13 @@ using UnityEngine;
 public class ClassroomDoor : MonoBehaviour
 {
     public string sceneNameEnter;
+    public bool isFocused;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Update()
     {
-        if (collision.gameObject.CompareTag("StudentLeader"))
+        if (isFocused && InputHandler.instance.IsButtonHeld(0))
         {
+            isFocused = false;
             SceneHandler.instance.GoToScene(sceneNameEnter);
         }
     }

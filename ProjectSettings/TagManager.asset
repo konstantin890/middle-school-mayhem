@@ -13,6 +13,7 @@ TagManager:
   - StudentLeader
   - StudentLeaderSpawnPoint
   - Confiner
+  - EnterArea
   layers:
   - Default
   - TransparentFX

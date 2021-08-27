@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class StudentLeader : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class StudentLeader : MonoBehaviour
     //-1=none, 0=Small Explosive, 1=Itching Powder, 2=Stink Bomb
     private int touchingCraftingStation = 0;
 
+    public TMP_Text classroomEnterText;
     private TextArea textShown = null;
     private bool canPlayerMove = true;
 
@@ -85,6 +87,13 @@ public class StudentLeader : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.CompareTag("EnterArea"))
+        {
+            // Show text
+            classroomEnterText.gameObject.SetActive(true);
+            collision.gameObject.GetComponent<ClassroomDoor>().isFocused = true;
+        }
+
         StudentNPC collStudent = collision.gameObject.GetComponent<StudentNPC>();
         if (collStudent != null) 
         {
@@ -137,6 +146,13 @@ public class StudentLeader : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (collision.gameObject.CompareTag("EnterArea"))
+        {
+            // Hide text
+            classroomEnterText.gameObject.SetActive(false);
+            collision.gameObject.GetComponent<ClassroomDoor>().isFocused = false;
+        }
+
         TextArea collText = collision.gameObject.GetComponent<TextArea>();
         if (collText != null && collText == textShown) 
         {

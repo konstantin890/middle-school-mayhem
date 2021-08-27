@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
+    public static InputHandler instance;
     [Range(0f, 1f)]
     public float inputSensitivity = 0.1f;
     private int verticalMovement = 0;
@@ -16,6 +17,7 @@ public class InputHandler : MonoBehaviour
 
     void Awake()
     {
+        instance = this;
         inventory = GetComponent<Inventory>();
         if (inventory == null)
             Debug.LogError("InputHandler needs Inventory to work properly.");
@@ -68,7 +70,7 @@ public class InputHandler : MonoBehaviour
 
     //Function returns if the requested button is JUST pressed (aka, returns 'true' only once)
     //If we need to check if the button is being held, just check the array 'buttonsHeld', at the wanted position
-    private bool CheckIfButtonPressed(string axisName, int arrayIdx)
+    public bool CheckIfButtonPressed(string axisName, int arrayIdx)
     {
         if (Input.GetAxis(axisName) >= inputSensitivity && !buttonsHeld[arrayIdx])
         {
