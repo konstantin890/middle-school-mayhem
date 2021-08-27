@@ -406,7 +406,6 @@ GameObject:
   m_Component:
   - component: {fileID: 225072893}
   - component: {fileID: 225072896}
-  - component: {fileID: 225072895}
   - component: {fileID: 225072894}
   m_Layer: 0
   m_Name: cm
@@ -451,18 +450,6 @@ MonoBehaviour:
   m_YawDamping: 0
   m_RollDamping: 0
   m_AngularDamping: 0
---- !u!114 &225072895
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 225072892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e8b78ac948f05a46a6d8339a503172b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &225072896
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -792,6 +779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialSceneName: Floor1_Class1
+  cinemachineManager: {fileID: 0}
   fadeAnimator: {fileID: 424604530}
   studentLeader: {fileID: 1299436813}
 --- !u!1 &501345510
@@ -2648,9 +2636,10 @@ GameObject:
   - component: {fileID: 2073064692}
   - component: {fileID: 2073064691}
   - component: {fileID: 2073064693}
+  - component: {fileID: 2073064694}
   m_Layer: 0
   m_Name: CM vcam1
-  m_TagString: Untagged
+  m_TagString: Confiner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2721,6 +2710,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a8a05de0ac134f4f9d01bef6b9da077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2073064694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073064690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BoundingShape2D: {fileID: 0}
+  m_Damping: 0.5
+  m_MaxWindowSize: -1
 --- !u!1 &2074428170
 GameObject:
   m_ObjectHideFlags: 0

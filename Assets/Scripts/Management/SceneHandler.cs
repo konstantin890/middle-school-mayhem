@@ -13,6 +13,7 @@ public class SceneHandler : MonoBehaviour
 
     public string initialSceneName;
 
+    public CinemachineManager cinemachineManager;
     public Animator fadeAnimator;
     public Transform studentLeader;
 
@@ -22,6 +23,7 @@ public class SceneHandler : MonoBehaviour
 
         SceneManager.LoadScene(initialSceneName, LoadSceneMode.Additive);
         currentlyLoadedLevelName = initialSceneName;
+        PostLevelLoad();
     }
 
     public void GoToScene(string sceneName)
@@ -65,5 +67,6 @@ public class SceneHandler : MonoBehaviour
 
         //studentLeader.transform.position = GameObject.FindGameObjectWithTag("StudentLeaderSpawnPoint").transform.position;
 
+        // TODO: Reinstantiate the students around the Leader, could be random pos in a sphere
     }
 }
