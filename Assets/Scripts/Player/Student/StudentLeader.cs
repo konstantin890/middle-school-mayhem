@@ -180,11 +180,11 @@ public class StudentLeader : MonoBehaviour
         }
     }
 
-    public IEnumerator PausePlayer()
+    public IEnumerator PausePlayer(bool force = false)
     {
         yield return new WaitForSeconds(0.1f);
 
-        if (textShown != null) //player may exit text area...
+        if (textShown != null || force) //player may exit text area...
         {
             canPlayerMove = false;
             animator.SetFloat("Speed", 0f);
