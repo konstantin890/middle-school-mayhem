@@ -29,6 +29,8 @@ public class StudentLeader : MonoBehaviour
     private TextArea textShown = null;
     private bool canPlayerMove = true;
 
+    private GameObject callout;
+
     private void Awake()
     {
         instance = this;
@@ -36,6 +38,8 @@ public class StudentLeader : MonoBehaviour
         inventory = GetComponent<Inventory>();
         if (inventory == null)
             Debug.LogError("StudentLeader needs Inventory to work properly.");
+
+        callout = transform.GetChild(0).gameObject; //hopefully this is not null....
     }
 
     public void InitiateStudent()
@@ -92,6 +96,7 @@ public class StudentLeader : MonoBehaviour
             // Show text
             classroomEnterText.gameObject.SetActive(true);
             collision.gameObject.GetComponent<ClassroomDoor>().isFocused = true;
+            callout.SetActive(true);
         }
 
         StudentNPC collStudent = collision.gameObject.GetComponent<StudentNPC>();
@@ -138,6 +143,7 @@ public class StudentLeader : MonoBehaviour
             {
                 touchingCraftingStation = i;
                 inventory.UpdateCraftingPopup(i, studentManager.GetStudentCountByClass(StudentClass.Nerd));
+                callout.SetActive(true);
                 break;
             }
         }
@@ -151,6 +157,7 @@ public class StudentLeader : MonoBehaviour
             // Hide text
             classroomEnterText.gameObject.SetActive(false);
             collision.gameObject.GetComponent<ClassroomDoor>().isFocused = false;
+            callout.SetActive(false);
         }
 
         TextArea collText = collision.gameObject.GetComponent<TextArea>();
@@ -165,6 +172,7 @@ public class StudentLeader : MonoBehaviour
         {
             if (collision.gameObject.CompareTag(craftingStationTags[i]) && touchingCraftingStation == i)
             {
+                callout.SetActive(false);
                 touchingCraftingStation = -1;
                 inventory.UpdateCraftingPopup(-1, -1);
                 break;
