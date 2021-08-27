@@ -84,4 +84,6 @@ public class InputHandler : MonoBehaviour
 
         return false;
     }
+
+    public bool IsButtonHeld(int arrayIdx) => buttonsHeld[arrayIdx];
 }
