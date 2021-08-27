@@ -51,6 +51,7 @@ public class StudentNPC : MonoBehaviour
     {
         isAttracted = true;
         aiTargetter.target = leader;
+        DontDestroyOnLoad(this);
     }
 
     public void LeaveGroup()
@@ -60,6 +61,7 @@ public class StudentNPC : MonoBehaviour
 
         animator.SetBool("FearMaxed", true);
         StudentManager.instance.RemoveStudent(this);
+        Debug.Log("Student left the group!");
     }
 
     public void ApplyFear(float fearValue)

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6043681369379713972}
   - component: {fileID: 6043681369379713973}
+  - component: {fileID: 7073330279427938168}
   m_Layer: 0
   m_Name: Student AI Pathfinder
   m_TagString: Untagged
@@ -86,3 +87,15 @@ MonoBehaviour:
     pivotPointRoot: {fileID: 0}
     spreadOutCount: 1
   showGraphs: 1
+--- !u!114 &7073330279427938168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6043681369379713970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81b5333da468b5d4d86a2b90145d7394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
