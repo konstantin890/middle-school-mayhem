@@ -25,11 +25,10 @@ public class StudentLeader : MonoBehaviour
     //-1=none, 0=Small Explosive, 1=Itching Powder, 2=Stink Bomb
     private int touchingCraftingStation = 0;
 
-    public TMP_Text classroomEnterText;
     private TextArea textShown = null;
     private bool canPlayerMove = true;
 
-    private GameObject callout;
+    public GameObject callout;
 
     private void Awake()
     {
@@ -155,7 +154,6 @@ public class StudentLeader : MonoBehaviour
         if (collision.gameObject.CompareTag("EnterArea"))
         {
             // Hide text
-            classroomEnterText.gameObject.SetActive(false);
             inventory.SetPopupText("");
 
             collision.gameObject.GetComponent<ClassroomDoor>().isFocused = false;
