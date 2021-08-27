@@ -68,6 +68,8 @@ public class Inventory : MonoBehaviour
             stinkBombCountDisplay.text = $"{items[2]}";
 
             UpdateCraftingPopup(craftingStation, nerds);
+
+            studentLeader.playerSounds.CaftSound();
         }
     }
 

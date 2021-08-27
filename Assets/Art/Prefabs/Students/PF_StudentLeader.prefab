@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4719464461684673488}
   - component: {fileID: 3345564150713626570}
   - component: {fileID: 7704542321746894112}
+  - component: {fileID: 5255495909458903884}
   - component: {fileID: 4792211793509376849}
   - component: {fileID: 7461331093635827218}
   - component: {fileID: 3714927552467003814}
@@ -115,6 +116,7 @@ MonoBehaviour:
   - StinkBombCraftingStation
   inventory: {fileID: 0}
   callout: {fileID: 0}
+  playerSounds: {fileID: 0}
 --- !u!114 &3345564150713626570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,6 +163,23 @@ MonoBehaviour:
   - {x: 1, y: 2}
   - {x: 1, y: 1}
   studentLeader: {fileID: 0}
+--- !u!114 &5255495909458903884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6660672982962828942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 877d95fcb14246b4d9c4e84c39e457f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundSrc: {fileID: 0}
+  craft: {fileID: 8300000, guid: a2f3218ad5a824447a1ffbe492b1524b, type: 3}
+  door: {fileID: 8300000, guid: dfc87bcd402106641ae84087d2538ce3, type: 3}
+  followerGained: {fileID: 8300000, guid: f25b2251f2388484eb634641109ee124, type: 3}
+  collectChemical: {fileID: 8300000, guid: 28d0e7e1caa6220498897d95d9cf515f, type: 3}
 --- !u!50 &4792211793509376849
 Rigidbody2D:
   serializedVersion: 4

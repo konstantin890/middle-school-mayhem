@@ -30,6 +30,8 @@ public class StudentLeader : MonoBehaviour
 
     public GameObject callout;
 
+    public PlayerSounds playerSounds;
+
     private void Awake()
     {
         instance = this;
@@ -39,6 +41,8 @@ public class StudentLeader : MonoBehaviour
             Debug.LogError("StudentLeader needs Inventory to work properly.");
 
         callout = transform.GetChild(0).gameObject; //hopefully this is not null....
+
+        playerSounds = GetComponent<PlayerSounds>(); 
     }
 
     public void InitiateStudent()
@@ -104,6 +108,7 @@ public class StudentLeader : MonoBehaviour
             if (!collStudent.IsAttracted())
             {
                 studentManager.AddStudent(collStudent);
+                playerSounds.FollowerSound();
                 //Debug.Log("Added Student to group");
             }
 
@@ -134,6 +139,7 @@ public class StudentLeader : MonoBehaviour
             collision.gameObject.tag = "Untagged"; //"Destroy" takes a bit and player could pick up twice a chemical if collided with many at once
             Destroy(collision.gameObject);
             inventory.PickupChemical();
+            playerSounds.CollectChemical();
         }
 
         for (int i = 0; i < craftingStationTags.Length; i++)
