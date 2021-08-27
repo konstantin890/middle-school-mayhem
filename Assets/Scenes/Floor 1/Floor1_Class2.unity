@@ -4788,6 +4788,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Table_Large (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8716023209480687681, guid: 1c420d65ec81059429c608dd728c3974, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8716023209480687710, guid: 1c420d65ec81059429c608dd728c3974, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -4988,6 +4992,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Table_Large
       objectReference: {fileID: 0}
+    - target: {fileID: 8716023209480687681, guid: 1c420d65ec81059429c608dd728c3974, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8716023209480687710, guid: 1c420d65ec81059429c608dd728c3974, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -5088,7 +5096,7 @@ CompositeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
+  m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
   m_ColliderPaths:

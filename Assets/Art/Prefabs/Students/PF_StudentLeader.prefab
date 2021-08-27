@@ -113,7 +113,8 @@ MonoBehaviour:
   - SmallExplosiveCraftingStation
   - ItchingPowderCraftingStation
   - StinkBombCraftingStation
-  classroomEnterText: {fileID: 0}
+  inventory: {fileID: 0}
+  callout: {fileID: 0}
 --- !u!114 &3345564150713626570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,7 +206,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.75}
+  m_Size: {x: 0.55, y: 0.75}
   m_EdgeRadius: 0
 --- !u!95 &3714927552467003814
 Animator:
