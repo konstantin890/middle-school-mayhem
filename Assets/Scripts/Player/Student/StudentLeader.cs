@@ -180,7 +180,7 @@ public class StudentLeader : MonoBehaviour
         }
     }
 
-    IEnumerator PausePlayer()
+    public IEnumerator PausePlayer()
     {
         yield return new WaitForSeconds(0.1f);
 
@@ -193,7 +193,7 @@ public class StudentLeader : MonoBehaviour
         }
     }
 
-    private void UnpausePlayer()
+    public void UnpausePlayer()
     {
         canPlayerMove = true;
         inventory.canUseItems = true; //we needed it later!
