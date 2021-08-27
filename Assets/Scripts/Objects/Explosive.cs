@@ -17,9 +17,10 @@ public class Explosive : MonoBehaviour
 
     IEnumerator StartExploding() 
     {
+        //ok, I know I hard-coded this shit and it is BAD!
         yield return new WaitForSeconds(0.1f);
         animator.SetTrigger("Explode");
-        yield return new WaitForSeconds(0.3f); //idk change this
+        yield return new WaitForSeconds(0.3f);
         soundSrc.Play();
         yield return new WaitForSeconds(0.15f);
         ExplodeBarredDoors();
