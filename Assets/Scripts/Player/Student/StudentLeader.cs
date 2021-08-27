@@ -97,8 +97,13 @@ public class StudentLeader : MonoBehaviour
         if (collision.gameObject.CompareTag("EnterArea"))
         {
             // Show text
-            inventory.SetPopupText("Enter room? \n(spacebar/controller?");
-            collision.gameObject.GetComponent<ClassroomDoor>().isFocused = true;
+            ClassroomDoor classroomDoor = collision.gameObject.GetComponent<ClassroomDoor>();
+            if (classroomDoor.isBarred)
+                inventory.SetPopupText("Door is barred. Cannot enter room");
+            else
+                inventory.SetPopupText("Enter room?");
+
+            classroomDoor.isFocused = true;
             callout.SetActive(true);
         }
 

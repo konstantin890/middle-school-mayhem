@@ -227,6 +227,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8251433646874311725, guid: 71fb8f9ee2d4446409fe424998520a4d, type: 3}
     - target: {fileID: 7704542321746894112, guid: 1c1bef5b44c48c8478ea752090d46e31, type: 3}
+      propertyPath: items.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7704542321746894112, guid: 1c1bef5b44c48c8478ea752090d46e31, type: 3}
       propertyPath: smallExplosivePrefab
       value: 
       objectReference: {fileID: 8251433646874311725, guid: 56ee4077f25b88146a3779d166a66fe6, type: 3}

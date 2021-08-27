@@ -72,6 +72,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneNameEnter: 
   isFocused: 0
+  isBarred: 0
+  normalDoor: {fileID: -3468596928167051028, guid: ccf0696ac85a0c946913af654db5785c, type: 3}
+  barredDoor: {fileID: 7794581237443052159, guid: cce27fe32c941b244845222c2cd96500, type: 3}
   spawnObj: {fileID: 8625751618933088973}
 --- !u!1 &4583627328171503767
 GameObject:
