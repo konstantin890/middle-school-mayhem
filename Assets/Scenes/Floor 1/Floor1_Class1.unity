@@ -415,6 +415,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3131900137400336019, guid: ef58bfd4f0befe649b49a5843e81ead5, type: 3}
+      propertyPath: randomSpeedPercentageFactor
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4651700735324157135, guid: ef58bfd4f0befe649b49a5843e81ead5, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -3057,6 +3061,10 @@ PrefabInstance:
       propertyPath: pauseOnEnter
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 288689213939881558, guid: befbe45e582f65545b027378a83951c3, type: 3}
+      propertyPath: textToDisplay.Array.data[0]
+      value: PRESS SPACE TO CONTINUE<br>(or A in xbox controller)
+      objectReference: {fileID: 0}
     - target: {fileID: 288689213939881559, guid: befbe45e582f65545b027378a83951c3, type: 3}
       propertyPath: m_Size.x
       value: 4.0388355
@@ -4959,6 +4967,10 @@ PrefabInstance:
     - target: {fileID: 1413775027066631701, guid: be8618ecb0b6eec4caf3929b319db556, type: 3}
       propertyPath: m_SortingLayerID
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3131900137400336019, guid: be8618ecb0b6eec4caf3929b319db556, type: 3}
+      propertyPath: randomSpeedPercentageFactor
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4651700735324157135, guid: be8618ecb0b6eec4caf3929b319db556, type: 3}
       propertyPath: m_RootOrder
