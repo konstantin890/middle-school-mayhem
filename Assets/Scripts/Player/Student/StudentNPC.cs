@@ -18,6 +18,11 @@ public class StudentNPC : MonoBehaviour
     public Animator animator;
     public SpriteRenderer spriteRenderer;
 
+    [Range(0, 100)]
+    public float randomSpeedPercentageFactor = 5f;
+    [Range(0, 100)]
+    public float randomEndReachPercentageFactor = 10f;
+
     private AudioSource audioSrc;
 
     public float FearLevel 
@@ -34,7 +39,9 @@ public class StudentNPC : MonoBehaviour
 
     private void Awake()
     {
-        aiPath.maxSpeed *= data.speedMultiplier;
+        aiPath.maxSpeed *= data.speedMultiplier * (1 + (Random.Range(0, 2) * 2 - 1) * Random.Range(0f, randomSpeedPercentageFactor)/100f);
+        aiPath.endReachedDistance *= 1 + (Random.Range(0, 2) * 2 - 1) * Random.Range(0f, randomEndReachPercentageFactor)/100f;
+
         maxFear /= data.braveryMultiplier;
 
         audioSrc = GetComponent<AudioSource>();

@@ -237,6 +237,8 @@ MonoBehaviour:
   aiTargetter: {fileID: 328027495907184166}
   animator: {fileID: 7963743449138202806}
   spriteRenderer: {fileID: 1413775027066631701}
+  randomSpeedPercentageFactor: 5
+  randomEndReachPercentageFactor: 10
 --- !u!58 &-5601653478268657346
 CircleCollider2D:
   m_ObjectHideFlags: 0
