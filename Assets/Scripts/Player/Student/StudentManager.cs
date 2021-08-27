@@ -25,7 +25,10 @@ public class StudentManager : MonoBehaviour
 
     private void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.F) && attractedStudents.Count > 0) 
+        {
+            attractedStudents[0].ApplyFear(20);
+        }
     }
 
     /*private void SpawnLeader()

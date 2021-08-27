@@ -18,6 +18,8 @@ public class StudentNPC : MonoBehaviour
     public Animator animator;
     public SpriteRenderer spriteRenderer;
 
+    private AudioSource audioSrc;
+
     public float FearLevel 
     {
         get => fearLevel;
@@ -34,6 +36,8 @@ public class StudentNPC : MonoBehaviour
     {
         aiPath.maxSpeed *= data.speedMultiplier;
         maxFear /= data.braveryMultiplier;
+
+        audioSrc = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -71,6 +75,7 @@ public class StudentNPC : MonoBehaviour
         FearLevel += fearValue / data.braveryMultiplier;
         // play hurt animation
         animator.SetTrigger("Hurt");
+        audioSrc.Play();
     }
 
     public bool IsAttracted() => isAttracted;
