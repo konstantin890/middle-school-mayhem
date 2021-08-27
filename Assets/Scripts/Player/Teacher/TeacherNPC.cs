@@ -41,10 +41,18 @@ public class TeacherNPC : MonoBehaviour
         }
     }
 
+    private AudioSource soundSrc;
+
+    public AudioClip throwChalkSound;
+    public AudioClip giveupSound;
+    public AudioClip[] scoldSounds = new AudioClip[2];
+
     private void Awake()
     {
         // Attack loop
         ExecuteAttackLoop();
+
+        soundSrc = GetComponent<AudioSource>();
     }
 
     public void ExecuteAttackLoop()
@@ -86,6 +94,9 @@ public class TeacherNPC : MonoBehaviour
         animator.SetTrigger("Subs_ThrowChalk");
         Destroy(thrownChalk.gameObject, 3f);*/
 
+        soundSrc.clip = scoldSounds[Random.Range(0, 2)]; //2 is exclusive, so 0 or 1
+        soundSrc.Play();
+
         animator.SetBool("Scold", true);
 
         foreach (StudentNPC student in studentsInsideArea)
@@ -102,6 +113,9 @@ public class TeacherNPC : MonoBehaviour
         chalkRb.AddForce((target.position - transform.position) * chalkSpeed, ForceMode2D.Impulse);
         animator.SetTrigger("Subs_ThrowChalk");
         Destroy(thrownChalk.gameObject, 3f);
+
+        soundSrc.clip = throwChalkSound;
+        soundSrc.Play();
     }
 
     private void MathsAttack_FPaper()
@@ -117,6 +131,9 @@ public class TeacherNPC : MonoBehaviour
     public void LeaveClass()
     {
         // AI to door, corroutine, after that, disapear (animation?)
+
+        soundSrc.clip = giveupSound;
+        soundSrc.Play();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
