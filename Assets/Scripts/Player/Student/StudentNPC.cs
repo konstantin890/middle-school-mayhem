@@ -86,5 +86,10 @@ public class StudentNPC : MonoBehaviour
         {
             Debug.Log("A Teacher entered AoE");
         }
+
+        if (collision.gameObject.CompareTag("Destructible"))
+        {
+            collision.GetComponent<Animator>().SetTrigger("Break");
+        }
     }
 }
