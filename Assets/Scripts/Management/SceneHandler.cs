@@ -70,4 +70,9 @@ public class SceneHandler : MonoBehaviour
 
         // TODO: Reinstantiate the students around the Leader, could be random pos in a sphere
     }
+
+    public Scene GetCurrentLevelScene()
+    {
+        return SceneManager.GetSceneByName(currentlyLoadedLevelName);
+    }
 }
