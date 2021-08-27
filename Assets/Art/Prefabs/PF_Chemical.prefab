@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4679131642047705281}
   - component: {fileID: 7373001787301009808}
   - component: {fileID: 6473813538245497393}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: PF_Chemical
   m_TagString: Chemical
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6082554781107185790}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -71,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -836624779
-  m_SortingLayer: 5
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -318911390704657791, guid: 2a85b38a83f422c43ae7a55262dec8c8, type: 3}
   m_Color: {r: 0.45231205, g: 0.8666667, b: 0.44705883, a: 1}
@@ -98,9 +98,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.14052363}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.24
 --- !u!95 &6473813538245497393
 Animator:
   serializedVersion: 3
