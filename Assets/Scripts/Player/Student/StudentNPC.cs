@@ -2,6 +2,7 @@ using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StudentNPC : MonoBehaviour
 {
@@ -61,6 +62,7 @@ public class StudentNPC : MonoBehaviour
 
         animator.SetBool("FearMaxed", true);
         StudentManager.instance.RemoveStudent(this);
+        SceneManager.MoveGameObjectToScene(gameObject, SceneHandler.instance.GetCurrentLevelScene());
         Debug.Log("Student left the group!");
     }
 
