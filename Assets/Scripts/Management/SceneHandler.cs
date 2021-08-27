@@ -8,12 +8,12 @@ public class SceneHandler : MonoBehaviour
 {
     public static SceneHandler instance;
 
+    [HideInInspector] public string lastLoadedLevelName;
     private string currentlyLoadedLevelName;
     private string pendingLoadLevelName;
 
     public string initialSceneName;
 
-    public CinemachineManager cinemachineManager;
     public Animator fadeAnimator;
     public Transform studentLeader;
 
@@ -56,6 +56,7 @@ public class SceneHandler : MonoBehaviour
     {
         SceneManager.LoadScene(pendingLoadLevelName, LoadSceneMode.Additive);
 
+        lastLoadedLevelName = currentlyLoadedLevelName;
         currentlyLoadedLevelName = pendingLoadLevelName;
 
         PostLevelLoad();
@@ -68,5 +69,7 @@ public class SceneHandler : MonoBehaviour
         //studentLeader.transform.position = GameObject.FindGameObjectWithTag("StudentLeaderSpawnPoint").transform.position;
 
         // TODO: Reinstantiate the students around the Leader, could be random pos in a sphere
+
+        
     }
 }

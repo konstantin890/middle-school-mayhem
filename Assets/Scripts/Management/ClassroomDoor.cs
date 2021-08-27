@@ -7,6 +7,8 @@ public class ClassroomDoor : MonoBehaviour
     public string sceneNameEnter;
     public bool isFocused;
 
+    public GameObject spawnObj;
+
     private void Update()
     {
         if (isFocused && InputHandler.instance.IsButtonHeld(0))
