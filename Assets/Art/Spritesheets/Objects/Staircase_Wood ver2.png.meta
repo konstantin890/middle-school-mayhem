@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 8f3860819ce1ad44e9e4eb253bf88020
+guid: d928b236f622fb84cac20a89de73bd2b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4233971151706988832
-    second: Staircase_Wood_0
+      213: 6782533760737336126
+    second: Staircase_Wood ver2_0
   - first:
-      213: 5916827493407904234
-    second: Staircase_Wood_1
+      213: 5467366348047895402
+    second: Staircase_Wood ver2_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -121,13 +121,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Staircase_Wood_0
+      name: Staircase_Wood ver2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 32
-        height: 80
+        height: 112
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,20 +135,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0212fb6745612ca30800000000000000
-      internalID: 4233971151706988832
+      spriteID: e3bd7dd1586602e50800000000000000
+      internalID: 6782533760737336126
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Staircase_Wood_1
+      name: Staircase_Wood ver2_1
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 32
-        height: 80
+        height: 112
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,8 +156,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae1d7dda14bcc1250800000000000000
-      internalID: 5916827493407904234
+      spriteID: a6bc158e9bcffdb40800000000000000
+      internalID: 5467366348047895402
       vertices: []
       indices: 
       edges: []
