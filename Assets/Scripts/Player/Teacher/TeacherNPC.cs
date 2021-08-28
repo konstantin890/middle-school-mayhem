@@ -8,6 +8,7 @@ public class TeacherNPC : MonoBehaviour
 {
     public static TeacherNPC instance; // Looks weird, but we need it for detecting if there are any teachers left in the room.
 
+    public SpriteRenderer spriteRenderer;
     public TeacherData type;
     public Animator animator;
     public AIDestinationSetter aiPathSetter;
@@ -98,6 +99,12 @@ public class TeacherNPC : MonoBehaviour
         initialPoition = transform.position;
     }
 
+    private void Update()
+    {
+        animator.SetFloat("Speed", Mathf.Abs(aiPath.desiredVelocity.x) + Mathf.Abs(aiPath.desiredVelocity.y));
+        spriteRenderer.sortingOrder = Mathf.RoundToInt(-(transform.position.y - 0.25f));
+    }
+
     public void ExecuteAttackLoop()
     {
         switch (type.variation)
@@ -162,9 +169,13 @@ public class TeacherNPC : MonoBehaviour
             {
                 yield return new WaitForSeconds(Random.Range(subsSecondsBetweenChalkAttackMin, subsSecondsBetweenChalkAttackMax));
 
+                Transform target = StudentManager.instance.GetRandomStudent();
+
+                if (target == null)
+                    continue;
+
                 thrownChalk = Instantiate(chalkPrefab, transform.position, Quaternion.identity);
                 Rigidbody2D chalkRb = thrownChalk.GetComponent<Rigidbody2D>();
-                Transform target = StudentManager.instance.GetRandomStudent();
 
                 thrownChalk.transform.rotation = GetProjectileRotation(transform.position, target.position);
                 chalkRb.AddForce((target.position - transform.position) * chalkSpeed, ForceMode2D.Impulse);
@@ -174,6 +185,8 @@ public class TeacherNPC : MonoBehaviour
                 soundSrc.clip = throwChalkSound;
                 soundSrc.Play();
             }
+
+            RefreshStudentsList();
         }
     }
 
@@ -230,6 +243,7 @@ public class TeacherNPC : MonoBehaviour
 
                 //ApplyFearToAllStudentsInArea(baseFearValue * type.fearMultiplier * fPaperFearMultiplier);
             }
+            RefreshStudentsList();
         }
     }
 
@@ -237,7 +251,8 @@ public class TeacherNPC : MonoBehaviour
     {
         foreach (StudentNPC student in studentsInsideArea)
         {
-            student.ApplyFear(fearToApply);
+            if (student)
+                student.ApplyFear(fearToApply);
         }
     }
 
@@ -277,13 +292,10 @@ public class TeacherNPC : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Student"))
         {
-            studentsInsideArea.Add(collision.gameObject.GetComponent<StudentNPC>());
-            return;
+            StudentNPC npc = collision.gameObject.GetComponent<StudentNPC>();
+            studentsInsideArea.Add(npc);
+            aiPathSetter.target = npc.gameObject.transform;
         }
-
-        /*StinkBomb collBomb = collision.GetComponent<StinkBomb>();
-        if (collBomb != null) 
-            collBomb.MaybeExplode();*/
     }
 
     private void OnTriggerExit(Collider collision)

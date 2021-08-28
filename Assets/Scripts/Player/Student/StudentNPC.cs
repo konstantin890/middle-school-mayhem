@@ -104,6 +104,8 @@ public class StudentNPC : MonoBehaviour
         SceneManager.MoveGameObjectToScene(gameObject, SceneHandler.instance.GetCurrentLevelScene());
         Debug.Log("Student left the group!");
 
+        gameObject.tag = "Untagged";
+
         Destroy(this);
     }
 

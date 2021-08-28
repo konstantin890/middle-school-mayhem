@@ -231,10 +231,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a902952e665294418c0aad42443f306, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 1413775027066631701}
   type: {fileID: 11400000, guid: 15dc9766e9719e54195135f4b3bfd0eb, type: 2}
   animator: {fileID: 7963743449138202806}
-  aiPathSetter: {fileID: 328027495907184166, guid: b3792716ce16d054aac2bfd9bcfdce39, type: 3}
-  aiPath: {fileID: 3104819809394358500, guid: b3792716ce16d054aac2bfd9bcfdce39, type: 3}
+  aiPathSetter: {fileID: 328027495907184166}
+  aiPath: {fileID: 3104819809394358500}
   hallSecondsBetweenYellAttackMin: 1
   hallSecondsBetweenYellAttackMax: 2
   chalkPrefab: {fileID: 9031800416664423403, guid: b42f5bf46d464784681daf2b64ba8f70, type: 3}
