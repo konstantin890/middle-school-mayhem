@@ -103,6 +103,11 @@ public class SceneHandler : MonoBehaviour
             StartCoroutine(DestroyClass());
 
         studentLeader.GetComponent<StudentLeader>().UnpausePlayer();
+
+        foreach (StudentNPC npc in StudentManager.instance.attractedStudents)
+        {
+            npc.teachersInRange = new List<TeacherNPC>(); // clear the list when switching scenes because the teacher no longer exist
+        }
     }
 
     public Scene GetCurrentLevelScene()

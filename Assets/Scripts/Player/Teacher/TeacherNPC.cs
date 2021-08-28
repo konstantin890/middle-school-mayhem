@@ -272,7 +272,6 @@ public class TeacherNPC : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Student"))
         {
-            Debug.Log("A Student entered AoE");
             studentsInsideArea.Add(collision.gameObject.GetComponent<StudentNPC>());
             return;
         }
@@ -287,7 +286,6 @@ public class TeacherNPC : MonoBehaviour
         if (collision.gameObject.CompareTag("Student"))
         {
             StudentNPC npc = collision.gameObject.GetComponent<StudentNPC>();
-            Debug.Log("A Student entered AoE");
             if (studentsInsideArea.Contains(npc))
                 studentsInsideArea.Remove(npc);
         }

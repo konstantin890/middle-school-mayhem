@@ -8,6 +8,10 @@ public class StudentNPC : MonoBehaviour
 {
     public StudentData data;
 
+    public float minTimeBetweenAttack = 0.5f;
+    public float maxTimeBetweenAttack = 1f;
+    public float basePatianceToLose = 30f;
+
     [Header("Debug values")]
     [Range(0, 1)] private float fearLevel = 0f;
     public float maxFear = 100;
@@ -24,6 +28,8 @@ public class StudentNPC : MonoBehaviour
     public float randomEndReachPercentageFactor = 10f;
 
     private AudioSource audioSrc;
+
+    public List<TeacherNPC> teachersInRange = new List<TeacherNPC>();
 
     public float FearLevel 
     {
@@ -59,11 +65,30 @@ public class StudentNPC : MonoBehaviour
         spriteRenderer.sortingOrder = Mathf.RoundToInt(-(transform.position.y - 0.25f));
     }
 
+    private IEnumerator AttackLoop()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(Random.Range(minTimeBetweenAttack, maxTimeBetweenAttack));
+
+            foreach (TeacherNPC npc in teachersInRange)
+            {
+                if (npc == null)
+                    continue;
+
+                float patianceToLose = basePatianceToLose * data.rowdinessMultiplier;
+                Debug.Log("Reducing Teacher patiance with " + patianceToLose);
+                npc.LosePatiance(patianceToLose);
+            }
+        }
+    }
+
     public void InitStudent(Transform leader)
     {
         isAttracted = true;
         aiTargetter.target = leader;
         DontDestroyOnLoad(this);
+        StartCoroutine(AttackLoop());
     }
 
     public void LeaveGroup()
@@ -94,12 +119,20 @@ public class StudentNPC : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Teacher"))
         {
-            Debug.Log("A Teacher entered AoE");
+            teachersInRange.Add(collision.GetComponent<TeacherNPC>());
         }
 
         if (collision.gameObject.CompareTag("Destructible"))
         {
             collision.GetComponent<Animator>().SetTrigger("Break");
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Teacher"))
+        {
+            teachersInRange.Remove(collision.GetComponent<TeacherNPC>());
         }
     }
 }
