@@ -13,7 +13,6 @@ public class StudentNPC : MonoBehaviour
     public float basePatianceToLose = 30f;
 
     [Header("Debug values")]
-    [Range(0, 1)] private float fearLevel = 0f;
     public float maxFear = 100;
     private bool isAttracted;
 
@@ -33,13 +32,13 @@ public class StudentNPC : MonoBehaviour
 
     public float FearLevel 
     {
-        get => fearLevel;
+        get => maxFear;
         set
         {
             if (value >= maxFear)
                 LeaveGroup();
 
-            fearLevel = value;
+            maxFear = value;
         }
     }
 
