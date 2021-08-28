@@ -9,15 +9,13 @@ public class Throwable : MonoBehaviour
 
     public bool penetratesStudent;
     public bool doesAreaDamage;
-    public float damageArea;
-
-    private Collider2D[] collResults;
+    public float damageAreaRadius;
 
     private List<int> studentsHit = new List<int>();
 
     private void Update()
     {
-        Physics2D.OverlapCircleNonAlloc(transform.position, detectRadius, collResults);
+        Collider2D[] collResults = Physics2D.OverlapCircleAll(transform.position, detectRadius);
         foreach (Collider2D hit in collResults)
         {
             if (hit.gameObject.CompareTag("Student"))
@@ -44,7 +42,7 @@ public class Throwable : MonoBehaviour
 
     private void DoAreaDamage() 
     {
-        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, damageArea);
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, damageAreaRadius);
         foreach (Collider2D hitCollider in hitColliders)
         {
             if (hitCollider.gameObject.CompareTag("Student"))
