@@ -30,15 +30,16 @@ public class StudentNPC : MonoBehaviour
 
     public List<TeacherNPC> teachersInRange = new List<TeacherNPC>();
 
+    private float fearLevel;
     public float FearLevel 
     {
-        get => maxFear;
+        get => fearLevel;
         set
         {
             if (value >= maxFear)
                 LeaveGroup();
 
-            maxFear = value;
+            fearLevel = value;
         }
     }
 
@@ -93,12 +94,17 @@ public class StudentNPC : MonoBehaviour
     public void LeaveGroup()
     {
         isAttracted = false;
-        aiTargetter.target = null;
+
+        Destroy(aiTargetter);
+        Destroy(aiPath);
 
         animator.SetBool("FearMaxed", true);
         StudentManager.instance.RemoveStudent(this);
+        Debug.Log("Destructable scene " + SceneHandler.instance.GetCurrentLevelScene());
         SceneManager.MoveGameObjectToScene(gameObject, SceneHandler.instance.GetCurrentLevelScene());
         Debug.Log("Student left the group!");
+
+        Destroy(this);
     }
 
     public void ApplyFear(float fearValue)

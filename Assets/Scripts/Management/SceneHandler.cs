@@ -206,7 +206,7 @@ public class SceneHandler : MonoBehaviour
         pickedUpStudents[currentlyLoadedLevelName].Add(pos); 
     }
 
-    public void UnlockDoor(Vector2 pos)
+    public void UnlockDoor(Vector2 pos) //TODO: Probably not needed anymore since the door design has been changed
     {
         if (!unlockedDoors.ContainsKey(currentlyLoadedLevelName))
             unlockedDoors.Add(currentlyLoadedLevelName, new List<Vector2>());

@@ -138,6 +138,7 @@ public class TeacherNPC : MonoBehaviour
             animator.SetBool("Scold", true);
             yield return new WaitForSeconds(1f);
             animator.SetBool("Scold", false);
+            RefreshStudentsList();
         }
     }
 
@@ -306,5 +307,14 @@ public class TeacherNPC : MonoBehaviour
 
         angleOutput.z += 90f; //Because of the model lmao
         return Quaternion.Euler(angleOutput);
+    }
+
+    private void RefreshStudentsList()
+    {
+        for (int i = 0; i < studentsInsideArea.Count; i++)
+        {
+            if (studentsInsideArea[i] == null)
+                studentsInsideArea.RemoveAt(i);
+        }
     }
 }
