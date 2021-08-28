@@ -40,6 +40,7 @@ public class Explosive : MonoBehaviour
             {
                 ClassroomDoor classroomDoor = hitCollider.gameObject.GetComponent<ClassroomDoor>();
                 classroomDoor.UnBarDoor();
+                SceneHandler.instance.UnlockDoor(hitCollider.transform.position);
                 if (classroomDoor.isFocused) 
                     StudentLeader.instance.inventory.SetPopupText("Enter room?");
             }

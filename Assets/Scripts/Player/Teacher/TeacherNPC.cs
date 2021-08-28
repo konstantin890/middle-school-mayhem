@@ -40,6 +40,9 @@ public class TeacherNPC : MonoBehaviour
     public float initialPatianceLevel = 100f;
     private List<StudentNPC> studentsInsideArea = new List<StudentNPC>();
 
+    [HideInInspector]
+    public Vector2 initialPoition;
+
     private bool isAngry;
     public bool IsAngry
     {
@@ -88,6 +91,8 @@ public class TeacherNPC : MonoBehaviour
         ExecuteAttackLoop();
 
         soundSrc = GetComponent<AudioSource>();
+
+        initialPoition = transform.position;
     }
 
     public void ExecuteAttackLoop()
@@ -246,6 +251,9 @@ public class TeacherNPC : MonoBehaviour
     public void LeaveClass()
     {
         // AI to door, corroutine, after that, disapear (animation?)
+
+        //HIS IS USED FOR LOADING/UNLOADING SCENES
+        SceneHandler.instance.RemoveTeacher(initialPoition);
 
         Debug.Log("Teacher, leaving classroom");
 

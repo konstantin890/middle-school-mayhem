@@ -114,6 +114,7 @@ public class StudentLeader : MonoBehaviour
             {
                 studentManager.AddStudent(collStudent);
                 playerSounds.FollowerSound();
+                SceneHandler.instance.PickUpStudent(collision.transform.position);
                 //Debug.Log("Added Student to group");
             }
 
@@ -139,9 +140,10 @@ public class StudentLeader : MonoBehaviour
             return;
         }
 
-        if (collision.gameObject.CompareTag("Chemical")) 
+        if (collision.gameObject.CompareTag("Chemical"))
         {
             collision.gameObject.tag = "Untagged"; //"Destroy" takes a bit and player could pick up twice a chemical if collided with many at once
+            SceneHandler.instance.PickUpChemicalOnScene(collision.gameObject.transform.position);
             Destroy(collision.gameObject);
             inventory.PickupChemical();
             playerSounds.CollectChemical();

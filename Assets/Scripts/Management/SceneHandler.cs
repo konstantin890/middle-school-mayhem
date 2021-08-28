@@ -17,7 +17,12 @@ public class SceneHandler : MonoBehaviour
     public Animator fadeAnimator;
     public Transform studentLeader;
 
-    private List<string> unloadedLevels = new List<string>(); 
+    private List<string> unloadedLevels = new List<string>();
+
+    private Dictionary<string, List<Vector2>> pickedUpChemicals = new Dictionary<string, List<Vector2>>();
+    private Dictionary<string, List<Vector2>> pickedUpStudents = new Dictionary<string, List<Vector2>>();
+    private Dictionary<string, List<Vector2>> unlockedDoors = new Dictionary<string, List<Vector2>>();
+    private Dictionary<string, List<Vector2>> removedTeachers = new Dictionary<string, List<Vector2>>();
 
     private void Awake()
     {
@@ -76,6 +81,27 @@ public class SceneHandler : MonoBehaviour
 
         // TODO: Reinstantiate the students around the Leader, could be random pos in a sphere
 
+        StinkBomb[] bombs = FindObjectsOfType<StinkBomb>();
+        foreach(StinkBomb bomb in bombs)
+        {
+            Destroy(bomb.gameObject);
+        }
+
+        if (!pickedUpChemicals.ContainsKey(currentlyLoadedLevelName))
+            pickedUpChemicals.Add(currentlyLoadedLevelName, new List<Vector2>());
+
+        if (!pickedUpStudents.ContainsKey(currentlyLoadedLevelName))
+            pickedUpStudents.Add(currentlyLoadedLevelName, new List<Vector2>());
+
+        if (!unlockedDoors.ContainsKey(currentlyLoadedLevelName))
+            unlockedDoors.Add(currentlyLoadedLevelName, new List<Vector2>());
+
+        if (!removedTeachers.ContainsKey(currentlyLoadedLevelName))
+            removedTeachers.Add(currentlyLoadedLevelName, new List<Vector2>());
+
+        if (CurrentLevelHasBeenLoadedBefore()) 
+            StartCoroutine(DestroyClass());
+
         studentLeader.GetComponent<StudentLeader>().UnpausePlayer();
     }
 
@@ -85,4 +111,109 @@ public class SceneHandler : MonoBehaviour
     }
 
     public bool CurrentLevelHasBeenLoadedBefore() => unloadedLevels.IndexOf(currentlyLoadedLevelName) >= 0;
+
+    private IEnumerator DestroyClass() 
+    {
+        yield return new WaitForSeconds(0.05f);
+        GameObject[] objects = GameObject.FindGameObjectsWithTag("Destructable");
+
+        foreach (GameObject go in objects)
+        {
+            go.GetComponent<Animator>().SetTrigger("Break");
+        }
+
+        objects = GameObject.FindGameObjectsWithTag("Destructible");
+        foreach (GameObject go in objects)
+        {
+            go.GetComponent<Animator>().SetTrigger("Break");
+        }
+
+        objects = GameObject.FindGameObjectsWithTag("Teacher");
+        foreach (GameObject go in objects)
+        {
+            foreach (Vector2 pos in removedTeachers[currentlyLoadedLevelName])
+            {
+                if (Vector2.Distance(go.transform.position, pos) < 0.05f)
+                {
+                    Destroy(go);
+                    break;
+                }
+            }
+        }
+
+        objects = GameObject.FindGameObjectsWithTag("Student");
+        foreach (GameObject go in objects)
+        {
+            if (go.scene.buildIndex != -1)
+            {
+                foreach (Vector2 pos in pickedUpStudents[currentlyLoadedLevelName])
+                {
+                    if (Vector2.Distance(go.transform.position, pos) < 0.05f)
+                    {
+                        Destroy(go);
+                        break;
+                    }
+                }
+            }
+        }
+
+        objects = GameObject.FindGameObjectsWithTag("Chemical");
+        foreach (GameObject go in objects)
+        {
+            foreach (Vector2 pos in pickedUpChemicals[currentlyLoadedLevelName]) 
+            {
+                if(Vector2.Distance(go.transform.position, pos) < 0.05f) 
+                {
+                    Destroy(go);
+                    break;
+                }
+            }
+        }
+
+        objects = GameObject.FindGameObjectsWithTag("EnterArea");
+        foreach (GameObject go in objects)
+        {
+            foreach (Vector2 pos in unlockedDoors[currentlyLoadedLevelName])
+            {
+                if (Vector2.Distance(go.transform.position, pos) < 0.05f)
+                {
+                    go.GetComponent<ClassroomDoor>().UnBarDoor();
+                    break;
+                }
+            }
+        }
+
+    }
+
+    public void PickUpChemicalOnScene(Vector2 pos) 
+    {
+        if (!pickedUpChemicals.ContainsKey(currentlyLoadedLevelName))
+            pickedUpChemicals.Add(currentlyLoadedLevelName, new List<Vector2>());
+
+        pickedUpChemicals[currentlyLoadedLevelName].Add(pos); 
+    }
+
+    public void PickUpStudent(Vector2 pos) 
+    {
+        if (!pickedUpStudents.ContainsKey(currentlyLoadedLevelName))
+            pickedUpStudents.Add(currentlyLoadedLevelName, new List<Vector2>());
+
+        pickedUpStudents[currentlyLoadedLevelName].Add(pos); 
+    }
+
+    public void UnlockDoor(Vector2 pos)
+    {
+        if (!unlockedDoors.ContainsKey(currentlyLoadedLevelName))
+            unlockedDoors.Add(currentlyLoadedLevelName, new List<Vector2>());
+
+        unlockedDoors[currentlyLoadedLevelName].Add(pos);
+    }
+
+    public void RemoveTeacher(Vector2 pos)
+    {
+        if (!removedTeachers.ContainsKey(currentlyLoadedLevelName))
+            removedTeachers.Add(currentlyLoadedLevelName, new List<Vector2>());
+
+        removedTeachers[currentlyLoadedLevelName].Add(pos);
+    }
 }
