@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 645a6f1a9d550444d8b7a30032057548, type: 2}
-  minTimeBetweenAttack: 0.5
+  minTimeBetweenAttack: 1
   maxTimeBetweenAttack: 1
   basePatianceToLose: 20
   maxFear: 140

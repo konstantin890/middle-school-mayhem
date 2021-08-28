@@ -3499,6 +3499,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 288689213939881558, guid: befbe45e582f65545b027378a83951c3, type: 3}
+      propertyPath: canPauseMultipleTimes
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 288689213939881558, guid: befbe45e582f65545b027378a83951c3, type: 3}
       propertyPath: textToDisplay.Array.data[0]
       value: A Hall Monitor... come on students, lets take him down!
       objectReference: {fileID: 0}

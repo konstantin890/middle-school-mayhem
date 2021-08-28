@@ -246,7 +246,7 @@ MonoBehaviour:
   prismPrefab: {fileID: 7496346267371224233, guid: b83c04946dda3514e837625fcee97f36, type: 3}
   prismSpeed: 10
   scienceSecondsBetweenPrismAttackMin: 1
-  scienceSecondsBetweenPrismAttackMax: 1.5
+  scienceSecondsBetweenPrismAttackMax: 2
   fPaperPrefab: {fileID: 1923398904766757819, guid: a7159938192d8f24dbd1aa30def63d46, type: 3}
   fPaperSpeed: 4
   scienceSecondsBetweenFPaperAttackMin: 2
