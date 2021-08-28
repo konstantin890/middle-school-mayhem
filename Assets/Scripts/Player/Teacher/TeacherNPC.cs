@@ -73,7 +73,6 @@ public class TeacherNPC : MonoBehaviour
             if (value <= 0)
             {
                 LeaveClass();
-                return;
             }
             initialPatianceLevel = value;
         }
@@ -214,7 +213,7 @@ public class TeacherNPC : MonoBehaviour
                 Transform target = StudentManager.instance.GetRandomStudent();
                 if (target == null)
                 {
-                    //idk, do something to stop the dude from attacking
+                    yield return null;
                 }
 
                 thrownFPaper.transform.rotation = GetProjectileRotation(transform.position, target.position);
@@ -242,10 +241,13 @@ public class TeacherNPC : MonoBehaviour
         if (PatianceLevel <= 0)
             return;
 
+        animator.SetBool("IsAngry", true);
         float toSubtract = PatianceLevel - patianceToLose * type.patianceMultiplier;
-        Debug.Log("Teacher, reduced patiance by " + toSubtract);
+        Debug.Log("Teacher, reduced patiance to " + toSubtract);
         
-        PatianceLevel -= toSubtract;
+        PatianceLevel = toSubtract;
+
+        animator.SetBool("IsAngry", false);
     }
 
     public void LeaveClass()
@@ -260,7 +262,7 @@ public class TeacherNPC : MonoBehaviour
         soundSrc.clip = giveupSound;
         soundSrc.Play();
 
-        animator.SetBool("FearMaxed", true);
+        animator.SetBool("LostPatiance", true);
         Destroy(gameObject, 2f);
     }
 
