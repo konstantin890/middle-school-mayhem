@@ -11,7 +11,7 @@ public class TextArea : MonoBehaviour
     private bool hasBeenShown = false;
     private int textIdx = 0;
 
-    public bool ShouldGamePause() => pauseOnEnter && (canPauseMultipleTimes || (!canPauseMultipleTimes && !hasBeenShown));
+    public bool ShouldGamePause() => pauseOnEnter && (canPauseMultipleTimes || (!canPauseMultipleTimes && !hasBeenShown && !SceneHandler.instance.CurrentLevelHasBeenLoadedBefore()));
 
     //Note: If any of these functions returns an empty string, it means the 'textToDisplay' array has ended! 
 

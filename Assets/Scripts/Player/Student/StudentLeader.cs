@@ -191,17 +191,20 @@ public class StudentLeader : MonoBehaviour
         }
     }
 
-    public IEnumerator PausePlayer(bool force = false)
+    public IEnumerator PausePlayer()
     {
         yield return new WaitForSeconds(0.1f);
 
-        if (textShown != null || force) //player may exit text area...
-        {
-            canPlayerMove = false;
-            animator.SetFloat("Speed", 0f);
-            inventory.canUseItems = false;
-            inventory.canCraftItems = false;
-        }
+        if (textShown != null) //player may exit text area...
+            ForcePausePlayer();
+    }
+
+    public void ForcePausePlayer() 
+    {
+        canPlayerMove = false;
+        animator.SetFloat("Speed", 0f);
+        inventory.canUseItems = false;
+        inventory.canCraftItems = false;
     }
 
     public void UnpausePlayer()

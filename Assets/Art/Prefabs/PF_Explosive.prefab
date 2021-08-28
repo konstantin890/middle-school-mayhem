@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6473813538245497393}
   - component: {fileID: -8259063524629624397}
   - component: {fileID: 447901681341635135}
+  - component: {fileID: -3743427991474364749}
   m_Layer: 6
   m_Name: PF_Explosive
   m_TagString: Untagged
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -836624779
+  m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7012761177666003978, guid: ac88d9610dc97cd4db1f3f7f61148e89, type: 3}
@@ -215,3 +216,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 6473813538245497393}
   explosionRadius: 1
+--- !u!114 &-3743427991474364749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6082554781107185790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

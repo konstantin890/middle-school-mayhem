@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 260523000}
   - component: {fileID: 260523002}
   - component: {fileID: 260523001}
+  - component: {fileID: 260523003}
   m_Layer: 6
   m_Name: Table_Small (2)
   m_TagString: Untagged
@@ -233,6 +234,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &260523003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260522999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &326710354
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,8 +288,8 @@ Transform:
   m_Children:
   - {fileID: 639804139}
   - {fileID: 2008321163}
-  - {fileID: 1673467844}
   - {fileID: 1658961387}
+  - {fileID: 1673467844}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -291,6 +304,7 @@ GameObject:
   - component: {fileID: 360135211}
   - component: {fileID: 360135213}
   - component: {fileID: 360135212}
+  - component: {fileID: 360135214}
   m_Layer: 6
   m_Name: Chair_Horizontal (1)
   m_TagString: Untagged
@@ -390,6 +404,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &360135214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360135210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &509995462
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,6 +427,7 @@ GameObject:
   - component: {fileID: 509995463}
   - component: {fileID: 509995465}
   - component: {fileID: 509995464}
+  - component: {fileID: 509995466}
   m_Layer: 6
   m_Name: Table_Small (4)
   m_TagString: Untagged
@@ -500,6 +527,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &509995466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509995462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &511456582
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,6 +550,7 @@ GameObject:
   - component: {fileID: 511456583}
   - component: {fileID: 511456585}
   - component: {fileID: 511456584}
+  - component: {fileID: 511456586}
   m_Layer: 6
   m_Name: Chair_Horizontal (2)
   m_TagString: Untagged
@@ -610,6 +650,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &511456586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511456582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &554868217
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,6 +673,7 @@ GameObject:
   - component: {fileID: 554868218}
   - component: {fileID: 554868220}
   - component: {fileID: 554868219}
+  - component: {fileID: 554868221}
   m_Layer: 6
   m_Name: Chair_Horizontal (3)
   m_TagString: Untagged
@@ -720,6 +773,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &554868221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554868217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &639804138
 GameObject:
   m_ObjectHideFlags: 0
@@ -2132,6 +2197,7 @@ GameObject:
   - component: {fileID: 965751674}
   - component: {fileID: 965751676}
   - component: {fileID: 965751675}
+  - component: {fileID: 965751677}
   m_Layer: 6
   m_Name: Table_Small
   m_TagString: Untagged
@@ -2231,6 +2297,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &965751677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965751673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &968195410
 GameObject:
   m_ObjectHideFlags: 0
@@ -2278,6 +2356,7 @@ GameObject:
   - component: {fileID: 1132716003}
   - component: {fileID: 1132716005}
   - component: {fileID: 1132716004}
+  - component: {fileID: 1132716006}
   m_Layer: 6
   m_Name: Table_Small (5)
   m_TagString: Untagged
@@ -2377,6 +2456,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1132716006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132716002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1580288776
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2445,6 +2536,7 @@ GameObject:
   - component: {fileID: 1598195792}
   - component: {fileID: 1598195794}
   - component: {fileID: 1598195793}
+  - component: {fileID: 1598195795}
   m_Layer: 6
   m_Name: Table_Small (1)
   m_TagString: Untagged
@@ -2544,6 +2636,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1598195795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598195791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1658961386
 GameObject:
   m_ObjectHideFlags: 0
@@ -2574,7 +2678,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 326710356}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!483693784 &1658961388
 TilemapRenderer:
@@ -2614,9 +2718,9 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 334164295
+  m_SortingLayer: -1
+  m_SortingOrder: 2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -3106,7 +3210,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 326710356}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!19719996 &1673467845
 TilemapCollider2D:
@@ -3362,9 +3466,9 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 334164295
+  m_SortingLayer: -1
+  m_SortingOrder: 3
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -3745,6 +3849,7 @@ GameObject:
   - component: {fileID: 1890352617}
   - component: {fileID: 1890352619}
   - component: {fileID: 1890352618}
+  - component: {fileID: 1890352620}
   m_Layer: 6
   m_Name: Table_Small (3)
   m_TagString: Untagged
@@ -3844,6 +3949,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1890352620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890352616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1998009507
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4069,7 +4186,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 334164295
   m_SortingLayer: -1
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -6099,6 +6216,7 @@ GameObject:
   - component: {fileID: 2028831757}
   - component: {fileID: 2028831759}
   - component: {fileID: 2028831758}
+  - component: {fileID: 2028831760}
   m_Layer: 6
   m_Name: Chair_Horizontal
   m_TagString: Untagged
@@ -6198,6 +6316,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2028831760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028831756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2054906201
 PrefabInstance:
   m_ObjectHideFlags: 0
