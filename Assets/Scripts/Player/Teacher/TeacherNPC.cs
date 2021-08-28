@@ -21,6 +21,9 @@ public class TeacherNPC : MonoBehaviour
     public float subsSecondsBetweenChalkAttackMax;
 
     [Header("Science Teacher")]
+    public Transform prismPrefab;
+    private Transform thrownPrism;
+    public float prismSpeed;
     public float prismFearMultiplier;
     public float scienceSecondsBetweenPrismAttackMin;
     public float scienceSecondsBetweenPrismAttackMax;
@@ -136,7 +139,7 @@ public class TeacherNPC : MonoBehaviour
                 Transform target = StudentManager.instance.GetRandomStudent();
                 chalkRb.AddForce((target.position - transform.position) * chalkSpeed, ForceMode2D.Impulse);
                 animator.SetTrigger("Subs_ThrowChalk");
-                Destroy(thrownChalk.gameObject, 3f);
+                Destroy(thrownChalk.gameObject, 5f);
 
                 soundSrc.clip = throwChalkSound;
                 soundSrc.Play();
@@ -155,6 +158,16 @@ public class TeacherNPC : MonoBehaviour
                 yield return new WaitForSeconds(Random.Range(scienceSecondsBetweenPrismAttackMin, scienceSecondsBetweenPrismAttackMax));
 
                 animator.SetTrigger("Maths_PrismBeam");
+
+                /*thrownPrism = Instantiate(prismPrefab, transform.position, Quaternion.identity);
+                Rigidbody2D prismRb = thrownPrism.GetComponent<Rigidbody2D>();
+                Transform target = StudentManager.instance.GetRandomStudent();
+                prismRb.AddForce((target.position - transform.position) * prismSpeed, ForceMode2D.Impulse);
+                Destroy(thrownPrism.gameObject, 3f);
+
+                soundSrc.clip = throwChalkSound;
+                soundSrc.Play();*/ 
+
 
                 //ApplyFearToAllStudentsInArea(baseFearValue * type.fearMultiplier * prismFearMultiplier);
             }
