@@ -17,6 +17,8 @@ public class SceneHandler : MonoBehaviour
     public Animator fadeAnimator;
     public Transform studentLeader;
 
+    private List<string> unloadedLevels = new List<string>(); 
+
     private void Awake()
     {
         instance = this;
@@ -28,6 +30,7 @@ public class SceneHandler : MonoBehaviour
 
     public void GoToScene(string sceneName)
     {
+        studentLeader.GetComponent<StudentLeader>().ForcePausePlayer();
         fadeAnimator.SetTrigger("FadeOut");
         pendingLoadLevelName = sceneName;
     }
@@ -59,6 +62,9 @@ public class SceneHandler : MonoBehaviour
         lastLoadedLevelName = currentlyLoadedLevelName;
         currentlyLoadedLevelName = pendingLoadLevelName;
 
+        if (unloadedLevels.IndexOf(lastLoadedLevelName) < 0)
+            unloadedLevels.Add(lastLoadedLevelName);
+
         PostLevelLoad();
     }
 
@@ -69,10 +75,14 @@ public class SceneHandler : MonoBehaviour
         //studentLeader.transform.position = GameObject.FindGameObjectWithTag("StudentLeaderSpawnPoint").transform.position;
 
         // TODO: Reinstantiate the students around the Leader, could be random pos in a sphere
+
+        studentLeader.GetComponent<StudentLeader>().UnpausePlayer();
     }
 
     public Scene GetCurrentLevelScene()
     {
         return SceneManager.GetSceneByName(currentlyLoadedLevelName);
     }
+
+    public bool CurrentLevelHasBeenLoadedBefore() => unloadedLevels.IndexOf(currentlyLoadedLevelName) >= 0;
 }
