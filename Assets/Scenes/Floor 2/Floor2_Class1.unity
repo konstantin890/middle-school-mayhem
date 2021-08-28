@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 119934386}
   - component: {fileID: 119934387}
   - component: {fileID: 119934388}
+  - component: {fileID: 119934389}
   m_Layer: 6
   m_Name: Table_Small (1)
   m_TagString: Untagged
@@ -233,6 +234,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.75, y: 1.3125}
   m_EdgeRadius: 0
+--- !u!114 &119934389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119934385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &123338263
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,6 +257,7 @@ GameObject:
   - component: {fileID: 123338264}
   - component: {fileID: 123338265}
   - component: {fileID: 123338266}
+  - component: {fileID: 123338267}
   m_Layer: 6
   m_Name: Table_Small (3)
   m_TagString: Untagged
@@ -343,6 +357,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.75, y: 1.3125}
   m_EdgeRadius: 0
+--- !u!114 &123338267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123338263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &142602246
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,6 +380,7 @@ GameObject:
   - component: {fileID: 142602247}
   - component: {fileID: 142602248}
   - component: {fileID: 142602249}
+  - component: {fileID: 142602250}
   m_Layer: 6
   m_Name: Table_Large (3)
   m_TagString: Untagged
@@ -453,6 +480,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.75, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &142602250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142602246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &161626181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -521,6 +560,7 @@ GameObject:
   - component: {fileID: 215513386}
   - component: {fileID: 215513387}
   - component: {fileID: 215513388}
+  - component: {fileID: 215513389}
   m_Layer: 6
   m_Name: Table_Large
   m_TagString: Untagged
@@ -620,6 +660,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.75, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &215513389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215513385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &220881616
 GameObject:
   m_ObjectHideFlags: 0
@@ -667,6 +719,7 @@ GameObject:
   - component: {fileID: 228339955}
   - component: {fileID: 228339956}
   - component: {fileID: 228339957}
+  - component: {fileID: 228339958}
   m_Layer: 6
   m_Name: Chair_Horizontal (6)
   m_TagString: Untagged
@@ -766,6 +819,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 0.75}
   m_EdgeRadius: 0
+--- !u!114 &228339958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228339954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &253780919
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -838,6 +903,7 @@ GameObject:
   - component: {fileID: 270006938}
   - component: {fileID: 270006939}
   - component: {fileID: 270006940}
+  - component: {fileID: 270006941}
   m_Layer: 6
   m_Name: Chair_Horizontal
   m_TagString: Untagged
@@ -937,6 +1003,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 0.75}
   m_EdgeRadius: 0
+--- !u!114 &270006941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270006937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &296784864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1115,6 +1193,7 @@ GameObject:
   - component: {fileID: 354591356}
   - component: {fileID: 354591357}
   - component: {fileID: 354591358}
+  - component: {fileID: 354591359}
   m_Layer: 6
   m_Name: Chair_Horizontal (2)
   m_TagString: Untagged
@@ -1214,6 +1293,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 0.75}
   m_EdgeRadius: 0
+--- !u!114 &354591359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354591355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &433833917
 GameObject:
   m_ObjectHideFlags: 0
@@ -3673,6 +3764,7 @@ GameObject:
   - component: {fileID: 478825616}
   - component: {fileID: 478825617}
   - component: {fileID: 478825618}
+  - component: {fileID: 478825619}
   m_Layer: 6
   m_Name: Chair_Horizontal (1)
   m_TagString: Untagged
@@ -3772,6 +3864,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 0.75}
   m_EdgeRadius: 0
+--- !u!114 &478825619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478825615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &496579798
 GameObject:
   m_ObjectHideFlags: 0
@@ -3783,6 +3887,7 @@ GameObject:
   - component: {fileID: 496579799}
   - component: {fileID: 496579800}
   - component: {fileID: 496579801}
+  - component: {fileID: 496579802}
   m_Layer: 6
   m_Name: Chair_Horizontal (5)
   m_TagString: Untagged
@@ -3882,6 +3987,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 0.75}
   m_EdgeRadius: 0
+--- !u!114 &496579802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496579798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &619663791
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4064,6 +4181,7 @@ GameObject:
   - component: {fileID: 1036132701}
   - component: {fileID: 1036132702}
   - component: {fileID: 1036132703}
+  - component: {fileID: 1036132704}
   m_Layer: 6
   m_Name: Chair_Horizontal (4)
   m_TagString: Untagged
@@ -4163,6 +4281,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 0.75}
   m_EdgeRadius: 0
+--- !u!114 &1036132704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036132700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1140609952
 GameObject:
   m_ObjectHideFlags: 0
@@ -4212,6 +4342,7 @@ GameObject:
   - component: {fileID: 1141887032}
   - component: {fileID: 1141887033}
   - component: {fileID: 1141887034}
+  - component: {fileID: 1141887035}
   m_Layer: 6
   m_Name: Chair_Horizontal (3)
   m_TagString: Untagged
@@ -4311,6 +4442,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 0.75}
   m_EdgeRadius: 0
+--- !u!114 &1141887035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141887031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1263140119
 GameObject:
   m_ObjectHideFlags: 0
@@ -4439,6 +4582,7 @@ GameObject:
   - component: {fileID: 1340900509}
   - component: {fileID: 1340900510}
   - component: {fileID: 1340900511}
+  - component: {fileID: 1340900512}
   m_Layer: 6
   m_Name: Table_Small
   m_TagString: Untagged
@@ -4538,6 +4682,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.75, y: 1.3125}
   m_EdgeRadius: 0
+--- !u!114 &1340900512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340900508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1379421808
 GameObject:
   m_ObjectHideFlags: 0
@@ -4568,7 +4724,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1771903138}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!483693784 &1379421810
 TilemapRenderer:
@@ -4608,9 +4764,9 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 334164295
+  m_SortingLayer: -1
+  m_SortingOrder: 2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -5335,7 +5491,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 334164295
   m_SortingLayer: -1
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -7381,8 +7537,8 @@ Transform:
   m_Children:
   - {fileID: 433833918}
   - {fileID: 1386222628}
-  - {fileID: 1839372366}
   - {fileID: 1379421809}
+  - {fileID: 1839372366}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7397,6 +7553,7 @@ GameObject:
   - component: {fileID: 1799990504}
   - component: {fileID: 1799990505}
   - component: {fileID: 1799990506}
+  - component: {fileID: 1799990507}
   m_Layer: 6
   m_Name: Table_Large (2)
   m_TagString: Untagged
@@ -7496,6 +7653,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.75, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &1799990507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799990503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1839372365
 GameObject:
   m_ObjectHideFlags: 0
@@ -7529,7 +7698,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1771903138}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!66 &1839372367
 CompositeCollider2D:
@@ -7846,9 +8015,9 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: 334164295
+  m_SortingLayer: -1
+  m_SortingOrder: 3
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16

@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 11881928}
   - component: {fileID: 11881927}
   - component: {fileID: 11881929}
+  - component: {fileID: 11881930}
   m_Layer: 6
   m_Name: Chair_Vertical
   m_TagString: Untagged
@@ -233,6 +234,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 1.0625}
   m_EdgeRadius: 0
+--- !u!114 &11881930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11881926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &90567785
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,6 +257,7 @@ GameObject:
   - component: {fileID: 90567787}
   - component: {fileID: 90567786}
   - component: {fileID: 90567788}
+  - component: {fileID: 90567789}
   m_Layer: 6
   m_Name: Table_Small
   m_TagString: Untagged
@@ -343,6 +357,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.75, y: 1.3125}
   m_EdgeRadius: 0
+--- !u!114 &90567789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90567785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &98700271
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,6 +380,7 @@ GameObject:
   - component: {fileID: 98700273}
   - component: {fileID: 98700272}
   - component: {fileID: 98700274}
+  - component: {fileID: 98700275}
   m_Layer: 6
   m_Name: Table_Small (1)
   m_TagString: Untagged
@@ -453,6 +480,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.75, y: 1.3125}
   m_EdgeRadius: 0
+--- !u!114 &98700275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98700271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &210567147
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,6 +503,7 @@ GameObject:
   - component: {fileID: 210567149}
   - component: {fileID: 210567148}
   - component: {fileID: 210567150}
+  - component: {fileID: 210567151}
   m_Layer: 6
   m_Name: Box3
   m_TagString: Untagged
@@ -563,6 +603,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8686469, y: 0.93559456}
   m_EdgeRadius: 0
+--- !u!114 &210567151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210567147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &258951577
 GameObject:
   m_ObjectHideFlags: 0
@@ -574,6 +626,7 @@ GameObject:
   - component: {fileID: 258951579}
   - component: {fileID: 258951578}
   - component: {fileID: 258951580}
+  - component: {fileID: 258951581}
   m_Layer: 6
   m_Name: Chair_Horizontal (2)
   m_TagString: Untagged
@@ -673,6 +726,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 1.3125}
   m_EdgeRadius: 0
+--- !u!114 &258951581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258951577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &401259344
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -858,6 +923,7 @@ GameObject:
   - component: {fileID: 974856242}
   - component: {fileID: 974856241}
   - component: {fileID: 974856243}
+  - component: {fileID: 974856244}
   m_Layer: 6
   m_Name: Box2
   m_TagString: Untagged
@@ -957,6 +1023,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8806387, y: 0.9400386}
   m_EdgeRadius: 0
+--- !u!114 &974856244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974856240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1072765030
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,9 +1175,9 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 334164295
+  m_SortingLayer: -1
+  m_SortingOrder: 2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -1310,6 +1388,7 @@ GameObject:
   - component: {fileID: 1452147300}
   - component: {fileID: 1452147299}
   - component: {fileID: 1452147301}
+  - component: {fileID: 1452147302}
   m_Layer: 6
   m_Name: Table_Large
   m_TagString: Untagged
@@ -1409,6 +1488,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.75, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &1452147302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452147298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1602747000
 GameObject:
   m_ObjectHideFlags: 0
@@ -1420,6 +1511,7 @@ GameObject:
   - component: {fileID: 1602747002}
   - component: {fileID: 1602747001}
   - component: {fileID: 1602747003}
+  - component: {fileID: 1602747004}
   m_Layer: 6
   m_Name: Box1
   m_TagString: Untagged
@@ -1519,6 +1611,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.877573, y: 0.9425645}
   m_EdgeRadius: 0
+--- !u!114 &1602747004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602747000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1813274737
 GameObject:
   m_ObjectHideFlags: 0
@@ -4418,7 +4522,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 334164295
   m_SortingLayer: -1
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -8168,6 +8272,7 @@ GameObject:
   - component: {fileID: 1908939596}
   - component: {fileID: 1908939595}
   - component: {fileID: 1908939597}
+  - component: {fileID: 1908939598}
   m_Layer: 6
   m_Name: Chair_Horizontal
   m_TagString: Untagged
@@ -8267,6 +8372,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 1.3125}
   m_EdgeRadius: 0
+--- !u!114 &1908939598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908939594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1910362655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8339,6 +8456,7 @@ GameObject:
   - component: {fileID: 1983214272}
   - component: {fileID: 1983214271}
   - component: {fileID: 1983214273}
+  - component: {fileID: 1983214274}
   m_Layer: 6
   m_Name: Box_Open
   m_TagString: Untagged
@@ -8438,6 +8556,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1.125}
   m_EdgeRadius: 0
+--- !u!114 &1983214274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983214270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2069905209
 GameObject:
   m_ObjectHideFlags: 0
@@ -8887,9 +9017,9 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 334164295
+  m_SortingLayer: -1
+  m_SortingOrder: 3
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
