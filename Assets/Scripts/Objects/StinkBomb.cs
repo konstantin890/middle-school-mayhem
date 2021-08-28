@@ -5,7 +5,7 @@ using UnityEngine;
 public class StinkBomb : MonoBehaviour
 {
     public Animator animator;
-    private CircleCollider2D circleCollider = null;
+    public float effectRadius = 1.5f;
     private AudioSource soundSrc;
 
     public float timeToDetonate = 0f;
@@ -18,15 +18,17 @@ public class StinkBomb : MonoBehaviour
         //soundSrc = GetComponent<AudioSource>();
 
         easterEggYeyy = true;
-
-        circleCollider = GetComponent<CircleCollider2D>();
-        if(circleCollider == null) 
-            Debug.LogError("Broooo!!! Add a circle collider to the stink bomb!!!");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Teacher") && easterEggYeyy)
+        if (collision.gameObject.CompareTag("Teacher"))
+            MaybeExplode();
+    }
+
+    public void MaybeExplode() 
+    {
+        if (easterEggYeyy)
         {
             easterEggYeyy = false; //we detonate the bomb only once
             StartCoroutine(StartExploding());
@@ -49,7 +51,7 @@ public class StinkBomb : MonoBehaviour
 
     public void ActivateEffect()
     {
-        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, circleCollider.radius);
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, effectRadius);
         foreach (Collider2D hitCollider in hitColliders)
         {
             if (hitCollider.gameObject.CompareTag("Teacher"))
