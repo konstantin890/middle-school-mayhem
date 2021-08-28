@@ -17,7 +17,7 @@ public class TextArea : MonoBehaviour
 
     public string GetFirstText()
     {
-        if (textToDisplay.Length <= 0)
+        if (!ShouldShowText() || textToDisplay.Length <= 0)
             return "";
 
         textIdx = 0;
@@ -37,4 +37,11 @@ public class TextArea : MonoBehaviour
         return textToDisplay[textIdx];
     }
     
+    private bool ShouldShowText()
+    {
+        if (hasBeenShown || SceneHandler.instance.CurrentLevelHasBeenLoadedBefore())
+            return false;
+        else
+            return true;
+    }
 }
