@@ -98,8 +98,8 @@ public class StudentLeader : MonoBehaviour
         {
             // Show text
             ClassroomDoor classroomDoor = collision.gameObject.GetComponent<ClassroomDoor>();
-            if (classroomDoor.isBarred)
-                inventory.SetPopupText("Door is barred. Cannot enter room");
+            if (classroomDoor.isBlocked)
+                inventory.SetPopupText("You have to make all teachers leave before you enter!");
             else
                 inventory.SetPopupText("Enter room?");
 

@@ -7,13 +7,13 @@ public class ClassroomDoor : MonoBehaviour
     public string sceneNameEnter;
     public bool isFocused;
 
-    public bool isBarred;
+    [HideInInspector] public bool isBlocked = true;
     public Sprite normalDoor;
     public Sprite barredDoor;
 
     private void Awake()
     {
-        if (isBarred) 
+        if (isBlocked) 
             transform.parent.GetComponent<SpriteRenderer>().sprite = barredDoor;
     }
 
@@ -21,7 +21,7 @@ public class ClassroomDoor : MonoBehaviour
 
     private void Update()
     {
-        if (isFocused && InputHandler.instance.IsButtonHeld(0) && !isBarred)
+        if (isFocused && InputHandler.instance.IsButtonHeld(0) && !isBlocked)
         {
             isFocused = false;
             SceneHandler.instance.GoToScene(sceneNameEnter);
@@ -31,9 +31,17 @@ public class ClassroomDoor : MonoBehaviour
         }
     }
 
+    private void LateUpdate()
+    {
+        if (TeacherNPC.instance == null)
+            isBlocked = false;
+        else
+            isBlocked = true;
+    }
+
     public void UnBarDoor() 
     {
-        isBarred = false;
+        isBlocked = false;
         transform.parent.GetComponent<SpriteRenderer>().sprite = normalDoor;
     }
 }

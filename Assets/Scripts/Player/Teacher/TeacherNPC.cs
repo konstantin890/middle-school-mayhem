@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class TeacherNPC : MonoBehaviour
 {
+    public static TeacherNPC instance; // Looks weird, but we need it for detecting if there are any teachers left in the room.
+
     public TeacherData type;
     public Animator animator;
     public AIDestinationSetter aiPathSetter;
@@ -86,6 +88,8 @@ public class TeacherNPC : MonoBehaviour
 
     private void Awake()
     {
+        instance = this;
+
         // Attack loop
         ExecuteAttackLoop();
 
