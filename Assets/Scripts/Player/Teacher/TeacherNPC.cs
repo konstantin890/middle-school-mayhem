@@ -191,7 +191,14 @@ public class TeacherNPC : MonoBehaviour
         {
             Debug.Log("A Student entered AoE");
             studentsInsideArea.Add(collision.gameObject.GetComponent<StudentNPC>());
+            return;
         }
+
+        StinkBomb collBomb = collision.GetComponent<StinkBomb>();
+        if (collBomb != null) 
+            collBomb.MaybeExplode();
+
+        Debug.Log(collBomb);
     }
 
     private void OnTriggerExit(Collider collision)
