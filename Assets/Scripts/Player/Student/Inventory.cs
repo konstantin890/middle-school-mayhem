@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class Inventory : MonoBehaviour
     public TMP_Text itchingPowderCountDisplay;
     public TMP_Text stinkBombCountDisplay;
     public TMP_Text actionPopupText;
+    public Image popupUnderlay;
 
     [Header("Crafting")]
     public string[] itemNames = { "Small Explosive", "Itching Powder", "Stink Bomb" };
@@ -77,27 +79,29 @@ public class Inventory : MonoBehaviour
     {
         if (item < 0 || item >= itemNames.Length)
         {
-            actionPopupText.text = "";
+            SetPopupText("");
             return;
         }
 
-        actionPopupText.text = $"{itemNames[item]}";
+        string output = $"{itemNames[item]}";
 
         if (chemicalCount < craftingRecepies[item].x)
-            actionPopupText.text += $"\n<color=#ff0000>Chemicals {chemicalCount}/{craftingRecepies[item].x}</color>";
+            output += $"\n<color=#ff0000>Chemicals {chemicalCount}/{craftingRecepies[item].x}</color>";
         else
-            actionPopupText.text += $"\n<color=#00ff00>Chemicals {chemicalCount}/{craftingRecepies[item].x}</color>";
+            output += $"\n<color=#00ff00>Chemicals {chemicalCount}/{craftingRecepies[item].x}</color>";
 
         if (nerds < craftingRecepies[item].y)
-            actionPopupText.text += $"\n<color=#ff0000>Nerds {nerds}/{craftingRecepies[item].y}</color>";
+            output += $"\n<color=#ff0000>Nerds {nerds}/{craftingRecepies[item].y}</color>";
         else
-            actionPopupText.text += $"\n<color=#00ff00>Nerds {nerds}/{craftingRecepies[item].y}</color>";
+            output += $"\n<color=#00ff00>Nerds {nerds}/{craftingRecepies[item].y}</color>";
 
+        SetPopupText(output);
     }
 
     public void SetPopupText(string text)
     {
         actionPopupText.text = $"{text}";
+        popupUnderlay.enabled = (text.Trim() != "");
     }
 
     public void PickupChemical()
