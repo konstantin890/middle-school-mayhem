@@ -155,6 +155,8 @@ public class TeacherNPC : MonoBehaviour
                 thrownChalk = Instantiate(chalkPrefab, transform.position, Quaternion.identity);
                 Rigidbody2D chalkRb = thrownChalk.GetComponent<Rigidbody2D>();
                 Transform target = StudentManager.instance.GetRandomStudent();
+
+                thrownChalk.transform.rotation = GetPrismRotation(transform.position, target.position);
                 chalkRb.AddForce((target.position - transform.position) * chalkSpeed, ForceMode2D.Impulse);
                 animator.SetTrigger("Subs_ThrowChalk");
                 Destroy(thrownChalk.gameObject, 5f);

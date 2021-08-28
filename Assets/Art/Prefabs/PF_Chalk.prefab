@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 9031800416664423403}
   - component: {fileID: 9031800416664423396}
   - component: {fileID: 2523554284938177117}
-  - component: {fileID: 692905005669121415}
   - component: {fileID: 4977968498766821982}
+  - component: {fileID: 7515992213516707061}
   m_Layer: 0
   m_Name: PF_Chalk
   m_TagString: Untagged
@@ -107,22 +107,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &692905005669121415
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9031800416664423397}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!95 &4977968498766821982
 Animator:
   serializedVersion: 3
@@ -142,3 +126,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7515992213516707061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9031800416664423397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0d767454c60a8459f435fc2e1b0093, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageDealt: 10
+  detectRadius: 0.5
+  penetratesStudent: 0
+  doesAreaDamage: 0
+  damageAreaRadius: 0
