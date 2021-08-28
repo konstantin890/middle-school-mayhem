@@ -4996,7 +4996,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6888714600191837399, guid: cb3a37d39bae5fd44b4839c165c11a42, type: 3}
       propertyPath: m_SortingLayer
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6888714600191837399, guid: cb3a37d39bae5fd44b4839c165c11a42, type: 3}
       propertyPath: m_SortingOrder
@@ -5004,7 +5004,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6888714600191837399, guid: cb3a37d39bae5fd44b4839c165c11a42, type: 3}
       propertyPath: m_SortingLayerID
-      value: 334164295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8564890229547080953, guid: cb3a37d39bae5fd44b4839c165c11a42, type: 3}
       propertyPath: barredDoor
