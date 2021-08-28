@@ -75,6 +75,9 @@ public class StudentManager : MonoBehaviour
 
     public Transform GetRandomStudent()
     {
+        if (attractedStudents.Count == 0)
+            return null;
+
         int listPos = Random.Range(0, attractedStudents.Count);
 
         return attractedStudents[listPos].transform;

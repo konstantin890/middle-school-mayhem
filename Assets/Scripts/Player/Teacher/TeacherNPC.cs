@@ -177,14 +177,20 @@ public class TeacherNPC : MonoBehaviour
 
                 animator.SetTrigger("Maths_PrismBeam");
 
-                /*thrownPrism = Instantiate(prismPrefab, transform.position, Quaternion.identity);
+                thrownPrism = Instantiate(prismPrefab, transform.position, Quaternion.identity);
                 Rigidbody2D prismRb = thrownPrism.GetComponent<Rigidbody2D>();
                 Transform target = StudentManager.instance.GetRandomStudent();
+                if(target == null) 
+                { 
+                    //idk, do something to stop the dude from attacking
+                }
+
+                thrownPrism.transform.rotation = GetPrismRotation(transform.position, target.position);
                 prismRb.AddForce((target.position - transform.position) * prismSpeed, ForceMode2D.Impulse);
                 Destroy(thrownPrism.gameObject, 3f);
 
                 soundSrc.clip = throwChalkSound;
-                soundSrc.Play();*/ 
+                soundSrc.Play();
 
 
                 //ApplyFearToAllStudentsInArea(baseFearValue * type.fearMultiplier * prismFearMultiplier);
@@ -241,11 +247,9 @@ public class TeacherNPC : MonoBehaviour
             return;
         }
 
-        StinkBomb collBomb = collision.GetComponent<StinkBomb>();
+        /*StinkBomb collBomb = collision.GetComponent<StinkBomb>();
         if (collBomb != null) 
-            collBomb.MaybeExplode();
-
-        Debug.Log(collBomb);
+            collBomb.MaybeExplode();*/
     }
 
     private void OnTriggerExit(Collider collision)
@@ -257,5 +261,18 @@ public class TeacherNPC : MonoBehaviour
             if (studentsInsideArea.Contains(npc))
                 studentsInsideArea.Remove(npc);
         }
+    }
+
+    private Quaternion GetPrismRotation(Vector2 teacherPos, Vector2 studentPos) 
+    {
+        Vector3 angleOutput = Vector3.zero;
+
+        if(teacherPos.x == studentPos.x) 
+            angleOutput.z = (teacherPos.y < studentPos.y) ? 90f : 270f;
+        else 
+            angleOutput.z = Mathf.Atan2(teacherPos.y - studentPos.y, teacherPos.x - studentPos.x) * Mathf.Rad2Deg;
+
+        angleOutput.z += 90f; //Because of the model lmao
+        return Quaternion.Euler(angleOutput);
     }
 }

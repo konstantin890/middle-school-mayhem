@@ -243,6 +243,8 @@ MonoBehaviour:
   subsSecondsBetweenScoldAttackMax: 0
   subsSecondsBetweenChalkAttackMin: 0
   subsSecondsBetweenChalkAttackMax: 0
+  prismPrefab: {fileID: 7496346267371224233, guid: b83c04946dda3514e837625fcee97f36, type: 3}
+  prismSpeed: 10
   prismFearMultiplier: 0
   scienceSecondsBetweenPrismAttackMin: 0
   scienceSecondsBetweenPrismAttackMax: 0
