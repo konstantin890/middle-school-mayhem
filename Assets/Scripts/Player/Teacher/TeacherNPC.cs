@@ -15,7 +15,6 @@ public class TeacherNPC : MonoBehaviour
     public Transform chalkPrefab;
     private Transform thrownChalk;
     public float chalkSpeed;
-    public float chalkFearMultiplier;
     public float subsSecondsBetweenScoldAttackMin;
     public float subsSecondsBetweenScoldAttackMax;
     public float subsSecondsBetweenChalkAttackMin;
@@ -97,14 +96,14 @@ public class TeacherNPC : MonoBehaviour
         while (true)
         {
             yield return new WaitUntil(() => studentsInsideArea.Count > 1);
-            Debug.Log("Enoughs students inside area!");
             yield return new WaitForSeconds(Random.Range(hallSecondsBetweenYellAttackMin, hallSecondsBetweenYellAttackMax));
-            Debug.Log("Time to strike!");
 
             soundSrc.clip = scoldSounds[Random.Range(0, 2)]; //2 is exclusive, so 0 or 1
             soundSrc.Play();
 
-            ApplyFearToAllStudentsInArea(baseFearValue * type.fearMultiplier);
+            float fearToApply = baseFearValue * type.fearMultiplier;
+            Debug.Log("Applying raw fear: " + fearToApply);
+            ApplyFearToAllStudentsInArea(fearToApply);
 
             animator.SetBool("Scold", true);
             yield return new WaitForSeconds(1f);
@@ -157,7 +156,7 @@ public class TeacherNPC : MonoBehaviour
 
                 animator.SetTrigger("Maths_PrismBeam");
 
-                ApplyFearToAllStudentsInArea(baseFearValue * type.fearMultiplier * prismFearMultiplier);
+                //ApplyFearToAllStudentsInArea(baseFearValue * type.fearMultiplier * prismFearMultiplier);
             }
             else
             {
@@ -165,7 +164,7 @@ public class TeacherNPC : MonoBehaviour
 
                 animator.SetTrigger("Maths_ThrowFPaper");
 
-                ApplyFearToAllStudentsInArea(baseFearValue * type.fearMultiplier * fPaperFearMultiplier);
+                //ApplyFearToAllStudentsInArea(baseFearValue * type.fearMultiplier * fPaperFearMultiplier);
             }
         }
     }

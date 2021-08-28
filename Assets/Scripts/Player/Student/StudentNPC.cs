@@ -79,7 +79,10 @@ public class StudentNPC : MonoBehaviour
 
     public void ApplyFear(float fearValue)
     {
-        FearLevel += fearValue / data.braveryMultiplier;
+        float toIncrease = fearValue / data.braveryMultiplier;
+        FearLevel += toIncrease;
+        Debug.Log("Incrasing student fear by " + toIncrease);
+
         // play hurt animation
         animator.SetTrigger("Hurt");
         audioSrc.Play();
