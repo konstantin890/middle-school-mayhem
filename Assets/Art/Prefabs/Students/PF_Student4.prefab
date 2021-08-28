@@ -234,7 +234,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 67058a832a000f44197974fe4061f25c, type: 2}
   minTimeBetweenAttack: 0.5
   maxTimeBetweenAttack: 1
-  basePatianceToLose: 30
+  basePatianceToLose: 10
   maxFear: 100
   aiPath: {fileID: 3104819809394358500}
   aiTargetter: {fileID: 328027495907184166}
