@@ -233,10 +233,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: {fileID: 11400000, guid: 15dc9766e9719e54195135f4b3bfd0eb, type: 2}
   animator: {fileID: 7963743449138202806}
-  secondsBetweenAttackMin: 0
-  secondsBetweenAttackMax: 0
+  hallSecondsBetweenYellAttackMin: 1
+  hallSecondsBetweenYellAttackMax: 2
   chalkPrefab: {fileID: 9031800416664423403, guid: b42f5bf46d464784681daf2b64ba8f70, type: 3}
   chalkSpeed: 5
+  chalkFearMultiplier: 2
+  subsSecondsBetweenScoldAttackMin: 1
+  subsSecondsBetweenScoldAttackMax: 2
+  subsSecondsBetweenChalkAttackMin: 2
+  subsSecondsBetweenChalkAttackMax: 3
+  prismFearMultiplier: 3
+  scienceSecondsBetweenPrismAttackMin: 1
+  scienceSecondsBetweenPrismAttackMax: 1.5
+  fPaperFearMultiplier: 3
+  scienceSecondsBetweenFPaperAttackMin: 2
+  scienceSecondsBetweenFPaperAttackMax: 3
+  baseFearValue: 10
   patianceLevel: 0
   throwChalkSound: {fileID: 8300000, guid: be5331b505f23c24e8a8901d8e136903, type: 3}
   giveupSound: {fileID: 8300000, guid: ff4fc4da566be0e45b1a225769f044a5, type: 3}

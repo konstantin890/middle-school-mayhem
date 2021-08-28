@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 4010985237283037511}
   - component: {fileID: 3471708440902452463}
   m_Layer: 0
-  m_Name: PF_Teacher_Maths
+  m_Name: PF_Teacher_Science
   m_TagString: Teacher
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -231,12 +231,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a902952e665294418c0aad42443f306, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: {fileID: 11400000, guid: 0f8576afd2c917c4c844ae25917b8801, type: 2}
+  type: {fileID: 11400000, guid: 015f497912170c74382f08c82bef7e4a, type: 2}
   animator: {fileID: 7963743449138202806}
-  secondsBetweenAttackMin: 0
-  secondsBetweenAttackMax: 0
+  hallSecondsBetweenYellAttackMin: 0
+  hallSecondsBetweenYellAttackMax: 0
   chalkPrefab: {fileID: 9031800416664423403, guid: b42f5bf46d464784681daf2b64ba8f70, type: 3}
   chalkSpeed: 5
+  subsSecondsBetweenAttackMin: 0
+  subsSecondsBetweenAttackMax: 0
   patianceLevel: 0
   throwChalkSound: {fileID: 8300000, guid: be5331b505f23c24e8a8901d8e136903, type: 3}
   giveupSound: {fileID: 8300000, guid: ff4fc4da566be0e45b1a225769f044a5, type: 3}

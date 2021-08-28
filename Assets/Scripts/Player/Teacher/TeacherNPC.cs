@@ -8,14 +8,28 @@ public class TeacherNPC : MonoBehaviour
     public Animator animator;
 
     [Header("Hall Teacher")]
-    public float secondsBetweenAttackMin;
-    public float secondsBetweenAttackMax;
+    public float hallSecondsBetweenYellAttackMin;
+    public float hallSecondsBetweenYellAttackMax;
 
     [Header("Subs Teacher")]
     public Transform chalkPrefab;
     private Transform thrownChalk;
     public float chalkSpeed;
+    public float chalkFearMultiplier;
+    public float subsSecondsBetweenScoldAttackMin;
+    public float subsSecondsBetweenScoldAttackMax;
+    public float subsSecondsBetweenChalkAttackMin;
+    public float subsSecondsBetweenChalkAttackMax;
 
+    [Header("Science Teacher")]
+    public float prismFearMultiplier;
+    public float scienceSecondsBetweenPrismAttackMin;
+    public float scienceSecondsBetweenPrismAttackMax;
+    public float fPaperFearMultiplier;
+    public float scienceSecondsBetweenFPaperAttackMin;
+    public float scienceSecondsBetweenFPaperAttackMax;
+
+    public float baseFearValue = 10f;
     [Range(0, 1)] public float patianceLevel;
     private List<StudentNPC> studentsInsideArea = new List<StudentNPC>();
 
@@ -60,18 +74,19 @@ public class TeacherNPC : MonoBehaviour
         switch (type.variation)
         {
             case TeacherVariation.HallMonitor:
-                AttackLoopHall();
+                StartCoroutine(AttackLoopHall());
                 break;
 
             case TeacherVariation.Sub:
-                //SpecialAttack_Subs_Chalk();
+                StartCoroutine(AttackLoopSub());
                 break;
 
             case TeacherVariation.Science:
-                //MathsAttack_FPaper();
+                StartCoroutine(AttackLoopScience());
                 break;
 
             default:
+                Debug.LogError("Teacher not implemented yet!");
                 break;
         }
     }
@@ -79,53 +94,88 @@ public class TeacherNPC : MonoBehaviour
 
     private IEnumerator AttackLoopHall()
     {
-        yield return new WaitUntil(() => studentsInsideArea.Count > 1);
-        yield return new WaitForSeconds(Random.Range(secondsBetweenAttackMin, secondsBetweenAttackMax));
-        RegularAttack_HallMonitor();
-        StartCoroutine(AttackLoopHall());
-    }
-
-    private void RegularAttack_HallMonitor()
-    {
-        /*thrownChalk = Instantiate(chalkPrefab, transform.position, Quaternion.identity);
-        Rigidbody2D chalkRb = thrownChalk.GetComponent<Rigidbody2D>();
-        Transform target = StudentManager.instance.GetRandomStudent();
-        chalkRb.AddForce((target.position - transform.position) * chalkSpeed, ForceMode2D.Impulse);
-        animator.SetTrigger("Subs_ThrowChalk");
-        Destroy(thrownChalk.gameObject, 3f);*/
-
-        soundSrc.clip = scoldSounds[Random.Range(0, 2)]; //2 is exclusive, so 0 or 1
-        soundSrc.Play();
-
-        animator.SetBool("Scold", true);
-
-        foreach (StudentNPC student in studentsInsideArea)
+        while (true)
         {
-            student.ApplyFear(10f);
+            yield return new WaitUntil(() => studentsInsideArea.Count > 1);
+            Debug.Log("Enoughs students inside area!");
+            yield return new WaitForSeconds(Random.Range(hallSecondsBetweenYellAttackMin, hallSecondsBetweenYellAttackMax));
+            Debug.Log("Time to strike!");
+
+            soundSrc.clip = scoldSounds[Random.Range(0, 2)]; //2 is exclusive, so 0 or 1
+            soundSrc.Play();
+
+            ApplyFearToAllStudentsInArea(baseFearValue * type.fearMultiplier);
+
+            animator.SetBool("Scold", true);
+            yield return new WaitForSeconds(1f);
+            animator.SetBool("Scold", false);
         }
     }
 
-    private void SpecialAttack_Subs_Chalk()
+    private IEnumerator AttackLoopSub()
     {
-        thrownChalk = Instantiate(chalkPrefab, transform.position, Quaternion.identity);
-        Rigidbody2D chalkRb = thrownChalk.GetComponent<Rigidbody2D>();
-        Transform target = StudentManager.instance.GetRandomStudent();
-        chalkRb.AddForce((target.position - transform.position) * chalkSpeed, ForceMode2D.Impulse);
-        animator.SetTrigger("Subs_ThrowChalk");
-        Destroy(thrownChalk.gameObject, 3f);
+        while (true)
+        {
+            yield return new WaitUntil(() => studentsInsideArea.Count > 1);
+            int attackID = Random.Range(0, 2);
+            if (attackID == 0)
+            {
+                yield return new WaitForSeconds(Random.Range(subsSecondsBetweenScoldAttackMin, subsSecondsBetweenScoldAttackMax));
 
-        soundSrc.clip = throwChalkSound;
-        soundSrc.Play();
+                ApplyFearToAllStudentsInArea(baseFearValue * type.fearMultiplier);
+
+                animator.SetBool("Scold", true);
+                yield return new WaitForSeconds(1f);
+                animator.SetBool("Scold", false);
+            }
+            else
+            {
+                yield return new WaitForSeconds(Random.Range(subsSecondsBetweenChalkAttackMin, subsSecondsBetweenChalkAttackMax));
+
+                thrownChalk = Instantiate(chalkPrefab, transform.position, Quaternion.identity);
+                Rigidbody2D chalkRb = thrownChalk.GetComponent<Rigidbody2D>();
+                Transform target = StudentManager.instance.GetRandomStudent();
+                chalkRb.AddForce((target.position - transform.position) * chalkSpeed, ForceMode2D.Impulse);
+                animator.SetTrigger("Subs_ThrowChalk");
+                Destroy(thrownChalk.gameObject, 3f);
+
+                soundSrc.clip = throwChalkSound;
+                soundSrc.Play();
+            }
+        }
     }
 
-    private void MathsAttack_FPaper()
+    private IEnumerator AttackLoopScience()
     {
-        animator.SetTrigger("Maths_ThrowFPaper");
+        while (true)
+        {
+            yield return new WaitUntil(() => studentsInsideArea.Count > 1);
+            int attackID = Random.Range(0, 2);
+            if (attackID == 0)
+            {
+                yield return new WaitForSeconds(Random.Range(scienceSecondsBetweenPrismAttackMin, scienceSecondsBetweenPrismAttackMax));
+
+                animator.SetTrigger("Maths_PrismBeam");
+
+                ApplyFearToAllStudentsInArea(baseFearValue * type.fearMultiplier * prismFearMultiplier);
+            }
+            else
+            {
+                yield return new WaitForSeconds(Random.Range(scienceSecondsBetweenFPaperAttackMin, scienceSecondsBetweenFPaperAttackMax));
+
+                animator.SetTrigger("Maths_ThrowFPaper");
+
+                ApplyFearToAllStudentsInArea(baseFearValue * type.fearMultiplier * fPaperFearMultiplier);
+            }
+        }
     }
 
-    private void MathsAttack_PrismBeam()
+    private void ApplyFearToAllStudentsInArea(float fearToApply)
     {
-        animator.SetTrigger("Maths_PrismBeam");
+        foreach (StudentNPC student in studentsInsideArea)
+        {
+            student.ApplyFear(fearToApply);
+        }
     }
 
     public void LeaveClass()
