@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 692905005669121415}
   - component: {fileID: 4977968498766821982}
   m_Layer: 0
-  m_Name: Chalk
+  m_Name: PF_Chalk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

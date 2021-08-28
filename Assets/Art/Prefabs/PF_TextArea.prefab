@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 288689213939881558}
   - component: {fileID: 288689213939881559}
   m_Layer: 0
-  m_Name: TextArea
+  m_Name: PF_TextArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
