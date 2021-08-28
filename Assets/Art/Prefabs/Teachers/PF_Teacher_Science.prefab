@@ -200,7 +200,7 @@ MonoBehaviour:
   rotationSpeed: 360
   slowdownDistance: 0.6
   pickNextWaypointDist: 0.2
-  endReachedDistance: 1
+  endReachedDistance: 0
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 0
   whenCloseToDestination: 0
@@ -233,13 +233,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: {fileID: 11400000, guid: 015f497912170c74382f08c82bef7e4a, type: 2}
   animator: {fileID: 7963743449138202806}
+  aiPathSetter: {fileID: 328027495907184166}
+  aiPath: {fileID: 3104819809394358500}
   hallSecondsBetweenYellAttackMin: 0
   hallSecondsBetweenYellAttackMax: 0
   chalkPrefab: {fileID: 9031800416664423403, guid: b42f5bf46d464784681daf2b64ba8f70, type: 3}
   chalkSpeed: 5
-  subsSecondsBetweenAttackMin: 0
-  subsSecondsBetweenAttackMax: 0
-  patianceLevel: 0
+  subsSecondsBetweenScoldAttackMin: 0
+  subsSecondsBetweenScoldAttackMax: 0
+  subsSecondsBetweenChalkAttackMin: 0
+  subsSecondsBetweenChalkAttackMax: 0
+  prismFearMultiplier: 0
+  scienceSecondsBetweenPrismAttackMin: 0
+  scienceSecondsBetweenPrismAttackMax: 0
+  fPaperFearMultiplier: 0
+  scienceSecondsBetweenFPaperAttackMin: 0
+  scienceSecondsBetweenFPaperAttackMax: 0
+  baseFearValue: 10
+  initialPatianceLevel: 100
   throwChalkSound: {fileID: 8300000, guid: be5331b505f23c24e8a8901d8e136903, type: 3}
   giveupSound: {fileID: 8300000, guid: ff4fc4da566be0e45b1a225769f044a5, type: 3}
   scoldSounds:

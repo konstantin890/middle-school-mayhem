@@ -42,7 +42,6 @@ public class Explosive : MonoBehaviour
                 classroomDoor.UnBarDoor();
                 if (classroomDoor.isFocused) 
                     StudentLeader.instance.inventory.SetPopupText("Enter room?");
-                
             }
         }
     }

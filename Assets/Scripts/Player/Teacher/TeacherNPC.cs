@@ -1,11 +1,15 @@
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TeacherNPC : MonoBehaviour
 {
     public TeacherData type;
     public Animator animator;
+    public AIDestinationSetter aiPathSetter;
+    public AIPath aiPath;
 
     [Header("Hall Teacher")]
     public float hallSecondsBetweenYellAttackMin;
@@ -29,7 +33,7 @@ public class TeacherNPC : MonoBehaviour
     public float scienceSecondsBetweenFPaperAttackMax;
 
     public float baseFearValue = 10f;
-    [Range(0, 1)] public float patianceLevel;
+    public float initialPatianceLevel = 100f;
     private List<StudentNPC> studentsInsideArea = new List<StudentNPC>();
 
     private bool isAngry;
@@ -51,6 +55,20 @@ public class TeacherNPC : MonoBehaviour
         {
             animator.SetBool("IsItchy", value); // used for angry walk
             isItchy = value;
+        }
+    }
+
+    public float PatianceLevel 
+    {
+        get => initialPatianceLevel;
+        set
+        {
+            if (value <= 0)
+            {
+                LeaveClass();
+                return;
+            }
+            initialPatianceLevel = value;
         }
     }
 
@@ -177,12 +195,28 @@ public class TeacherNPC : MonoBehaviour
         }
     }
 
+    public void LosePatiance(float patianceToLose)
+    {
+        if (PatianceLevel <= 0)
+            return;
+
+        float toSubtract = PatianceLevel - patianceToLose * type.patianceMultiplier;
+        Debug.Log("Teacher, reduced patiance by " + toSubtract);
+        
+        PatianceLevel -= toSubtract;
+    }
+
     public void LeaveClass()
     {
         // AI to door, corroutine, after that, disapear (animation?)
 
+        Debug.Log("Teacher, leaving classroom");
+
         soundSrc.clip = giveupSound;
         soundSrc.Play();
+
+        animator.SetBool("FearMaxed", true);
+        Destroy(gameObject, 2f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

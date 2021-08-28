@@ -9,7 +9,9 @@ public class ItchingPowder : MonoBehaviour
     private AudioSource soundSrc;
 
     public float timeToDetonate = 0.5f;
-    public float damageDealt;
+    public float tickTime = 1f;
+    public float loopTick = 3f;
+    public float patianceToLose;
 
     private void Awake()
     {
@@ -25,11 +27,11 @@ public class ItchingPowder : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         //soundSrc.Play();
         yield return new WaitForSeconds(0.15f);
-        ActivateEffect();
+        StartCoroutine(LoopEffect());
         yield return new WaitForSeconds(0.25f);
 
         GetComponent<SpriteRenderer>().enabled = false;
-        Destroy(gameObject, 1f); //we need to wait a bit for the sound to finish!
+        Destroy(gameObject, loopTick + 1f); //we need to wait a bit for the sound to finish!
     }
 
     public void ActivateEffect()
@@ -40,7 +42,17 @@ public class ItchingPowder : MonoBehaviour
             if (hitCollider.gameObject.CompareTag("Teacher"))
             {
                 //idk do damage or something
+                hitCollider.GetComponent<TeacherNPC>().LosePatiance(patianceToLose);
             }
+        }
+    }
+
+    private IEnumerator LoopEffect()
+    {
+        for (int i = 0; i < loopTick; i++)
+        {
+            yield return new WaitForSeconds(tickTime);
+            ActivateEffect();
         }
     }
 }
