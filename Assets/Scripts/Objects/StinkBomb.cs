@@ -8,41 +8,26 @@ public class StinkBomb : MonoBehaviour
     public float effectRadius = 1.5f;
     private AudioSource soundSrc;
 
-    public float timeToDetonate = 0f;
-    public float damageDealt;
-
-    private bool easterEggYeyy = true;
+    public float timeToExplode = 0.5f;
+    public float tickTime = 1f;
+    public float loopTick = 3f;
+    public float patianceDamage = 30f;
 
     private void Awake()
     {
-        //soundSrc = GetComponent<AudioSource>();
+        soundSrc = GetComponent<AudioSource>();
 
-        easterEggYeyy = true;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Teacher"))
-            MaybeExplode();
-    }
-
-    public void MaybeExplode() 
-    {
-        if (easterEggYeyy)
-        {
-            easterEggYeyy = false; //we detonate the bomb only once
-            StartCoroutine(StartExploding());
-        }
+        StartCoroutine(StartExploding());
     }
 
     IEnumerator StartExploding()
     {
-        yield return new WaitForSeconds(timeToDetonate);
+        yield return new WaitForSeconds(timeToExplode);
         animator.SetTrigger("Explode");
         yield return new WaitForSeconds(0.3f);
-        //soundSrc.Play();
+        soundSrc.Play();
         yield return new WaitForSeconds(0.15f);
-        ActivateEffect();
+        StartCoroutine(GasEffect());
         yield return new WaitForSeconds(0.25f);
 
         GetComponent<SpriteRenderer>().enabled = false;
@@ -56,8 +41,18 @@ public class StinkBomb : MonoBehaviour
         {
             if (hitCollider.gameObject.CompareTag("Teacher"))
             {
-                //idk do damage or something
+                TeacherNPC npc = hitCollider.GetComponent<TeacherNPC>();
+                npc.LosePatiance(patianceDamage);
             }
+        }
+    }
+
+    private IEnumerator GasEffect()
+    {
+        for (int i = 0; i < loopTick; i++)
+        {
+            yield return new WaitForSeconds(tickTime);
+            ActivateEffect();
         }
     }
 }

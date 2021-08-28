@@ -262,6 +262,8 @@ public class TeacherNPC : MonoBehaviour
         soundSrc.clip = giveupSound;
         soundSrc.Play();
 
+        animator.SetBool("IsItchy", false);
+        animator.StopPlayback();
         animator.SetBool("LostPatiance", true);
         Destroy(gameObject, 2f);
     }

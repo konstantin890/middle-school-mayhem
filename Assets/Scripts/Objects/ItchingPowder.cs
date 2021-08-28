@@ -15,7 +15,7 @@ public class ItchingPowder : MonoBehaviour
 
     private void Awake()
     {
-        //soundSrc = GetComponent<AudioSource>();
+        soundSrc = GetComponent<AudioSource>();
 
         StartCoroutine(StartExploding());
     }
@@ -25,7 +25,7 @@ public class ItchingPowder : MonoBehaviour
         yield return new WaitForSeconds(timeToDetonate);
         animator.SetTrigger("Explode");
         yield return new WaitForSeconds(0.3f);
-        //soundSrc.Play();
+        soundSrc.Play();
         yield return new WaitForSeconds(0.15f);
         StartCoroutine(LoopEffect());
         yield return new WaitForSeconds(0.25f);
@@ -41,10 +41,22 @@ public class ItchingPowder : MonoBehaviour
         {
             if (hitCollider.gameObject.CompareTag("Teacher"))
             {
-                //idk do damage or something
-                hitCollider.GetComponent<TeacherNPC>().LosePatiance(patianceDamage);
+                TeacherNPC npc = hitCollider.GetComponent<TeacherNPC>();
+                npc.LosePatiance(patianceDamage);
+                StartCoroutine(ItchingTimer(npc));
             }
         }
+    }
+
+    private IEnumerator ItchingTimer(TeacherNPC npc)
+    {
+        if (npc)
+            npc.animator.SetBool("IsItchy", true);
+
+        yield return new WaitForSeconds(3f);
+
+        if (npc)
+            npc.animator.SetBool("IsItchy", false);
     }
 
     private IEnumerator LoopEffect()
