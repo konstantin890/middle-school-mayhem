@@ -11,7 +11,7 @@ public class ItchingPowder : MonoBehaviour
     public float timeToDetonate = 0.5f;
     public float tickTime = 1f;
     public float loopTick = 3f;
-    public float patianceToLose;
+    public float patianceDamage = 30f;
 
     private void Awake()
     {
@@ -42,7 +42,7 @@ public class ItchingPowder : MonoBehaviour
             if (hitCollider.gameObject.CompareTag("Teacher"))
             {
                 //idk do damage or something
-                hitCollider.GetComponent<TeacherNPC>().LosePatiance(patianceToLose);
+                hitCollider.GetComponent<TeacherNPC>().LosePatiance(patianceDamage);
             }
         }
     }
