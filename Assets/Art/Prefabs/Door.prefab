@@ -86,7 +86,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4583627328171503766}
   - component: {fileID: 4583627328171503765}
-  - component: {fileID: 8019280120522977069}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -148,9 +147,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 334164295
+  m_SortingLayer: -1
+  m_SortingOrder: 5
   m_Sprite: {fileID: -3468596928167051028, guid: ccf0696ac85a0c946913af654db5785c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -162,18 +161,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8019280120522977069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4583627328171503767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8625751618933088973
 GameObject:
   m_ObjectHideFlags: 0
