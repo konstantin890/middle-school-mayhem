@@ -56,7 +56,7 @@ public class StudentNPC : MonoBehaviour
 
         animator.SetFloat("Speed", Mathf.Abs(aiPath.desiredVelocity.x) + Mathf.Abs(aiPath.desiredVelocity.y));
 
-        spriteRenderer.sortingOrder = Mathf.FloorToInt(-transform.position.y);
+        spriteRenderer.sortingOrder = Mathf.RoundToInt(-(transform.position.y - 0.25f));
     }
 
     public void InitStudent(Transform leader)
