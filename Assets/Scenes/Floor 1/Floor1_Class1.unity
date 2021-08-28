@@ -5364,10 +5364,6 @@ PrefabInstance:
       propertyPath: sceneNameEnter
       value: Floor1_Hall
       objectReference: {fileID: 0}
-    - target: {fileID: 4583627328171503765, guid: 3f31fe7a849f4e64ebe597680c232238, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4583627328171503766, guid: 3f31fe7a849f4e64ebe597680c232238, type: 3}
       propertyPath: m_RootOrder
       value: 2
