@@ -13,8 +13,13 @@ public class Throwable : MonoBehaviour
 
     private List<int> studentsHit = new List<int>();
 
+    private bool deactivate = false;
+
     private void Update()
     {
+        if (deactivate)
+            return;
+
         Collider2D[] collResults = Physics2D.OverlapCircleAll(transform.position, detectRadius);
         foreach (Collider2D hit in collResults)
         {
@@ -31,7 +36,8 @@ public class Throwable : MonoBehaviour
 
                 if (!penetratesStudent)
                 {
-                    Destroy(gameObject);
+                    Destroy(gameObject, doesAreaDamage ? 1f : 0f);
+                    deactivate = true;
                     return;
                 }
 
@@ -42,6 +48,12 @@ public class Throwable : MonoBehaviour
 
     private void DoAreaDamage() 
     {
+        Animator anim = GetComponent<Animator>();
+        if (anim != null)
+            anim.SetTrigger("Explode");
+
+        this.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, damageAreaRadius);
         foreach (Collider2D hitCollider in hitColliders)
         {

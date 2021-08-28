@@ -28,10 +28,11 @@ public class TeacherNPC : MonoBehaviour
     public Transform prismPrefab;
     private Transform thrownPrism;
     public float prismSpeed;
-    public float prismFearMultiplier;
     public float scienceSecondsBetweenPrismAttackMin;
     public float scienceSecondsBetweenPrismAttackMax;
-    public float fPaperFearMultiplier;
+    public Transform fPaperPrefab;
+    private Transform thrownFPaper;
+    public float fPaperSpeed;
     public float scienceSecondsBetweenFPaperAttackMin;
     public float scienceSecondsBetweenFPaperAttackMax;
 
@@ -156,7 +157,7 @@ public class TeacherNPC : MonoBehaviour
                 Rigidbody2D chalkRb = thrownChalk.GetComponent<Rigidbody2D>();
                 Transform target = StudentManager.instance.GetRandomStudent();
 
-                thrownChalk.transform.rotation = GetPrismRotation(transform.position, target.position);
+                thrownChalk.transform.rotation = GetProjectileRotation(transform.position, target.position);
                 chalkRb.AddForce((target.position - transform.position) * chalkSpeed, ForceMode2D.Impulse);
                 animator.SetTrigger("Subs_ThrowChalk");
                 Destroy(thrownChalk.gameObject, 5f);
@@ -187,7 +188,7 @@ public class TeacherNPC : MonoBehaviour
                     //idk, do something to stop the dude from attacking
                 }
 
-                thrownPrism.transform.rotation = GetPrismRotation(transform.position, target.position);
+                thrownPrism.transform.rotation = GetProjectileRotation(transform.position, target.position);
                 prismRb.AddForce((target.position - transform.position) * prismSpeed, ForceMode2D.Impulse);
                 Destroy(thrownPrism.gameObject, 3f);
 
@@ -202,6 +203,21 @@ public class TeacherNPC : MonoBehaviour
                 yield return new WaitForSeconds(Random.Range(scienceSecondsBetweenFPaperAttackMin, scienceSecondsBetweenFPaperAttackMax));
 
                 animator.SetTrigger("Maths_ThrowFPaper");
+
+                thrownFPaper = Instantiate(fPaperPrefab, transform.position, Quaternion.identity);
+                Rigidbody2D paperRb = thrownFPaper.GetComponent<Rigidbody2D>();
+                Transform target = StudentManager.instance.GetRandomStudent();
+                if (target == null)
+                {
+                    //idk, do something to stop the dude from attacking
+                }
+
+                thrownFPaper.transform.rotation = GetProjectileRotation(transform.position, target.position);
+                paperRb.AddForce((target.position - transform.position) * fPaperSpeed, ForceMode2D.Impulse);
+                Destroy(thrownFPaper.gameObject, 3f);
+
+                soundSrc.clip = throwChalkSound;
+                soundSrc.Play();
 
                 //ApplyFearToAllStudentsInArea(baseFearValue * type.fearMultiplier * fPaperFearMultiplier);
             }
@@ -265,7 +281,7 @@ public class TeacherNPC : MonoBehaviour
         }
     }
 
-    private Quaternion GetPrismRotation(Vector2 teacherPos, Vector2 studentPos) 
+    private Quaternion GetProjectileRotation(Vector2 teacherPos, Vector2 studentPos) 
     {
         Vector3 angleOutput = Vector3.zero;
 
