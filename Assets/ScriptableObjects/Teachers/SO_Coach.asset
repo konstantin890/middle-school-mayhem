@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SO_Coach
   m_EditorClassIdentifier: 
   variation: 2
-  speedMultiplier: 1.5
-  patianceMultiplier: 0.5
-  fearMultiplier: 1.5
+  speedMultiplier: 1
+  patianceMultiplier: 1
+  fearMultiplier: 1
