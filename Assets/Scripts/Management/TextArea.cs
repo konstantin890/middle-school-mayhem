@@ -26,6 +26,9 @@ public class TextArea : MonoBehaviour
 
     public string GetNextText()
     {
+        if (TitleManager.instance)
+            TitleManager.instance.RemoveTitle();
+
         textIdx++;
 
         if (textToDisplay.Length <= textIdx)
