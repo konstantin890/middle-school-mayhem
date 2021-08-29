@@ -3264,7 +3264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 288689213939881558, guid: befbe45e582f65545b027378a83951c3, type: 3}
       propertyPath: textToDisplay.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 288689213939881558, guid: befbe45e582f65545b027378a83951c3, type: 3}
       propertyPath: textToDisplay.Array.data[0]
@@ -3272,7 +3272,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 288689213939881558, guid: befbe45e582f65545b027378a83951c3, type: 3}
       propertyPath: textToDisplay.Array.data[1]
-      value: It's time to take over this school!
+      value: We have had enough of this detention...
+      objectReference: {fileID: 0}
+    - target: {fileID: 288689213939881558, guid: befbe45e582f65545b027378a83951c3, type: 3}
+      propertyPath: textToDisplay.Array.data[2]
+      value: It's time for the students to take over this school!
       objectReference: {fileID: 0}
     - target: {fileID: 288689213939881559, guid: befbe45e582f65545b027378a83951c3, type: 3}
       propertyPath: m_Size.x
