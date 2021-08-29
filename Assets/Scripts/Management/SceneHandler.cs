@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -23,6 +24,9 @@ public class SceneHandler : MonoBehaviour
     private Dictionary<string, List<Vector2>> pickedUpStudents = new Dictionary<string, List<Vector2>>();
     private Dictionary<string, List<Vector2>> unlockedDoors = new Dictionary<string, List<Vector2>>();
     private Dictionary<string, List<Vector2>> removedTeachers = new Dictionary<string, List<Vector2>>();
+
+    public GameObject GameOverGO;
+    public TMP_Text gameOverText;
 
     private void Awake()
     {
@@ -220,5 +224,28 @@ public class SceneHandler : MonoBehaviour
             removedTeachers.Add(currentlyLoadedLevelName, new List<Vector2>());
 
         removedTeachers[currentlyLoadedLevelName].Add(pos);
+    }
+
+    public void GameOver()
+    {
+        GameOverGO.SetActive(true);
+        StartCoroutine(GameOverCountdown());
+    }
+
+    private IEnumerator GameOverCountdown()
+    {
+        gameOverText.text = "Restarting in 3..";
+        yield return new WaitForSeconds(1f);
+        gameOverText.text = "Restarting in 2..";
+        yield return new WaitForSeconds(1f);
+        gameOverText.text = "Restarting in 1..";
+        yield return new WaitForSeconds(1f);
+
+        SceneManager.LoadScene(0);
+    }
+
+    private void OnDestroy()
+    {
+        instance = null;
     }
 }

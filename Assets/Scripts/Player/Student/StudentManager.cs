@@ -42,6 +42,12 @@ public class StudentManager : MonoBehaviour
     {
         attractedStudents.Remove(student);
         UpdateAttractedStudentsUI();
+
+        if (attractedStudents.Count == 0)
+        {
+            Debug.Log("Game Over!");
+            SceneHandler.instance.GameOver();
+        }
     }
 
     public void UpdateAttractedStudentsUI()
