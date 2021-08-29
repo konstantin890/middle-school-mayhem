@@ -6335,6 +6335,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1646465764188367035, guid: 3f31fe7a849f4e64ebe597680c232238, type: 3}
+      propertyPath: sceneNameEnter
+      value: Floor2_Hall
+      objectReference: {fileID: 0}
     - target: {fileID: 4583627328171503765, guid: 3f31fe7a849f4e64ebe597680c232238, type: 3}
       propertyPath: m_SortingLayerID
       value: 334164295
