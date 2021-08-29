@@ -367,15 +367,15 @@ PrefabInstance:
       objectReference: {fileID: 8251433646874311725, guid: 71fb8f9ee2d4446409fe424998520a4d, type: 3}
     - target: {fileID: 7704542321746894112, guid: 1c1bef5b44c48c8478ea752090d46e31, type: 3}
       propertyPath: items.Array.data[0]
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7704542321746894112, guid: 1c1bef5b44c48c8478ea752090d46e31, type: 3}
       propertyPath: items.Array.data[1]
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7704542321746894112, guid: 1c1bef5b44c48c8478ea752090d46e31, type: 3}
       propertyPath: items.Array.data[2]
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7704542321746894112, guid: 1c1bef5b44c48c8478ea752090d46e31, type: 3}
       propertyPath: smallExplosivePrefab
@@ -2737,7 +2737,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 30
+  m_lineSpacing: -30
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0

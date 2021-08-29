@@ -121,9 +121,13 @@ public class SceneHandler : MonoBehaviour
 
     public bool CurrentLevelHasBeenLoadedBefore() => unloadedLevels.IndexOf(currentlyLoadedLevelName) >= 0;
 
-    private IEnumerator DestroyClass() 
+    private IEnumerator DestroyClass()
     {
         yield return new WaitForSeconds(0.05f);
+
+        if (TitleManager.instance)
+            TitleManager.instance.RemoveTitle();
+
         GameObject[] objects = GameObject.FindGameObjectsWithTag("Destructable");
 
         foreach (GameObject go in objects)
@@ -240,6 +244,13 @@ public class SceneHandler : MonoBehaviour
         yield return new WaitForSeconds(1f);
         gameOverText.text = "Restarting in 1..";
         yield return new WaitForSeconds(1f);
+
+        AsyncOperation asyncOperation = SceneManager.UnloadSceneAsync(currentlyLoadedLevelName);
+        Debug.Log(asyncOperation);
+        while (!asyncOperation.isDone)
+        {
+            yield return null;
+        }
 
         SceneManager.LoadScene(0);
     }
