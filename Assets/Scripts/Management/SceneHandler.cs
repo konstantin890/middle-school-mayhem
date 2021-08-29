@@ -246,10 +246,12 @@ public class SceneHandler : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         AsyncOperation asyncOperation = SceneManager.UnloadSceneAsync(currentlyLoadedLevelName);
-        Debug.Log(asyncOperation);
-        while (!asyncOperation.isDone)
+        if (asyncOperation != null)
         {
-            yield return null;
+            while (!asyncOperation.isDone)
+            {
+                yield return null;
+            }
         }
 
         SceneManager.LoadScene(0);
