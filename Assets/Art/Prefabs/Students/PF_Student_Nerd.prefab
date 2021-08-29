@@ -232,8 +232,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: f3440c5cce280014cacb12c2a91f2c1e, type: 2}
-  minTimeBetweenAttack: 1
-  maxTimeBetweenAttack: 1
+  minTimeBetweenAttack: 2.5
+  maxTimeBetweenAttack: 3
   basePatianceToLose: 5
   maxFear: 60
   aiPath: {fileID: 3104819809394358500}

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6631931809197097454}
   - component: {fileID: 6631931809197097455}
   - component: {fileID: 6631931809197097452}
-  - component: {fileID: -5755187327330781416}
   m_Layer: 6
   m_Name: ItchingPowderCraftingStation
   m_TagString: ItchingPowderCraftingStation
@@ -71,9 +70,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 334164295
+  m_SortingLayer: -1
+  m_SortingOrder: 10
   m_Sprite: {fileID: 210223647617833686, guid: 4e8892972f4d2454da341e44734c2149, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -111,15 +110,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 0.75}
   m_EdgeRadius: 0
---- !u!114 &-5755187327330781416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6631931809197097453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52910142de15d004baaf40bfee0fa9f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
