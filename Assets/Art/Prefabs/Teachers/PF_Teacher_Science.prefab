@@ -253,7 +253,7 @@ MonoBehaviour:
   scienceSecondsBetweenFPaperAttackMin: 2
   scienceSecondsBetweenFPaperAttackMax: 3
   baseFearValue: 25
-  initialPatianceLevel: 150
+  initialPatianceLevel: 120
   initialPoition: {x: 0, y: 0}
   throwChalkSound: {fileID: 8300000, guid: be5331b505f23c24e8a8901d8e136903, type: 3}
   giveupSound: {fileID: 8300000, guid: ff4fc4da566be0e45b1a225769f044a5, type: 3}
