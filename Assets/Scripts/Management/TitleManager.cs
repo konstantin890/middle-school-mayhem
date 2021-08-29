@@ -14,8 +14,12 @@ public class TitleManager : MonoBehaviour
 
     public void RemoveTitle()
     {
-        if (SceneHandler.instance.CurrentLevelHasBeenLoadedBefore())
+        /*if (SceneHandler.instance.CurrentLevelHasBeenLoadedBefore())
+        {
+            transform.GetChild(0).gameObject.SetActive(false);
             return;
+        }*/
+            
 
         Debug.Log("Remove title");
         animator.SetTrigger("MoveAway");
