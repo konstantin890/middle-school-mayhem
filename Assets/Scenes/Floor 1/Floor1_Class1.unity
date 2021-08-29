@@ -3140,6 +3140,18 @@ PrefabInstance:
       propertyPath: baseFearValue
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7130653178565921531, guid: 7c5239638c8358c45af3d8ce0137a59c, type: 3}
+      propertyPath: initialPatianceLevel
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7130653178565921531, guid: 7c5239638c8358c45af3d8ce0137a59c, type: 3}
+      propertyPath: hallSecondsBetweenYellAttackMax
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7130653178565921531, guid: 7c5239638c8358c45af3d8ce0137a59c, type: 3}
+      propertyPath: hallSecondsBetweenYellAttackMin
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c5239638c8358c45af3d8ce0137a59c, type: 3}
 --- !u!4 &1193256763 stripped
