@@ -8,8 +8,8 @@ public class EndManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (TeacherNPC.instance == null)
-            TriggerEndScreen();
+        if (FindObjectsOfType<TeacherNPC>().Length == 0)
+                TriggerEndScreen();
     }
 
     private void TriggerEndScreen()
