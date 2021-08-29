@@ -2842,8 +2842,8 @@ MonoBehaviour:
   sceneNameEnter: Floor1_Hall
   isFocused: 0
   isBlocked: 1
-  normalDoor: {fileID: -3468596928167051028, guid: ccf0696ac85a0c946913af654db5785c, type: 3}
-  barredDoor: {fileID: 7794581237443052159, guid: cce27fe32c941b244845222c2cd96500, type: 3}
+  normalDoor: {fileID: -2475067763843504117, guid: 9b9ee62850ff74d42813b29b6f2a50f3, type: 3}
+  barredDoor: {fileID: -2475067763843504117, guid: 9b9ee62850ff74d42813b29b6f2a50f3, type: 3}
   checkForTeachers: 1
   spawnObj: {fileID: 230117481}
 --- !u!61 &1911520143
