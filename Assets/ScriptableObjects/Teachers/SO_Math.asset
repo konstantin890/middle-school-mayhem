@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   variation: 4
   speedMultiplier: 1
-  patianceMultiplier: 1.5
+  patianceMultiplier: 1
   fearMultiplier: 1

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SO_Jock
   m_EditorClassIdentifier: 
   studentClass: 1
-  speedMultiplier: 1.5
-  rowdinessMultiplier: 1.5
-  braveryMultiplier: 0.5
+  speedMultiplier: 1
+  rowdinessMultiplier: 1
+  braveryMultiplier: 1
