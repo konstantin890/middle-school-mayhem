@@ -11,6 +11,8 @@ public class ClassroomDoor : MonoBehaviour
     public Sprite normalDoor;
     public Sprite barredDoor;
 
+    public bool checkForTeachers = true;
+
     private void Awake()
     {
         if (isBlocked) 
@@ -33,8 +35,14 @@ public class ClassroomDoor : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (!checkForTeachers)
+            return;
+
         if (TeacherNPC.instance == null)
-            isBlocked = false;
+        {
+            UnBarDoor();
+            checkForTeachers = false;
+        }
         else
             isBlocked = true;
     }
