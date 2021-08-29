@@ -279,6 +279,9 @@ public class TeacherNPC : MonoBehaviour
         if (thrownPrism)
             Destroy(thrownPrism);
 
+        Destroy(aiPathSetter);
+        Destroy(aiPath);
+
         //HIS IS USED FOR LOADING/UNLOADING SCENES
         SceneHandler.instance.RemoveTeacher(initialPoition);
 
