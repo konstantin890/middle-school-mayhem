@@ -239,11 +239,11 @@ MonoBehaviour:
   hallSecondsBetweenYellAttackMin: 0
   hallSecondsBetweenYellAttackMax: 0
   chalkPrefab: {fileID: 9031800416664423403, guid: b42f5bf46d464784681daf2b64ba8f70, type: 3}
-  chalkSpeed: 5
-  subsSecondsBetweenScoldAttackMin: 0
-  subsSecondsBetweenScoldAttackMax: 0
-  subsSecondsBetweenChalkAttackMin: 0
-  subsSecondsBetweenChalkAttackMax: 0
+  chalkSpeed: 3
+  subsSecondsBetweenScoldAttackMin: 2
+  subsSecondsBetweenScoldAttackMax: 3
+  subsSecondsBetweenChalkAttackMin: 2.5
+  subsSecondsBetweenChalkAttackMax: 3.5
   prismPrefab: {fileID: 7496346267371224233, guid: b83c04946dda3514e837625fcee97f36, type: 3}
   prismSpeed: 10
   scienceSecondsBetweenPrismAttackMin: 0
@@ -252,7 +252,7 @@ MonoBehaviour:
   fPaperSpeed: 4
   scienceSecondsBetweenFPaperAttackMin: 0
   scienceSecondsBetweenFPaperAttackMax: 0
-  baseFearValue: 20
+  baseFearValue: 12.5
   initialPatianceLevel: 80
   initialPoition: {x: 0, y: 0}
   throwChalkSound: {fileID: 8300000, guid: be5331b505f23c24e8a8901d8e136903, type: 3}
