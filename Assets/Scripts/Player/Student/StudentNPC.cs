@@ -26,7 +26,8 @@ public class StudentNPC : MonoBehaviour
     [Range(0, 100)]
     public float randomEndReachPercentageFactor = 10f;
 
-    private AudioSource audioSrc;
+    public AudioSource audioSrcHurt;
+    public AudioSource audioSrcChaos;
 
     public List<TeacherNPC> teachersInRange = new List<TeacherNPC>();
 
@@ -43,18 +44,45 @@ public class StudentNPC : MonoBehaviour
         }
     }
 
+    public bool IsShouting 
+    {
+        get => isShouting;
+        set
+        {
+            if (value != isShouting)
+            {
+                if (value)
+                {
+                    animator.SetBool("IsShouting", true);
+                    Debug.Log("Play!");
+                    audioSrcChaos.Play();
+                }
+                else
+                {
+                    animator.SetBool("IsShouting", false);
+                    Debug.Log("Stop!");
+                    audioSrcChaos.Stop();
+                }
+            }
+
+            isShouting = value;
+        }
+    }
+
+    private bool isShouting;
+
     private void Awake()
     {
         aiPath.maxSpeed *= data.speedMultiplier * (1 + (Random.Range(0, 2) * 2 - 1) * Random.Range(0f, randomSpeedPercentageFactor)/100f);
         aiPath.endReachedDistance *= 1 + (Random.Range(0, 2) * 2 - 1) * Random.Range(0f, randomEndReachPercentageFactor)/100f;
 
         maxFear /= data.braveryMultiplier;
-
-        audioSrc = GetComponent<AudioSource>();
     }
 
     private void Update()
     {
+        RefreshTeachersList();
+
         if (aiPath.desiredVelocity.x >= 0.01f)
             transform.localScale = new Vector3(1f, 1f, 1f);
         else if (aiPath.desiredVelocity.x <= -0.01f)
@@ -63,6 +91,15 @@ public class StudentNPC : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(aiPath.desiredVelocity.x) + Mathf.Abs(aiPath.desiredVelocity.y));
 
         spriteRenderer.sortingOrder = Mathf.RoundToInt(-(transform.position.y - 0.25f));
+
+        if (teachersInRange.Count > 0)
+        {
+            IsShouting = true;
+        }
+        else
+        {
+            IsShouting = false;
+        }
     }
 
     private IEnumerator AttackLoop()
@@ -117,7 +154,7 @@ public class StudentNPC : MonoBehaviour
 
         // play hurt animation
         animator.SetTrigger("Hurt");
-        audioSrc.Play();
+        audioSrcHurt.Play();
     }
 
     public bool IsAttracted() => isAttracted;
@@ -140,6 +177,15 @@ public class StudentNPC : MonoBehaviour
         if (collision.gameObject.CompareTag("Teacher"))
         {
             teachersInRange.Remove(collision.GetComponent<TeacherNPC>());
+        }
+    }
+
+    private void RefreshTeachersList()
+    {
+        for (int i = 0; i < teachersInRange.Count; i++)
+        {
+            if (teachersInRange[i] == null)
+                teachersInRange.RemoveAt(i);
         }
     }
 }
