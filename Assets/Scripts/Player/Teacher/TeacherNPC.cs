@@ -272,7 +272,12 @@ public class TeacherNPC : MonoBehaviour
 
     public void LeaveClass()
     {
-        // AI to door, corroutine, after that, disapear (animation?)
+        if (thrownChalk)
+            Destroy(thrownChalk);
+        if (thrownFPaper)
+            Destroy(thrownFPaper);
+        if (thrownPrism)
+            Destroy(thrownPrism);
 
         //HIS IS USED FOR LOADING/UNLOADING SCENES
         SceneHandler.instance.RemoveTeacher(initialPoition);

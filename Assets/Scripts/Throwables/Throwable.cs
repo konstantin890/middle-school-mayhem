@@ -52,7 +52,7 @@ public class Throwable : MonoBehaviour
         if (anim != null)
             anim.SetTrigger("Explode");
 
-        this.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, damageAreaRadius);
         foreach (Collider2D hitCollider in hitColliders)
