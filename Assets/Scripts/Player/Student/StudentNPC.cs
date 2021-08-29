@@ -168,7 +168,9 @@ public class StudentNPC : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Destructible"))
         {
-            collision.GetComponent<Animator>().SetTrigger("Break");
+            Animator destructableAnimator = collision.GetComponent<Animator>();
+            destructableAnimator.SetTrigger("Break");
+            collision.gameObject.tag = "Untagged";
         }
     }
 
