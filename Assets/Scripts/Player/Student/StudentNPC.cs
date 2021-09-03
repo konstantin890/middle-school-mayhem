@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum StudentClass { Normal, Jock, Nerd }
+
 public class StudentNPC : MonoBehaviour
 {
-    public StudentData data;
+    public StudentClass studentClass;
 
     public float minTimeBetweenAttack = 0.5f;
     public float maxTimeBetweenAttack = 1f;
-    public float basePatianceToLose = 30f;
+    public float patianceToLose = 30f;
 
     [Header("Debug values")]
     public float maxFear = 100;
@@ -73,10 +75,8 @@ public class StudentNPC : MonoBehaviour
 
     private void Awake()
     {
-        aiPath.maxSpeed *= data.speedMultiplier * (1 + (Random.Range(0, 2) * 2 - 1) * Random.Range(0f, randomSpeedPercentageFactor)/100f);
-        aiPath.endReachedDistance *= 1 + (Random.Range(0, 2) * 2 - 1) * Random.Range(0f, randomEndReachPercentageFactor)/100f;
-
-        maxFear /= data.braveryMultiplier;
+        aiPath.maxSpeed *= 1 + (Random.Range(0, 2) * 2 - 1) * Random.Range(0f, randomSpeedPercentageFactor) / 100f;
+        aiPath.endReachedDistance *= 1 + (Random.Range(0, 2) * 2 - 1) * Random.Range(0f, randomEndReachPercentageFactor) / 100f;
     }
 
     private void Update()
@@ -113,7 +113,6 @@ public class StudentNPC : MonoBehaviour
                 if (npc == null)
                     continue;
 
-                float patianceToLose = basePatianceToLose * data.rowdinessMultiplier;
                 Debug.Log("Reducing Teacher patiance with " + patianceToLose);
                 npc.LosePatiance(patianceToLose);
             }
@@ -148,9 +147,8 @@ public class StudentNPC : MonoBehaviour
 
     public void ApplyFear(float fearValue)
     {
-        float toIncrease = fearValue / data.braveryMultiplier;
-        FearLevel += toIncrease;
-        Debug.Log("Incrasing student fear by " + toIncrease);
+        FearLevel += fearValue;
+        Debug.Log("Incrasing student fear by " + fearValue);
 
         // play hurt animation
         animator.SetTrigger("Hurt");

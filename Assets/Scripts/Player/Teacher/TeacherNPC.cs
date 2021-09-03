@@ -4,12 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum TeacherClass { HallMonitor, Substitute, Science }
+
 public class TeacherNPC : MonoBehaviour
 {
     public static TeacherNPC instance; // Looks weird, but we need it for detecting if there are any teachers left in the room.
 
     public SpriteRenderer spriteRenderer;
-    public TeacherData type;
+    public TeacherClass teacherClass;
     public Animator animator;
     public AIDestinationSetter aiPathSetter;
     public AIPath aiPath;
@@ -39,7 +41,7 @@ public class TeacherNPC : MonoBehaviour
     public float scienceSecondsBetweenFPaperAttackMin;
     public float scienceSecondsBetweenFPaperAttackMax;
 
-    public float baseFearValue = 10f;
+    public float fearValue = 10f;
     public float initialPatianceLevel = 100f;
     private List<StudentNPC> studentsInsideArea = new List<StudentNPC>();
 
@@ -107,17 +109,17 @@ public class TeacherNPC : MonoBehaviour
 
     public void ExecuteAttackLoop()
     {
-        switch (type.variation)
+        switch (teacherClass)
         {
-            case TeacherVariation.HallMonitor:
+            case TeacherClass.HallMonitor:
                 StartCoroutine(AttackLoopHall());
                 break;
 
-            case TeacherVariation.Sub:
+            case TeacherClass.Substitute:
                 StartCoroutine(AttackLoopSub());
                 break;
 
-            case TeacherVariation.Science:
+            case TeacherClass.Science:
                 StartCoroutine(AttackLoopScience());
                 break;
 
@@ -138,9 +140,8 @@ public class TeacherNPC : MonoBehaviour
             soundSrc.clip = scoldSounds[Random.Range(0, 2)]; //2 is exclusive, so 0 or 1
             soundSrc.Play();
 
-            float fearToApply = baseFearValue * type.fearMultiplier;
-            Debug.Log("Applying raw fear: " + fearToApply);
-            ApplyFearToAllStudentsInArea(fearToApply);
+            Debug.Log("Applying fear: " + fearValue);
+            ApplyFearToAllStudentsInArea(fearValue);
 
             animator.SetBool("Scold", true);
             yield return new WaitForSeconds(1f);
@@ -159,7 +160,7 @@ public class TeacherNPC : MonoBehaviour
             {
                 yield return new WaitForSeconds(Random.Range(subsSecondsBetweenScoldAttackMin, subsSecondsBetweenScoldAttackMax));
 
-                ApplyFearToAllStudentsInArea(baseFearValue * type.fearMultiplier);
+                ApplyFearToAllStudentsInArea(fearValue);
 
                 animator.SetBool("Scold", true);
                 yield return new WaitForSeconds(1f);
@@ -262,10 +263,11 @@ public class TeacherNPC : MonoBehaviour
             return;
 
         animator.SetBool("IsAngry", true);
-        float toSubtract = PatianceLevel - patianceToLose * type.patianceMultiplier;
-        Debug.Log("Teacher, reduced patiance to " + toSubtract);
-        
-        PatianceLevel = toSubtract;
+
+        PatianceLevel -= patianceToLose;
+
+        Debug.Log("Teacher, reduced patiance by " + patianceToLose);
+
 
         animator.SetBool("IsAngry", false);
     }

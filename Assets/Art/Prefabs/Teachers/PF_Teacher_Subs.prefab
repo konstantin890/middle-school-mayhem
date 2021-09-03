@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1413775027066631701}
-  type: {fileID: 11400000, guid: a989846b920799a4296d517c139ba4fd, type: 2}
+  teacherClass: 0
   animator: {fileID: 7963743449138202806}
   aiPathSetter: {fileID: 328027495907184166}
   aiPath: {fileID: 3104819809394358500}
@@ -252,7 +252,7 @@ MonoBehaviour:
   fPaperSpeed: 4
   scienceSecondsBetweenFPaperAttackMin: 0
   scienceSecondsBetweenFPaperAttackMax: 0
-  baseFearValue: 12.5
+  fearValue: 12.5
   initialPatianceLevel: 80
   initialPoition: {x: 0, y: 0}
   throwChalkSound: {fileID: 8300000, guid: be5331b505f23c24e8a8901d8e136903, type: 3}
