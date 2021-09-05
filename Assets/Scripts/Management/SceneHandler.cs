@@ -81,10 +81,6 @@ public class SceneHandler : MonoBehaviour
     {
         // Post-load set-up
 
-        //studentLeader.transform.position = GameObject.FindGameObjectWithTag("StudentLeaderSpawnPoint").transform.position;
-
-        // TODO: Reinstantiate the students around the Leader, could be random pos in a sphere
-
         StinkBomb[] bombs = FindObjectsOfType<StinkBomb>();
         foreach(StinkBomb bomb in bombs)
         {

@@ -2,9 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LeaderSpawnManager : MonoBehaviour
+public class FloorManager : MonoBehaviour
 {
     private void Awake()
+    {
+        HandleStudentSpawn();
+    }
+
+    private void HandleStudentSpawn()
     {
         bool foundNonStandardSpawnPos = false;
         foreach (ClassroomDoor spawn in FindObjectsOfType<ClassroomDoor>())
@@ -18,7 +23,10 @@ public class LeaderSpawnManager : MonoBehaviour
         }
 
         if (!foundNonStandardSpawnPos)
-            StudentLeader.instance.transform.position = transform.position;
+        {
+            Transform spawnPoint = GameObject.FindGameObjectWithTag("StudentLeaderSpawnPoint").transform;
+            StudentLeader.instance.transform.position = spawnPoint.position;
+        }
 
         Transform leaderPos = StudentLeader.instance.transform;
         Debug.Log("Leader pos: " + leaderPos.position);
