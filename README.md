@@ -27,7 +27,7 @@ The game is developed by **TerraStudios** and a collective of amazing developers
 - Nikos Konstantinou - Programming / UI
 - Vivek Suley - Game Design / Level Design / QA
 
-# Libraries and third-party scripts used
+## Libraries and third-party scripts used
 - [Astar Pathfinding](https://arongranberg.com/astar/front)
 - [Multi Scene](https://github.com/Madgvox/unity-scene-groups)
 
