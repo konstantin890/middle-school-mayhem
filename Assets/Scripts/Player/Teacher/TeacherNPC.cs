@@ -145,8 +145,8 @@ public class TeacherNPC : MonoBehaviour
             yield return new WaitUntil(() => studentsInsideArea.Count > 1);
             yield return new WaitForSeconds(Random.Range(hallSecondsBetweenYellAttackMin, hallSecondsBetweenYellAttackMax));
 
-            soundSrc.clip = scoldSounds[Random.Range(0, 2)]; //2 is exclusive, so 0 or 1
-            soundSrc.Play();
+            //soundSrc.clip = scoldSounds[Random.Range(0, 2)]; //2 is exclusive, so 0 or 1
+            SoundManager.instance.PlayScoldSound(scoldSounds[Random.Range(0, 2)]); //2 is exclusive, so 0 or 1
 
             Debug.Log("Applying fear: " + fearValue);
             ApplyFearToAllStudentsInArea(fearValue);

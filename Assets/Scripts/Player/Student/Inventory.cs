@@ -79,7 +79,7 @@ public class Inventory : MonoBehaviour
 
             UpdateCraftingPopup(craftingStation, nerds);
 
-            studentLeader.playerSounds.CaftSound();
+            studentLeader.playerSounds.CraftAction();
         }
     }
 

@@ -65,13 +65,15 @@ public class StudentNPC : MonoBehaviour
                 {
                     animator.SetBool("IsShouting", true);
                     Debug.Log("Play!");
-                    audioSrcChaos.Play();
+                    SoundManager.instance.PlayShoutingSound();
+                    //audioSrcChaos.Play();
                 }
                 else
                 {
                     animator.SetBool("IsShouting", false);
                     Debug.Log("Stop!");
-                    audioSrcChaos.Stop();
+                    SoundManager.instance.StopShoutingSound();
+                    //audioSrcChaos.Stop();
                 }
             }
 
@@ -160,7 +162,8 @@ public class StudentNPC : MonoBehaviour
 
         // play hurt animation
         animator.SetTrigger("Hurt");
-        audioSrcHurt.Play();
+        SoundManager.instance.PlayHurtSound();
+        //audioSrcHurt.Play();
     }
 
     public bool IsAttracted() => isAttracted;

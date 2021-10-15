@@ -37,7 +37,7 @@ public class ClassroomDoor : MonoBehaviour
             SceneHandler.instance.GoToScene(sceneNameEnter);
             StudentLeader.instance.inventory.SetPopupText("");
             StudentLeader.instance.callout.SetActive(false);
-            StudentLeader.instance.playerSounds.DoorSound();
+            StudentLeader.instance.playerSounds.DoorAction();
         }
     }
 

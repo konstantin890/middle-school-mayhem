@@ -121,7 +121,7 @@ public class StudentLeader : MonoBehaviour
             if (!collStudent.IsAttracted())
             {
                 studentManager.AddStudent(collStudent);
-                playerSounds.FollowerSound();
+                playerSounds.GainedFollower();
                 SceneHandler.instance.PickUpStudent(collision.transform.position);
                 //Debug.Log("Added Student to group");
             }

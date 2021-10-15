@@ -19,19 +19,19 @@ public class PlayerSounds : MonoBehaviour
     public AudioClip followerGained;
     public AudioClip collectChemical;
 
-    public void CaftSound() 
+    public void CraftAction() 
     {
         soundSrc.clip = craft;
         soundSrc.Play();
     }
 
-    public void DoorSound()
+    public void DoorAction()
     {
         soundSrc.clip = door;
         soundSrc.Play();
     }
 
-    public void FollowerSound() 
+    public void GainedFollower() 
     {
         soundSrc.clip = followerGained;
         soundSrc.Play();
