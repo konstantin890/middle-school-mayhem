@@ -93,6 +93,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -676,6 +677,30 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      MathsTeacher_10: 3526727443069456680
+      MathsTeacher_3: 5140649221031003147
+      MathsTeacher_9: 6930365793270946457
+      MathsTeacher_21: -6058911402606456367
+      MathsTeacher_17: 1172794698030471980
+      MathsTeacher_7: 8828635290816918588
+      MathsTeacher_11: 7412606779720054208
+      MathsTeacher_19: -6475644378499374148
+      MathsTeacher_12: 4458595936091388272
+      MathsTeacher_1: -1317696607090084990
+      MathsTeacher_2: -1804419062859369073
+      MathsTeacher_6: 2138670665731945842
+      MathsTeacher_16: -622705534502774385
+      MathsTeacher_8: 298036449609342212
+      MathsTeacher_5: 3780350937457043881
+      MathsTeacher_4: 8498848079774156788
+      MathsTeacher_18: 2967545056387306748
+      MathsTeacher_13: -8440617950290129028
+      MathsTeacher_0: -5824855666619582289
+      MathsTeacher_14: 3412602554403029311
+      MathsTeacher_15: 6767572170268133045
+      MathsTeacher_22: -4577981235872350965
+      MathsTeacher_20: -4583127304854120454
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

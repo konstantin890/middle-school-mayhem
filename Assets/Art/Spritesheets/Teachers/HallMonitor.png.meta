@@ -78,6 +78,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -556,6 +557,25 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      HallMonitor_13: -549494576549555427
+      HallMonitor_6: -4447342877841516839
+      HallMonitor_17: 4140295416556812306
+      HallMonitor_2: 6586194982595333307
+      HallMonitor_10: 3600074015086084218
+      HallMonitor_12: 353536504902606345
+      HallMonitor_3: -7720830490004475398
+      HallMonitor_0: 1873492311174017485
+      HallMonitor_1: 7741241102229911640
+      HallMonitor_7: 7529219571952083883
+      HallMonitor_15: -4344630296860603524
+      HallMonitor_5: -5481380661428097648
+      HallMonitor_16: 6055840024243858461
+      HallMonitor_8: 3531909541870035867
+      HallMonitor_9: 2970559746512681668
+      HallMonitor_14: 4900011834146692219
+      HallMonitor_11: -4052581634089828767
+      HallMonitor_4: 5576228944144087060
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

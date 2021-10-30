@@ -75,6 +75,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -532,6 +533,24 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Chair_Vertical_Anim_9: 8754963546306940730
+      Chair_Vertical_Anim_16: 8812537104031543901
+      Chair_Vertical_Anim_13: 2343497955693838376
+      Chair_Vertical_Anim_8: 176394216223240743
+      Chair_Vertical_Anim_11: -5708958670000772209
+      Chair_Vertical_Anim_1: -2983267610736825546
+      Chair_Vertical_Anim_6: 9090690168694815601
+      Chair_Vertical_Anim_12: -7609412324000872453
+      Chair_Vertical_Anim_3: 1528598186193063457
+      Chair_Vertical_Anim_4: -7201195858265866513
+      Chair_Vertical_Anim_5: 5388268118790050832
+      Chair_Vertical_Anim_0: 4484562385650199294
+      Chair_Vertical_Anim_14: -4062944354218068802
+      Chair_Vertical_Anim_2: -5691694390268109101
+      Chair_Vertical_Anim_7: 1245152951384403990
+      Chair_Vertical_Anim_15: 1988642346933188932
+      Chair_Vertical_Anim_10: -5929349835868944953
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

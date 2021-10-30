@@ -54,6 +54,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -364,6 +365,17 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      ItchBomb_0: -734402932439531960
+      ItchBomb_9: 5154502507134648670
+      ItchBomb_5: 6093798231873672683
+      ItchBomb_3: -7446620591309469768
+      ItchBomb_6: 6243597539874900531
+      ItchBomb_7: 6862774315577253433
+      ItchBomb_1: -841810213904464728
+      ItchBomb_4: 2184180100901782758
+      ItchBomb_2: 2453387710447169176
+      ItchBomb_8: 1921050470498636468
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
