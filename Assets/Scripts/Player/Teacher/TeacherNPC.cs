@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public enum TeacherClass { HallMonitor, Substitute, Science }
+public enum TeacherClass { HallMonitor, Substitute, Science, Principal }
 
 public class TeacherNPC : MonoBehaviour
 {
