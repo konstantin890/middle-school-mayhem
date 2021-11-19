@@ -106,8 +106,10 @@ public class StudentLeader : MonoBehaviour
         {
             // Show text
             ClassroomDoor classroomDoor = collision.gameObject.GetComponent<ClassroomDoor>();
-            if (classroomDoor.isBlocked)
+            if (classroomDoor.isBlockedByTeacher)
                 inventory.SetPopupText("You have to make all teachers leave before you enter!");
+            else if (classroomDoor.isBlocked)
+                inventory.SetPopupText("You have to explore the other rooms first!");
             else
                 inventory.SetPopupText("Enter room?");
 

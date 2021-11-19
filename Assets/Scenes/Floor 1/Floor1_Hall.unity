@@ -154,6 +154,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 203712614}
   m_RootOrder: 3
@@ -914,6 +915,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1939786273}
   - {fileID: 1081091180}
@@ -1007,6 +1009,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -9.45, y: 2.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1527889719}
   m_RootOrder: 0
@@ -1066,6 +1069,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79a3ab8dc13c814387d31bdb1df9a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doors:
+  - {fileID: 4583627328233103428}
+  - {fileID: 1503767039}
+  - {fileID: 1316278030}
+  - {fileID: 1997761265}
+  - {fileID: 6919202119681598016}
+  radialStudentSpawn: 1
 --- !u!4 &593023928
 Transform:
   m_ObjectHideFlags: 0
@@ -1076,6 +1086,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1456923006}
   m_RootOrder: 0
@@ -1163,6 +1174,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 203712614}
   - {fileID: 899649779}
@@ -1253,6 +1265,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 208933077}
   - {fileID: 1503767038}
@@ -1342,6 +1355,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8, y: 0.625, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1527889719}
   m_RootOrder: 1
@@ -1398,6 +1412,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.77, y: 2.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -1494,6 +1509,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 203712614}
   m_RootOrder: 1
@@ -3100,6 +3116,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.12, y: 11.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1346703085}
   m_Father: {fileID: 0}
@@ -3127,6 +3144,10 @@ PrefabInstance:
     - target: {fileID: 1646465764188367035, guid: 3f31fe7a849f4e64ebe597680c232238, type: 3}
       propertyPath: sceneNameEnter
       value: Floor1_Class3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646465764188367035, guid: 3f31fe7a849f4e64ebe597680c232238, type: 3}
+      propertyPath: checkForTeachers
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3175132325325888145, guid: 3f31fe7a849f4e64ebe597680c232238, type: 3}
       propertyPath: roomNumber
@@ -3208,6 +3229,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4583627328171503766, guid: 3f31fe7a849f4e64ebe597680c232238, type: 3}
   m_PrefabInstance: {fileID: 1316278028}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1316278030 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1646465764188367035, guid: 3f31fe7a849f4e64ebe597680c232238, type: 3}
+  m_PrefabInstance: {fileID: 1316278028}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6388cf24a337189468e36b2caa51bf1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1346703084
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3332,6 +3364,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 593023928}
   - {fileID: 5556476371344123928}
@@ -3361,6 +3394,10 @@ PrefabInstance:
     - target: {fileID: 1646465764188367035, guid: 3f31fe7a849f4e64ebe597680c232238, type: 3}
       propertyPath: sceneNameEnter
       value: Floor1_Class2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646465764188367035, guid: 3f31fe7a849f4e64ebe597680c232238, type: 3}
+      propertyPath: checkForTeachers
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3175132325325888145, guid: 3f31fe7a849f4e64ebe597680c232238, type: 3}
       propertyPath: roomNumber
@@ -3442,6 +3479,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4583627328171503766, guid: 3f31fe7a849f4e64ebe597680c232238, type: 3}
   m_PrefabInstance: {fileID: 1503767037}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1503767039 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1646465764188367035, guid: 3f31fe7a849f4e64ebe597680c232238, type: 3}
+  m_PrefabInstance: {fileID: 1503767037}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6388cf24a337189468e36b2caa51bf1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1527889718
 GameObject:
   m_ObjectHideFlags: 0
@@ -3468,6 +3516,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 289694035}
   - {fileID: 937908432}
@@ -3502,6 +3551,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 203712614}
   m_RootOrder: 0
@@ -4444,6 +4494,10 @@ PrefabInstance:
       propertyPath: sceneNameEnter
       value: Floor1_Class4
       objectReference: {fileID: 0}
+    - target: {fileID: 1646465764188367035, guid: 3f31fe7a849f4e64ebe597680c232238, type: 3}
+      propertyPath: checkForTeachers
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3175132325325888145, guid: 3f31fe7a849f4e64ebe597680c232238, type: 3}
       propertyPath: roomNumber
       value: 1
@@ -4524,6 +4578,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4583627328171503766, guid: 3f31fe7a849f4e64ebe597680c232238, type: 3}
   m_PrefabInstance: {fileID: 1997761263}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1997761265 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1646465764188367035, guid: 3f31fe7a849f4e64ebe597680c232238, type: 3}
+  m_PrefabInstance: {fileID: 1997761263}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6388cf24a337189468e36b2caa51bf1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2040967945
 GameObject:
   m_ObjectHideFlags: 0
@@ -4552,6 +4617,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 203712614}
   m_RootOrder: 2
@@ -4963,6 +5029,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9, y: 4.5, z: 0}
   m_LocalScale: {x: 1, y: 1.1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -4985,6 +5052,10 @@ PrefabInstance:
     - target: {fileID: 1646465764188367035, guid: 3f31fe7a849f4e64ebe597680c232238, type: 3}
       propertyPath: sceneNameEnter
       value: Floor1_Class1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646465764188367035, guid: 3f31fe7a849f4e64ebe597680c232238, type: 3}
+      propertyPath: checkForTeachers
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3175132325325888145, guid: 3f31fe7a849f4e64ebe597680c232238, type: 3}
       propertyPath: roomNumber
@@ -5052,6 +5123,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f31fe7a849f4e64ebe597680c232238, type: 3}
+--- !u!114 &4583627328233103428 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1646465764188367035, guid: 3f31fe7a849f4e64ebe597680c232238, type: 3}
+  m_PrefabInstance: {fileID: 4583627328233103427}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6388cf24a337189468e36b2caa51bf1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4583627329266984683 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6888714600191837396, guid: cb3a37d39bae5fd44b4839c165c11a42, type: 3}
@@ -5067,6 +5149,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.3600006, y: -1.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1456923006}
   m_RootOrder: 1
@@ -5144,7 +5227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6043681369379713973, guid: 722aff48f2456404792026ed2ccb5f8e, type: 3}
       propertyPath: data.dataString
-      value: UEsDBBQAAAgIAAAQIeySuYDVYQIAAAQFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVMty4jAQ/BVK5yVlAzGwt12HkD3kUSFbufgi5DFWIUsuPQIkxb/vSLaxw54QMz0z3a2RvwiXpgZmlV5rnj+qHMjPEfFn8mPUJx/gSHdKbvgndJh3ntvSg2jAvFLLFcZjX2ZUBVZz9kvuhAdHGHSSF0pXq3wHqTLWYLigwgCmtLK+WmLoa0SO+DNe+pITniZzf/rE0zIanfHIQFrQA2h0c9thW2QDdJIJWtWQe9Y9ftJ1nt3cBpxEQS2kacWUENy0fIg91UFvSmvjUA0Cck5RXyDh5ZbAd6Vt51+Kn4vCgG3Fa3q64xptarqS36rxrqJm31D7oML5OckskGp6Pv6XHschXWhVPXRj48iPsCVn+1d6YtTYgbfD8N133k4eqNjTrYD3EuSTWmvlZI5Jq50vdQYmd/3fi7K0BLbv4w3Vq6Cre8c7w+Ob+WIRT5fJdDWO5u1deUHn4MQxFbzahluYNYGNUMH7sAyg8Z7+IPuwKqbti1FP6a+BN7ob7lSbuOfaWEy1kqXnulVOeyhZBQO9NGdTpSWEcKugBkmFPb1gG3t9nVe5wdirzD31r6cd3ua6R3FVEsI9PoquUi/qcLk5U6rDI5jy2VnBJfSkfeIJfUqVlM22DT3pyjZOF5QNynaO59/3jGznBSyS2WRKp2wSJ8k4iac5S6CI2HJWTIoFCYvIJeqk4qUh2tqDtyb75hKXrvuojNaa1mHzc00Pa/5ZqYHlXBZqwzSAfG46XIiDxiH4RvNVztGgDVjLZbhv8pURodge8uzSKAtKV0eradZ3yUjNP5T1kYyk4SuSkTM5/wNQSwMEFAAACAgAABAh7DzqB6ZtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTVUVBKL0osyCgGihiCOKWZKSB2tFKSeVqqhZmJkXGicbKRoZmZrpmhcUqyWWqaQbKlSZpRmoVSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAABAh7JK5gNVhAgAABAUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAABAh7DzqB6ZtAAAAeAAAAAkAJAAAAAAAAAAAAAAArgIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABmAwAAAAA=
+      value: UEsDBBQAAAgIAAAQIeyD8PsiYwIAAAUFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2jAQ/SuMzoWxgRjorXUI6SEfU9rJxRchr7EGWfLoI0Ay/PeuZBs79ITYfbt67+3Kn4RLUwOzSm80z59UDuT7iPgz+Tbqk49wonslt/wDOswbz23pQTRgflPLFcZjX2ZUBVZz9kPuhQdHGHSSF0pX63wPqTLWYLigwgCmtLK+WmLoc0RO+DNe+ZIznqYLf/rA0yoaXfDIQFrQA2g0ueuwLbIBOskErWrIPeseP+06zyd3ASdRUAuJJlPfiykhuGkJEXuug+CU1sahHATknKLAwMLrLYHvS9sSuBa/FIUB26rX9HzPNfrUdCU/VWNeRc2h4fZOhfP3JPPAqun59F96HId0oVX12F0bR/4KW3J2+E3PjBo7MHcYvv/K28kjFQe6E/BWgnxWG62czDFptfOlzsD0vv97VZaWwA59vKF6E3R1b3nneDxZLJfxbJXM1uNo0Q7LC7oEJ06p4NUujGHeBLZCBe/DNoDGQf1C9mFXTNsXo57SXwN/6H64VG3igWtjMdVKlp7rTjntoWQdDPTSnE2VlhDCrYIaJBX2/Ipt7O04b3KDa28yD9Q/n/byNte9ipuSEO7xUXSTelXH6+RMqY5PYMoXZwWX0JP2iWf0KVVSNts29KQr2zpdUDYo2zuef90zslsUsEzm0xmdsWmcJOMknuUsgSJiq3kxLZYkLCKXqJOK14Zoaw9OTfbNJS5d91UZbTStw+bnmh43/KNSA8u5LNSWaQD50nS4EgeNl+Ajzdc5R4O2YC2XYd7kMyNCsQPk2bVRFpSuT1bTrO+SkZq/K+sjGUnDZyQjF3L5B1BLAwQUAAAICAAAECHsPOoHpm0AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNVRUEovSizIKAaKGII4pZkpIHa0UpJ5WqqFmYmRcaJxspGhmZmumaFxSrJZappBsqVJmlGahVIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAAECHsg/D7ImMCAAAFBQAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAECHsPOoHpm0AAAB4AAAACQAkAAAAAAAAAAAAAACwAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAGgDAAAAAA==
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 722aff48f2456404792026ed2ccb5f8e, type: 3}
@@ -5224,5 +5307,20 @@ PrefabInstance:
       propertyPath: sceneNameEnter
       value: Floor2_Hall
       objectReference: {fileID: 0}
+    - target: {fileID: 8564890229547080953, guid: cb3a37d39bae5fd44b4839c165c11a42, type: 3}
+      propertyPath: checkForTeachers
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb3a37d39bae5fd44b4839c165c11a42, type: 3}
+--- !u!114 &6919202119681598016 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8564890229547080953, guid: cb3a37d39bae5fd44b4839c165c11a42, type: 3}
+  m_PrefabInstance: {fileID: 6919202119681598015}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6388cf24a337189468e36b2caa51bf1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

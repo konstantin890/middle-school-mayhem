@@ -15,15 +15,18 @@ public class ClassroomDoor : MonoBehaviour
     public string sceneNameEnter;
     public bool isFocused;
 
-    [HideInInspector] public bool isBlocked = true;
+    [HideInInspector] public bool isBlockedByTeacher; // true when a teacher is present in the room
+    [HideInInspector] public bool isBlocked; // true when the room to which the door goes to is "too far"
+    [HideInInspector] public bool visuallyOpen; // true when the room has been explored
     public Sprite normalDoor;
+    public Sprite openedDoor;
     public Sprite barredDoor;
 
     public bool checkForTeachers = true;
 
     private void Awake()
     {
-        if (isBlocked) 
+        if (isBlockedByTeacher) 
             transform.parent.GetComponent<SpriteRenderer>().sprite = barredDoor;
     }
 
@@ -31,7 +34,7 @@ public class ClassroomDoor : MonoBehaviour
 
     private void Update()
     {
-        if (isFocused && InputHandler.instance.IsButtonHeld(0) && !isBlocked)
+        if (isFocused && InputHandler.instance.IsButtonHeld(0) && !isBlockedByTeacher && !isBlocked)
         {
             isFocused = false;
             SceneHandler.instance.GoToScene(sceneNameEnter);
@@ -46,18 +49,34 @@ public class ClassroomDoor : MonoBehaviour
         if (!checkForTeachers)
             return;
 
-        if (TeacherNPC.instance == null)
+        if (!visuallyOpen && TeacherNPC.instance == null && !isBlocked)
         {
             UnBarDoor();
             checkForTeachers = false;
         }
         else
-            isBlocked = true;
+        {
+            isBlockedByTeacher = true;
+            transform.parent.GetComponent<SpriteRenderer>().sprite = barredDoor;
+        }
+    }
+
+    public void LockDoor()
+    {
+        isBlocked = true;
+        isBlockedByTeacher = false;
+        transform.parent.GetComponent<SpriteRenderer>().sprite = barredDoor;
     }
 
     public void UnBarDoor() 
     {
-        isBlocked = false;
+        isBlockedByTeacher = false;
         transform.parent.GetComponent<SpriteRenderer>().sprite = normalDoor;
+    }
+
+    public void MarkDoorAsOpen()
+    {
+        visuallyOpen = true;
+        transform.parent.GetComponent<SpriteRenderer>().sprite = openedDoor;
     }
 }

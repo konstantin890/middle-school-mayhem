@@ -26,7 +26,7 @@ public class SceneHandler : MonoBehaviour
     public Animator fadeAnimator;
     public Transform studentLeader;
 
-    private List<string> unloadedLevels = new List<string>();
+    [HideInInspector] public List<string> previousUnloadedLevels = new List<string>();
 
     private Dictionary<string, List<Vector2>> pickedUpChemicals = new Dictionary<string, List<Vector2>>();
     private Dictionary<string, List<Vector2>> pickedUpStudents = new Dictionary<string, List<Vector2>>();
@@ -79,8 +79,8 @@ public class SceneHandler : MonoBehaviour
         lastLoadedLevelName = currentlyLoadedLevelName;
         currentlyLoadedLevelName = pendingLoadLevelName;
 
-        if (unloadedLevels.IndexOf(lastLoadedLevelName) < 0)
-            unloadedLevels.Add(lastLoadedLevelName);
+        if (previousUnloadedLevels.IndexOf(lastLoadedLevelName) < 0)
+            previousUnloadedLevels.Add(lastLoadedLevelName);
 
         PostLevelLoad();
     }
@@ -123,7 +123,7 @@ public class SceneHandler : MonoBehaviour
         return SceneManager.GetSceneByName(currentlyLoadedLevelName);
     }
 
-    public bool CurrentLevelHasBeenLoadedBefore() => unloadedLevels.IndexOf(currentlyLoadedLevelName) >= 0;
+    public bool CurrentLevelHasBeenLoadedBefore() => previousUnloadedLevels.IndexOf(currentlyLoadedLevelName) >= 0;
 
     private IEnumerator DestroyClass()
     {

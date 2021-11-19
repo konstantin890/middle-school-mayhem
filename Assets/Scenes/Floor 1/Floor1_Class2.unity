@@ -179,6 +179,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.8, y: 2.5, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -222,6 +223,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 639804139}
   - {fileID: 2008321163}
@@ -256,6 +258,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1980010325}
   - {fileID: 584536488}
@@ -389,6 +392,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 326710356}
   m_RootOrder: 0
@@ -2914,6 +2918,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 946672292}
   - {fileID: 621589192}
@@ -3015,6 +3020,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79a3ab8dc13c814387d31bdb1df9a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doors:
+  - {fileID: 1884663741}
 --- !u!4 &780435516
 Transform:
   m_ObjectHideFlags: 0
@@ -3025,6 +3032,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1074111764}
   m_RootOrder: 0
@@ -3060,6 +3068,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1991052381}
   - {fileID: 1765490211}
@@ -3092,6 +3101,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 780435516}
   - {fileID: 5556476370035911404}
@@ -3125,6 +3135,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 968195411}
   - {fileID: 674674858}
@@ -3254,7 +3265,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6043681369379713973, guid: 722aff48f2456404792026ed2ccb5f8e, type: 3}
       propertyPath: data.dataString
-      value: UEsDBBQAAAgIAAAQIewXwgYdXQIAAP0EAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVEtz2jAQ/iuMziVjHnGgt9YhpIc8JrSTiy9CWmMNsuTRI0Ay/PeuZBu71BfL376+/XblLyKUrYE5bdZG8CfNgXwfkXAm30a98RGOdKfVRnxC5/MuuCuDE40+b9QJjfgkhFldgTOC/VA7GZwTBL0ShTbViu8g09ZZhAsqLaDJaBeiFUJfI3LE13gZQk54mt6F0yeelsnojEcGyoHpXWet4/ju5naxxCddtAGNv1dM0qoGHsj3YdO0K3Ab3RS21XqEFpiWUtiWE3GnOvac0dp67AgduKDYYySS3CwRKEHsShcSDsNfisKCayUw9HQvDIrV5CU/daNgRe2+YfZBpQ+V0nkk1eR8+s88nkRzYXT12JWdJKGEKwXbv9ETo9YNFB7C9z3zSdTnQOWebiW8l6Ce9dporzganfEh1FuY3vefl86yEti+xxuqV6Cve8G7gXbjDD2cY/PHTIpqG4WcN8BG6ih43AIwOJpfSDjuiG1TIBpY/LHwm+6Gy9QaHoSxDk1tlyrQ22pvgitZRc1CN95l2iiIcEu6BkWlO71iGnc9wSvboOyV5YGGa9MWb23dbbgKiXDvnyRXpld9uAzLlvrwBLZ88U4KBT3pYHhGnTKtVLNgQ026sI03BWWDsJ0X/N/VItu7AhbpfDqjMzadpOk4ncw4S6FI2HJeTIsFibsnFPZJ5WtDtJUHp6b65Ar3rPubjNaG1nHZuaGHtfis9EByoQq9YQZAvTQZLsTBYBG8lnzFBQq0AeeEivMmXzmRmu2B55dEeex0dXSG5n2WnNTiQ7uA5CSLv4+cnMn5L1BLAwQUAAAICAAAECHsPOoHpm0AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNVRUEovSizIKAaKGII4pZkpIHa0UpJ5WqqFmYmRcaJxspGhmZmumaFxSrJZappBsqVJmlGahVIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAAECHsF8IGHV0CAAD9BAAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAECHsPOoHpm0AAAB4AAAACQAkAAAAAAAAAAAAAACqAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAGIDAAAAAA==
+      value: UEsDBBQAAAgIAAAQIewW9J4NXwIAAP8EAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVMty2jAU/RVG65IxjxDcXesQ0kUeE9rJxhshXWMNsuTRI0Ay/HuvZBu7dIU45z7OPbryFxHK1sCcNmsj+JPmQL6PSDiTb6OefIQj3Wm1EZ/QxbwL7soQRGPMG3VCIz4JaVZX4IxgP9ROhuAEQa9EoU214jvItHUW4YJKC0gZ7UK2QuhrRI74M05DyglP07tw+sRTmozOeGSgHJg+dNYGju9ubpdpmi6nt21CE+8Vk7SqgQfxfVqMig1uY5jCsdqI5CZwTEspbKuKuFMdp85obT3OhAFcUJwySkluUgRKELvShZLD9JeisOBaEww93QuDdjV1yU/deFhRu2+0fVDpQ6fFPMpqaj79R48nkS6Mrh67tpMktHClYPs3emLUuoHHQ/i+Vz6JDh2o3NOthPcS1LNeG+0VR9IZH1K9hel9//cyWVYC2/d4I/UK9HVveXel3YWGGc5x+GMmRbWNRs4bYCN1NDzuARi8nF8oOG6JbUsgGlT8sfCb7obr1BIPwliHVDulCvK22psQSlbRszCNd5k2CiLciq5BUelOr1jGXd/gFTdoe8U80PBw2uYt172Hq5QI9/FJckW96sPlsmypD09gyxfvpFDQiw7EM/qUaaWaBRt60qVtvCkoG6TtvOD/rhbZ3hWwXMynMzpj08liMV5MZpwtoEhYOi+mxZLE3RMK56TytRHa2oO3pvriCves+56M1obWcdm5oYe1+Kz0wHKhCr1hBkC9NBUuwsFgE3yYfMUFGrQB54SK902+ciI12wPPL4XyOOnq6AzN+yo5qcWHdgHJSRY/IDk5k/NfUEsDBBQAAAgIAAAQIew86gembQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM01VFQSi9KLMgoBooYgjilmSkgdrRSknlaqoWZiZFxonGykaGZma6ZoXFKsllqmkGypUmaUZqFUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAAAQIewW9J4NXwIAAP8EAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAQIew86gembQAAAHgAAAAJACQAAAAAAAAAAAAAAKwCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAZAMAAAAA
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 722aff48f2456404792026ed2ccb5f8e, type: 3}
@@ -3350,6 +3361,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1193256763}
   - {fileID: 713274042}
@@ -3384,6 +3396,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 326710356}
   m_RootOrder: 2
@@ -3936,6 +3949,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 326710356}
   m_RootOrder: 3
@@ -5089,6 +5103,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f31fe7a849f4e64ebe597680c232238, type: 3}
+--- !u!114 &1884663741 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1646465764188367035, guid: 3f31fe7a849f4e64ebe597680c232238, type: 3}
+  m_PrefabInstance: {fileID: 1884663740}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6388cf24a337189468e36b2caa51bf1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1889025173
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5349,6 +5374,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 326710356}
   m_RootOrder: 1
@@ -9078,6 +9104,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.3600006, y: -0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1074111764}
   m_RootOrder: 1
