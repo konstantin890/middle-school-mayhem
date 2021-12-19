@@ -261,6 +261,13 @@ MonoBehaviour:
   fPaperSpeed: 4
   scienceSecondsBetweenFPaperAttackMin: 0
   scienceSecondsBetweenFPaperAttackMax: 0
+  canePrefab: {fileID: 7496346267371224233, guid: f262afb263e3f5048a85571a54cfc6df, type: 3}
+  principalSecondsBetweenCaneAttackMin: 1
+  principalSecondsBetweenCaneAttackMax: 2
+  principalSecondsBetweenYellAttackMin: 0
+  principalSecondsBetweenYellAttackMax: 0
+  principalSecondsBetweenSummonAttackMin: 1
+  principalSecondsBetweenSummonAttackMax: 2
   fearValue: 12.5
   initialPatianceLevel: 80
   initialPoition: {x: 0, y: 0}

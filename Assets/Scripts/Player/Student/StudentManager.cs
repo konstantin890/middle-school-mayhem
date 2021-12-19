@@ -24,6 +24,8 @@ public class StudentManager : MonoBehaviour
     public TMP_Text nerdNumberText;
     public TMP_Text jockNumberText;
 
+    public List<Transform> teachersPrincipalCanSpawn = new List<Transform>();
+
     private void Awake()
     {
         instance = this;

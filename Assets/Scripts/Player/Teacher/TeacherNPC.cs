@@ -49,6 +49,17 @@ public class TeacherNPC : MonoBehaviour
     public float scienceSecondsBetweenFPaperAttackMin;
     public float scienceSecondsBetweenFPaperAttackMax;
 
+    [Header("Principal Teacher")]
+    public Transform canePrefab;
+    private Transform thrownCane;
+    public float principalSecondsBetweenCaneAttackMin;
+    public float principalSecondsBetweenCaneAttackMax;
+    public float principalSecondsBetweenYellAttackMin;
+    public float principalSecondsBetweenYellAttackMax;
+    public float principalSecondsBetweenSummonAttackMin;
+    public float principalSecondsBetweenSummonAttackMax;
+
+    [Header("Generic Values")]
     public float fearValue = 10f;
     public float initialPatianceLevel = 100f;
     private List<StudentNPC> studentsInsideArea = new List<StudentNPC>();
@@ -131,6 +142,10 @@ public class TeacherNPC : MonoBehaviour
                 StartCoroutine(AttackLoopScience());
                 break;
 
+            case TeacherClass.Principal:
+                StartCoroutine(AttackLoopPrincipal());
+                break;
+
             default:
                 Debug.LogError("Teacher not implemented yet!");
                 break;
@@ -140,7 +155,7 @@ public class TeacherNPC : MonoBehaviour
 
     private IEnumerator AttackLoopHall()
     {
-        while (true)
+        while (PatianceLevel != 0)
         {
             yield return new WaitUntil(() => studentsInsideArea.Count > 1);
             yield return new WaitForSeconds(Random.Range(hallSecondsBetweenYellAttackMin, hallSecondsBetweenYellAttackMax));
@@ -160,7 +175,7 @@ public class TeacherNPC : MonoBehaviour
 
     private IEnumerator AttackLoopSub()
     {
-        while (true)
+        while (PatianceLevel != 0)
         {
             yield return new WaitUntil(() => studentsInsideArea.Count > 1);
             int attackID = Random.Range(0, 2);
@@ -189,7 +204,7 @@ public class TeacherNPC : MonoBehaviour
                 thrownChalk.transform.rotation = GetProjectileRotation(transform.position, target.position);
                 chalkRb.AddForce((target.position - transform.position) * chalkSpeed, ForceMode2D.Impulse);
                 animator.SetTrigger("Subs_ThrowChalk");
-                Destroy(thrownChalk.gameObject, 5f);
+                StartCoroutine(LateDestroy(thrownChalk.gameObject, 5f));
 
                 soundSrc.clip = throwChalkSound;
                 soundSrc.Play();
@@ -201,7 +216,7 @@ public class TeacherNPC : MonoBehaviour
 
     private IEnumerator AttackLoopScience()
     {
-        while (true)
+        while (PatianceLevel != 0)
         {
             yield return new WaitUntil(() => studentsInsideArea.Count > 1);
             int attackID = Random.Range(0, 2);
@@ -221,7 +236,7 @@ public class TeacherNPC : MonoBehaviour
 
                 thrownPrism.transform.rotation = GetProjectileRotation(transform.position, target.position);
                 prismRb.AddForce((target.position - transform.position) * prismSpeed, ForceMode2D.Impulse);
-                Destroy(thrownPrism.gameObject, 3f);
+                StartCoroutine(LateDestroy(thrownPrism.gameObject, 3f));
 
                 soundSrc.clip = throwChalkSound;
                 soundSrc.Play();
@@ -245,7 +260,7 @@ public class TeacherNPC : MonoBehaviour
 
                 thrownFPaper.transform.rotation = GetProjectileRotation(transform.position, target.position);
                 paperRb.AddForce((target.position - transform.position) * fPaperSpeed, ForceMode2D.Impulse);
-                Destroy(thrownFPaper.gameObject, 3f);
+                StartCoroutine(LateDestroy(thrownFPaper.gameObject, 3f));
 
                 soundSrc.clip = throwChalkSound;
                 soundSrc.Play();
@@ -254,6 +269,57 @@ public class TeacherNPC : MonoBehaviour
             }
             RefreshStudentsList();
         }
+    }
+
+    private IEnumerator AttackLoopPrincipal()
+    {
+        while (PatianceLevel != 0)
+        {
+            yield return new WaitUntil(() => studentsInsideArea.Count > 1);
+
+            int attackID = Random.Range(0, 3);
+            if (attackID == 0) // scold/yell
+            {
+                yield return new WaitForSeconds(Random.Range(principalSecondsBetweenYellAttackMin, principalSecondsBetweenYellAttackMax));
+                animator.SetTrigger("Scold");
+
+                soundSrc.clip = scoldSounds[Random.Range(0, scoldSounds.Length)];
+                soundSrc.Play();
+
+                ApplyFearToAllStudentsInArea(fearValue);
+            }
+            else if (attackID == 1) // cane attack (special attack)
+            {
+                yield return new WaitForSeconds(Random.Range(principalSecondsBetweenCaneAttackMin, principalSecondsBetweenCaneAttackMax));
+                animator.SetTrigger("Principal_AttackSpecial");
+
+                soundSrc.clip = scoldSounds[Random.Range(0, scoldSounds.Length)];
+                soundSrc.Play();
+
+                thrownCane = Instantiate(canePrefab, transform.position + transform.forward, Quaternion.identity);
+                Transform target = StudentManager.instance.GetRandomStudent();
+                if (target == null)
+                {
+                    yield return null;
+                }
+                StartCoroutine(LateDestroy(thrownCane.gameObject, 3f));
+            }
+            else if (attackID == 2) // summon attack
+            {
+                yield return new WaitForSeconds(Random.Range(principalSecondsBetweenSummonAttackMin, principalSecondsBetweenSummonAttackMax));
+                animator.SetTrigger("Principal_SummonAttack");
+
+                // summon a teacher
+                Instantiate(StudentManager.instance.teachersPrincipalCanSpawn[Random.Range(0, StudentManager.instance.teachersPrincipalCanSpawn.Count)], transform.position + transform.forward, Quaternion.identity);
+            }
+        }
+    }
+
+    private IEnumerator LateDestroy(Object obj, float time)
+    {
+        yield return new WaitForSeconds(time);
+        if (obj)
+            Destroy(obj);
     }
 
     private void ApplyFearToAllStudentsInArea(float fearToApply)
@@ -283,11 +349,13 @@ public class TeacherNPC : MonoBehaviour
     public void LeaveClass()
     {
         if (thrownChalk)
-            Destroy(thrownChalk);
+            Destroy(thrownChalk.gameObject);
         if (thrownFPaper)
-            Destroy(thrownFPaper);
+            Destroy(thrownFPaper.gameObject);
         if (thrownPrism)
-            Destroy(thrownPrism);
+            Destroy(thrownPrism.gameObject);
+        if (thrownCane)
+            Destroy(thrownCane.gameObject);
 
         Destroy(aiPathSetter);
         Destroy(aiPath);
