@@ -109,7 +109,7 @@ public class StudentLeader : MonoBehaviour
             if (classroomDoor.isBlockedByTeacher)
                 inventory.SetPopupText("You have to make all teachers leave before you enter!");
             else if (classroomDoor.isBlocked)
-                inventory.SetPopupText("You have to explore the other rooms first!");
+                inventory.SetPopupText("You have to explore the other room first!");
             else
                 inventory.SetPopupText("Enter room?");
 
