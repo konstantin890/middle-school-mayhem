@@ -115,6 +115,7 @@ public class SceneHandler : MonoBehaviour
         foreach (StudentNPC npc in StudentManager.instance.attractedStudents)
         {
             npc.teachersInRange = new List<TeacherNPC>(); // clear the list when switching scenes because the teacher no longer exist
+            npc.aiPath.SetPath(null);
         }
     }
 
