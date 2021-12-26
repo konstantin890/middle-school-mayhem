@@ -999,6 +999,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3563794129868119200, guid: 7c5239638c8358c45af3d8ce0137a59c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3563794129868119200, guid: 7c5239638c8358c45af3d8ce0137a59c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4651700735324157135, guid: 7c5239638c8358c45af3d8ce0137a59c, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2138,10 +2146,10 @@ RectTransform:
   m_Father: {fileID: 2079616071}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 720, y: 480}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1026422430
 MonoBehaviour:
@@ -7328,6 +7336,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3113156815780935802, guid: b3792716ce16d054aac2bfd9bcfdce39, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113156815780935802, guid: b3792716ce16d054aac2bfd9bcfdce39, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4651700735324157135, guid: b3792716ce16d054aac2bfd9bcfdce39, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -8860,6 +8876,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF_Teacher_Subs
       objectReference: {fileID: 0}
+    - target: {fileID: 7842879837758126916, guid: 9a634345040daff41bf65d980e45921b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7842879837758126916, guid: 9a634345040daff41bf65d980e45921b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a634345040daff41bf65d980e45921b, type: 3}
 --- !u!1 &1409853477
@@ -10374,6 +10398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doors:
   - {fileID: 199062356}
+  radialStudentSpawn: 1
 --- !u!4 &1998616752
 Transform:
   m_ObjectHideFlags: 0

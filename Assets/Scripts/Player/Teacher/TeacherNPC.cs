@@ -23,8 +23,7 @@ public class TeacherNPC : MonoBehaviour
     public Animator animator;
     public AIDestinationSetter aiPathSetter;
     public AIPath aiPath;
-
-    private Vector3 directionFacing;
+    public Healthbar healthbar;
 
     [Header("Hall Teacher")]
     public float hallSecondsBetweenYellAttackMin;
@@ -100,6 +99,9 @@ public class TeacherNPC : MonoBehaviour
             {
                 LeaveClass();
             }
+
+            healthbar.OnEntityHealthUpdate(value);
+
             initialPatianceLevel = value;
         }
     }
