@@ -24,6 +24,8 @@ public class TeacherNPC : MonoBehaviour
     public AIDestinationSetter aiPathSetter;
     public AIPath aiPath;
 
+    private Vector3 directionFacing;
+
     [Header("Hall Teacher")]
     public float hallSecondsBetweenYellAttackMin;
     public float hallSecondsBetweenYellAttackMax;
@@ -296,13 +298,20 @@ public class TeacherNPC : MonoBehaviour
                 soundSrc.clip = scoldSounds[Random.Range(0, scoldSounds.Length)];
                 soundSrc.Play();
 
-                thrownCane = Instantiate(canePrefab, transform.position + transform.forward, Quaternion.identity);
                 Transform target = StudentManager.instance.GetRandomStudent();
                 if (target == null)
                 {
                     yield return null;
                 }
-                StartCoroutine(LateDestroy(thrownCane.gameObject, 3f));
+
+                thrownCane = Instantiate(canePrefab, transform.position, Quaternion.identity);
+                thrownCane.parent = transform;
+
+                string animTriggerName = GetFacingDirection() + "Swing";
+                Animator caneAnimator = thrownCane.GetComponent<Animator>();
+                caneAnimator.SetTrigger(animTriggerName);
+
+                StartCoroutine(LateDestroy(thrownCane.gameObject, caneAnimator.GetCurrentAnimatorStateInfo(0).length));
             }
             else if (attackID == 2) // summon attack
             {
@@ -312,6 +321,31 @@ public class TeacherNPC : MonoBehaviour
                 // summon a teacher
                 Instantiate(StudentManager.instance.teachersPrincipalCanSpawn[Random.Range(0, StudentManager.instance.teachersPrincipalCanSpawn.Count)], transform.position + transform.forward, Quaternion.identity);
             }
+        }
+    }
+
+    private string GetFacingDirection()
+    {
+        float xVelocity = aiPath.desiredVelocity.x;
+        float yVelocity = aiPath.desiredVelocity.y;
+
+        if (xVelocity >= 0.01f && yVelocity >= 0.01f) // looks right and up at the same time
+            return xVelocity > yVelocity ? "Right" : "Up"; // compare which movement is superiour
+        else if (xVelocity <= -0.01f && yVelocity <= -0.01f) // looks left and down at the same time
+            return xVelocity < yVelocity ? "Left" : "Down";
+        else if (xVelocity >= 0.01f) // only looks right
+            return "Right";
+        else if (xVelocity <= -0.01f) // only looks left
+            return "Left";
+        else if (yVelocity >= 0.01f) // only looks up
+            return "Up";
+        else if (yVelocity <= -0.01f) // only looks down
+            return "Down";
+        else
+        {
+            // Teacher is probably standing still so pick a random direction.
+            string[] possibleDirections = new string[] { "Left", "Right", "Up", "Down" };
+            return possibleDirections[Random.Range(0, possibleDirections.Length)];
         }
     }
 
