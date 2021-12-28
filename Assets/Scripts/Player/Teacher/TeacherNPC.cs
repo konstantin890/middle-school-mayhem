@@ -415,6 +415,9 @@ public class TeacherNPC : MonoBehaviour
         if (collision.gameObject.CompareTag("Student"))
         {
             StudentNPC npc = collision.gameObject.GetComponent<StudentNPC>();
+            if (!npc.IsAttracted())
+                return;
+
             studentsInsideArea.Add(npc);
             aiPathSetter.target = npc.gameObject.transform;
         }
@@ -425,7 +428,7 @@ public class TeacherNPC : MonoBehaviour
         if (collision.gameObject.CompareTag("Student"))
         {
             StudentNPC npc = collision.gameObject.GetComponent<StudentNPC>();
-            if (studentsInsideArea.Contains(npc))
+            if (npc.IsAttracted() && studentsInsideArea.Contains(npc))
                 studentsInsideArea.Remove(npc);
         }
     }

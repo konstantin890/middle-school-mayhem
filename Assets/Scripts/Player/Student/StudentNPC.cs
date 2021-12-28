@@ -16,6 +16,7 @@ public enum StudentClass { Normal, Jock, Nerd }
 
 public class StudentNPC : MonoBehaviour
 {
+    private System.Guid uniqueID;
     public StudentClass studentClass;
 
     public float minTimeBetweenAttack = 0.5f;
@@ -64,16 +65,12 @@ public class StudentNPC : MonoBehaviour
                 if (value)
                 {
                     animator.SetBool("IsShouting", true);
-                    Debug.Log("Play!");
                     SoundManager.instance.PlayShoutingSound();
-                    //audioSrcChaos.Play();
                 }
                 else
                 {
                     animator.SetBool("IsShouting", false);
-                    Debug.Log("Stop!");
                     SoundManager.instance.StopShoutingSound();
-                    //audioSrcChaos.Stop();
                 }
             }
 
@@ -85,6 +82,8 @@ public class StudentNPC : MonoBehaviour
 
     private void Awake()
     {
+        uniqueID = System.Guid.NewGuid();
+        Debug.Log(uniqueID.ToString());
         aiPath.maxSpeed *= 1 + (Random.Range(0, 2) * 2 - 1) * Random.Range(0f, randomSpeedPercentageFactor) / 100f;
         aiPath.endReachedDistance *= 1 + (Random.Range(0, 2) * 2 - 1) * Random.Range(0f, randomEndReachPercentageFactor) / 100f;
     }
@@ -170,7 +169,7 @@ public class StudentNPC : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Teacher"))
+        if (isAttracted && collision.gameObject.CompareTag("Teacher"))
         {
             teachersInRange.Add(collision.GetComponent<TeacherNPC>());
         }
@@ -186,7 +185,7 @@ public class StudentNPC : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Teacher"))
+        if (isAttracted && collision.gameObject.CompareTag("Teacher"))
         {
             teachersInRange.Remove(collision.GetComponent<TeacherNPC>());
         }
