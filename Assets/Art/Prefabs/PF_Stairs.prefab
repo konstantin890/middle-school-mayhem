@@ -26,6 +26,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6888714600191837396}
   m_RootOrder: 1
@@ -58,6 +59,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.72, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6888714600191837396}
   m_RootOrder: 0
@@ -102,9 +104,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneNameEnter: Floor2_Halll
   isFocused: 0
-  isBarred: 1
-  normalDoor: {fileID: -3468596928167051028, guid: ccf0696ac85a0c946913af654db5785c, type: 3}
-  barredDoor: {fileID: 7794581237443052159, guid: cce27fe32c941b244845222c2cd96500, type: 3}
+  isBlockedByTeacher: 0
+  isBlocked: 0
+  visuallyOpen: 0
+  normalDoor: {fileID: 2769245279486809966, guid: 9b9ee62850ff74d42813b29b6f2a50f3, type: 3}
+  openedDoor: {fileID: -3468596928167051028, guid: ccf0696ac85a0c946913af654db5785c, type: 3}
+  barredDoor: {fileID: 2769245279486809966, guid: 9b9ee62850ff74d42813b29b6f2a50f3, type: 3}
+  checkForTeachers: 1
   spawnObj: {fileID: 1707184002820331151}
 --- !u!1 &6888714600191837397
 GameObject:
@@ -133,6 +139,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.5, y: 6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5827812696925123550}
   - {fileID: 7394952398191346903}
@@ -220,6 +227,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6888714600191837396}
   m_RootOrder: 2

@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 84908162}
   - component: {fileID: 84908161}
   m_Layer: 6
-  m_Name: Staircase_Steel ver2_1
+  m_Name: Staircase_Steel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2947,7 +2947,7 @@ MonoBehaviour:
   isBlocked: 1
   visuallyOpen: 0
   normalDoor: {fileID: -2475067763843504117, guid: 9b9ee62850ff74d42813b29b6f2a50f3, type: 3}
-  openedDoor: {fileID: 0}
+  openedDoor: {fileID: -2475067763843504117, guid: 9b9ee62850ff74d42813b29b6f2a50f3, type: 3}
   barredDoor: {fileID: -2475067763843504117, guid: 9b9ee62850ff74d42813b29b6f2a50f3, type: 3}
   checkForTeachers: 0
   spawnObj: {fileID: 230117481}

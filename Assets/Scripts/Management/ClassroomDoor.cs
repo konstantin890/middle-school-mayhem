@@ -71,6 +71,7 @@ public class ClassroomDoor : MonoBehaviour
     public void UnBarDoor() 
     {
         isBlockedByTeacher = false;
+        isBlocked = false;
         transform.parent.GetComponent<SpriteRenderer>().sprite = normalDoor;
     }
 
