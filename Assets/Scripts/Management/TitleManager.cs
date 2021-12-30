@@ -24,9 +24,10 @@ public class TitleManager : MonoBehaviour
 
     private void Update()
     {
-        if (isTitleRemoved && InputHandler.instance.CheckIfButtonPressed("", 1))
+        if (isTitleRemoved && InputHandler.instance.CheckIfButtonPressed("Open Credits", 4))
         {
             // boom, open
+            Debug.Log("OPEN CREDITS!!!!");
         }
     }
 

@@ -19,7 +19,7 @@ public class InputHandler : MonoBehaviour
     private int horizontalMovement = 0;
     private bool isSprinting = false;
 
-    private bool[] buttonsHeld = { false, false, false, false };
+    private bool[] buttonsHeld = { false, false, false, false, false };
 
     private Inventory inventory;
 
