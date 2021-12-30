@@ -276,8 +276,8 @@ MonoBehaviour:
   throwChalkSound: {fileID: 8300000, guid: be5331b505f23c24e8a8901d8e136903, type: 3}
   giveupSound: {fileID: 8300000, guid: ff4fc4da566be0e45b1a225769f044a5, type: 3}
   scoldSounds:
-  - {fileID: 8300000, guid: 7f5b41be12f01074b858499056dc0a26, type: 3}
-  - {fileID: 8300000, guid: 8bba9ce7b38830346bd86324f2821433, type: 3}
+  - {fileID: 8300000, guid: a93b9d8f46cdd8e48a14f0650f49783c, type: 3}
+  - {fileID: 8300000, guid: a93b9d8f46cdd8e48a14f0650f49783c, type: 3}
 --- !u!58 &-5601653478268657346
 CircleCollider2D:
   m_ObjectHideFlags: 0
