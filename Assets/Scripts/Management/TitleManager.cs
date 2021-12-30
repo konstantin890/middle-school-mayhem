@@ -15,21 +15,25 @@ public class TitleManager : MonoBehaviour
     public static TitleManager instance;
     public Animator animator;
 
+    private bool isTitleRemoved;
+
     private void Awake()
     {
         instance = this;
     }
 
+    private void Update()
+    {
+        if (isTitleRemoved && InputHandler.instance.CheckIfButtonPressed("", 1))
+        {
+            // boom, open
+        }
+    }
+
     public void RemoveTitle()
     {
-        /*if (SceneHandler.instance.CurrentLevelHasBeenLoadedBefore())
-        {
-            transform.GetChild(0).gameObject.SetActive(false);
-            return;
-        }*/
-            
-
         Debug.Log("Remove title");
+        isTitleRemoved = true;
         animator.SetTrigger("MoveAway");
     }
 }
