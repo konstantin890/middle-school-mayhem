@@ -6,16 +6,17 @@
 // The following script has been written by either konstantin890 or Nikos (nikoskon2003) or both.
 // This file is covered by the GNU GPL v3 license. Read LICENSE.md for more information.
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TitleManager : MonoBehaviour
 {
     public static TitleManager instance;
-    public Animator animator;
+    public Animator titleAnimator;
+    public Animator creditsAnimator;
+    public GameObject creditsPanel;
 
-    private bool isTitleRemoved;
+    private bool titleOpen = true;
+    private bool creditsOpen;
 
     private void Awake()
     {
@@ -24,17 +25,26 @@ public class TitleManager : MonoBehaviour
 
     private void Update()
     {
-        if (isTitleRemoved && InputHandler.instance.CheckIfButtonPressed("Open Credits", 4))
+        if (titleOpen && !creditsOpen && InputHandler.instance.CheckIfButtonPressed("Open Credits", 4))
         {
-            // boom, open
-            Debug.Log("OPEN CREDITS!!!!");
+            // Show credits
+            Debug.Log("Show credits");
+            creditsOpen = true;
+            creditsAnimator.SetTrigger("FadeOut");
+        }
+        else if (creditsOpen && InputHandler.instance.CheckIfButtonPressed("Open Credits", 4))
+        {
+            // Close credits
+            Debug.Log("Hide credits");
+            creditsOpen = false;
+            creditsAnimator.SetTrigger("FadeIn");
         }
     }
 
     public void RemoveTitle()
     {
         Debug.Log("Remove title");
-        isTitleRemoved = true;
-        animator.SetTrigger("MoveAway");
+        titleOpen = false;
+        titleAnimator.SetTrigger("MoveAway");
     }
 }

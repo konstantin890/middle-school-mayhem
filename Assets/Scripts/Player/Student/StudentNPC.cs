@@ -83,7 +83,6 @@ public class StudentNPC : MonoBehaviour
     private void Awake()
     {
         uniqueID = System.Guid.NewGuid();
-        Debug.Log(uniqueID.ToString());
         aiPath.maxSpeed *= 1 + (Random.Range(0, 2) * 2 - 1) * Random.Range(0f, randomSpeedPercentageFactor) / 100f;
         aiPath.endReachedDistance *= 1 + (Random.Range(0, 2) * 2 - 1) * Random.Range(0f, randomEndReachPercentageFactor) / 100f;
     }
