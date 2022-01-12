@@ -54,6 +54,7 @@ public class SceneHandler : MonoBehaviour
 
     public void OnFadeOutComplete()
     {
+        Debug.Log("Moving on");
         if (currentlyLoadedLevelName != null)
             StartCoroutine(UnloadPastScene());
         else
@@ -117,6 +118,8 @@ public class SceneHandler : MonoBehaviour
             npc.teachersInRange = new List<TeacherNPC>(); // clear the list when switching scenes because the teacher no longer exist
             npc.aiPath.SetPath(null);
         }
+
+        fadeAnimator.SetTrigger("FadeIn");
     }
 
     public Scene GetCurrentLevelScene()
