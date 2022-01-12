@@ -100,6 +100,7 @@ public class TeacherNPC : MonoBehaviour
                 LeaveClass();
             }
 
+            Debug.Log("Healthbar Updated");
             healthbar.OnEntityHealthUpdate(value);
 
             initialPatianceLevel = value;
@@ -122,6 +123,8 @@ public class TeacherNPC : MonoBehaviour
         soundSrc = GetComponent<AudioSource>();
 
         initialPoition = transform.position;
+
+        healthbar.maxHealth = PatianceLevel;
     }
 
     private void Update()
@@ -376,8 +379,7 @@ public class TeacherNPC : MonoBehaviour
 
         PatianceLevel -= patianceToLose;
 
-        Debug.Log("Teacher, reduced patiance by " + patianceToLose);
-
+        Debug.Log("Teacher, reduced patience by " + patianceToLose);
 
         animator.SetBool("IsAngry", false);
     }
@@ -412,7 +414,7 @@ public class TeacherNPC : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Student"))
+        if (collision.gameObject.CompareTag("Student") && !studentsInsideArea.Contains(collision.gameObject.GetComponent<StudentNPC>()))
         {
             StudentNPC npc = collision.gameObject.GetComponent<StudentNPC>();
             if (!npc.IsAttracted())

@@ -114,14 +114,16 @@ public class StudentNPC : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(minTimeBetweenAttack, maxTimeBetweenAttack));
+            float randomDelay = Random.Range(minTimeBetweenAttack, maxTimeBetweenAttack);
+
+            yield return new WaitForSeconds(randomDelay);
 
             foreach (TeacherNPC npc in teachersInRange)
             {
                 if (npc == null)
                     continue;
 
-                Debug.Log("Reducing Teacher patiance with " + patianceToLose);
+                Debug.Log("Reducing Teacher patience by " + patianceToLose);
                 npc.LosePatiance(patianceToLose);
             }
         }
@@ -156,7 +158,7 @@ public class StudentNPC : MonoBehaviour
     public void ApplyFear(float fearValue)
     {
         FearLevel += fearValue;
-        Debug.Log("Incrasing student fear by " + fearValue);
+        Debug.Log("Increasing student fear by " + fearValue);
 
         // play hurt animation
         animator.SetTrigger("Hurt");
@@ -170,7 +172,12 @@ public class StudentNPC : MonoBehaviour
     {
         if (isAttracted && collision.gameObject.CompareTag("Teacher"))
         {
-            teachersInRange.Add(collision.GetComponent<TeacherNPC>());
+            TeacherNPC detectedTeacher = collision.GetComponent<TeacherNPC>();
+
+            if(!teachersInRange.Contains(detectedTeacher))
+            {
+                teachersInRange.Add(detectedTeacher);
+            } 
         }
 
         if (collision.gameObject.CompareTag("Destructible"))

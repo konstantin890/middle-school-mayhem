@@ -12,6 +12,8 @@ public class Healthbar : MonoBehaviour
     public Slider slider;
     public Animator animator;
 
+    public float maxHealth;
+
     private void Update()
     {
         slider.transform.position = Camera.main.WorldToScreenPoint(transform.parent.position + offset);
@@ -23,7 +25,8 @@ public class Healthbar : MonoBehaviour
     /// <param name="newHealthValue">New health value. Will be divided by 10 for the result.</param>
     public void OnEntityHealthUpdate(float newHealthValue)
     {
-        StartCoroutine(LerpFunction(newHealthValue / 10f, 1f));
+        StartCoroutine(LerpFunction(newHealthValue / maxHealth, 0.5f));
+
         animator.SetTrigger("HealthUpdated");
     }
 
@@ -34,11 +37,10 @@ public class Healthbar : MonoBehaviour
 
         while (time < duration)
         {
-            slider.value = Mathf.Lerp(startValue, endValue, time / duration);
+            slider.value = Mathf.Lerp(startValue, endValue, time / duration) ;
             time += Time.deltaTime;
             yield return null;
         }
 
-        slider.value = endValue;
     }
 }

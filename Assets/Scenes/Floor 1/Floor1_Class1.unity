@@ -6773,6 +6773,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF_Student3
       objectReference: {fileID: 0}
+    - target: {fileID: 6660672982962828942, guid: be8618ecb0b6eec4caf3929b319db556, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be8618ecb0b6eec4caf3929b319db556, type: 3}
 --- !u!1001 &1884663740

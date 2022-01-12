@@ -271,7 +271,7 @@ MonoBehaviour:
   principalSecondsBetweenSummonAttackMin: 0
   principalSecondsBetweenSummonAttackMax: 0
   fearValue: 10
-  initialPatianceLevel: 40
+  initialPatianceLevel: 60
   initialPoition: {x: 0, y: 0}
   throwChalkSound: {fileID: 8300000, guid: be5331b505f23c24e8a8901d8e136903, type: 3}
   giveupSound: {fileID: 8300000, guid: ff4fc4da566be0e45b1a225769f044a5, type: 3}

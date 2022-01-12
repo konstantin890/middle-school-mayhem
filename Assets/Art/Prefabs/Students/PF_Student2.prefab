@@ -28,6 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4651700735324157135}
   m_RootOrder: 0
@@ -86,7 +87,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &7963743449138202806
 Animator:
-  serializedVersion: 3
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -99,6 +100,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -137,6 +139,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2685877518783498945}
   m_Father: {fileID: 0}
@@ -182,11 +185,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6eb1402c17e84a9282a7f0f62eb584f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 2
+  version: 5
   radius: 1
   height: 5
-  repathRate: 1
-  canSearch: 1
   canMove: 1
   maxSpeed: 3
   gravity: {x: 0, y: 0, z: 0}
@@ -194,8 +195,16 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   centerOffsetCompatibility: NaN
+  repathRateCompatibility: 1
+  canSearchCompability: 1
   orientation: 1
   enableRotation: 0
+  autoRepath:
+    mode: 2
+    interval: 1
+    sensitivity: 10
+    maximumInterval: 2
+    visualizeSensitivity: 0
   targetCompatibility: {fileID: 0}
   maxAcceleration: -2.5
   rotationSpeed: 360
@@ -232,10 +241,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f21874428da6047926b39130115e11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 67058a832a000f44197974fe4061f25c, type: 2}
-  minTimeBetweenAttack: 1.25
-  maxTimeBetweenAttack: 1.75
-  basePatianceToLose: 5
+  studentClass: 0
+  minTimeBetweenAttack: 1.5
+  maxTimeBetweenAttack: 2.5
+  patianceToLose: 8
   maxFear: 100
   aiPath: {fileID: 3104819809394358500}
   aiTargetter: {fileID: 328027495907184166}

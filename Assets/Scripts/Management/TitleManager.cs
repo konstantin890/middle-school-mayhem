@@ -43,7 +43,6 @@ public class TitleManager : MonoBehaviour
 
     public void RemoveTitle()
     {
-        Debug.Log("Remove title");
         titleOpen = false;
         titleAnimator.SetTrigger("MoveAway");
     }
