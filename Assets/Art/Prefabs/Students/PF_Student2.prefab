@@ -250,8 +250,8 @@ MonoBehaviour:
   aiTargetter: {fileID: 328027495907184166}
   animator: {fileID: 7963743449138202806}
   spriteRenderer: {fileID: 1413775027066631701}
-  randomSpeedPercentageFactor: 5
-  randomEndReachPercentageFactor: 10
+  randomSpeedPercentageFactor: 10
+  randomEndReachPercentageFactor: 0
   audioSrcHurt: {fileID: 8334011729149349091}
   audioSrcChaos: {fileID: 8334011729149349091}
   teachersInRange: []

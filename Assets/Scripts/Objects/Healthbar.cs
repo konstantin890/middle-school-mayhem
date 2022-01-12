@@ -42,5 +42,6 @@ public class Healthbar : MonoBehaviour
             yield return null;
         }
 
+        slider.value = endValue;
     }
 }

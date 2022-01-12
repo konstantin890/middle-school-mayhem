@@ -365,7 +365,7 @@ public class TeacherNPC : MonoBehaviour
     {
         foreach (StudentNPC student in studentsInsideArea)
         {
-            if (student)
+            if (student && PatianceLevel > 0)
                 student.ApplyFear(fearToApply);
         }
     }
