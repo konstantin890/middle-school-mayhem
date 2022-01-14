@@ -130,7 +130,7 @@ public class TeacherNPC : MonoBehaviour
     private void Update()
     {
         animator.SetFloat("Speed", Mathf.Abs(aiPath.desiredVelocity.x) + Mathf.Abs(aiPath.desiredVelocity.y));
-        spriteRenderer.sortingOrder = Mathf.RoundToInt(-(transform.position.y - 0.25f));
+        spriteRenderer.sortingOrder = Mathf.RoundToInt(-(transform.position.y - (spriteRenderer.bounds.size.y/2)) * 100);
     }
 
     public void ExecuteAttackLoop()

@@ -77,7 +77,7 @@ public class StudentLeader : MonoBehaviour
                 transform.localScale = new Vector3(-1f, 1f, 1f);
 
             rigidBody.MovePosition(rigidBody.position + movementAxis * speed * Time.fixedDeltaTime);
-            spriteRenderer.sortingOrder = Mathf.RoundToInt(-(transform.position.y - 0.4f));
+            spriteRenderer.sortingOrder = Mathf.RoundToInt(-(transform.position.y - (spriteRenderer.bounds.size.y/2)) * 100);
         }
     }
 

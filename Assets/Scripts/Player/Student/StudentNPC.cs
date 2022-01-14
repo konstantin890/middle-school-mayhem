@@ -96,7 +96,7 @@ public class StudentNPC : MonoBehaviour
 
         animator.SetFloat("Speed", Mathf.Abs(aiPath.desiredVelocity.x) + Mathf.Abs(aiPath.desiredVelocity.y));
 
-        spriteRenderer.sortingOrder = Mathf.RoundToInt(-(transform.position.y - 0.25f));
+        spriteRenderer.sortingOrder = Mathf.RoundToInt(-(transform.position.y - (spriteRenderer.bounds.size.y/2)) * 100);
 
         if (teachersInRange.Count > 0)
         {
