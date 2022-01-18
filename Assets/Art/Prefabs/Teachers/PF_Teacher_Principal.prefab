@@ -270,8 +270,8 @@ MonoBehaviour:
   principalSecondsBetweenYellAttackMax: 0
   principalSecondsBetweenSummonAttackMin: 1
   principalSecondsBetweenSummonAttackMax: 2
-  fearValue: 12.5
-  initialPatianceLevel: 80
+  fearValue: 20
+  initialPatianceLevel: 200
   initialPoition: {x: 0, y: 0}
   throwChalkSound: {fileID: 8300000, guid: be5331b505f23c24e8a8901d8e136903, type: 3}
   giveupSound: {fileID: 8300000, guid: ff4fc4da566be0e45b1a225769f044a5, type: 3}
@@ -511,11 +511,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0248480e0380c174d9cefa65d3305056, type: 3}
---- !u!224 &5931417023079596841 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4083229533198712425, guid: 0248480e0380c174d9cefa65d3305056, type: 3}
-  m_PrefabInstance: {fileID: 7708522069871050048}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4582091783486759389 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6155567229595999389, guid: 0248480e0380c174d9cefa65d3305056, type: 3}
@@ -527,3 +522,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e97a755e57488c6419db1129c3191c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &5931417023079596841 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4083229533198712425, guid: 0248480e0380c174d9cefa65d3305056, type: 3}
+  m_PrefabInstance: {fileID: 7708522069871050048}
+  m_PrefabAsset: {fileID: 0}
