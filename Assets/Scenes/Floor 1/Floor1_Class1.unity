@@ -4463,7 +4463,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 288689213939881558, guid: befbe45e582f65545b027378a83951c3, type: 3}
       propertyPath: textToDisplay.Array.data[0]
-      value: PRESS SPACE TO START<br>(or A on Xbox controller)
+      value: PRESS SPACE TO START<br>(or A on Xbox controller)<br>or press C to open
+        credits (Joycon Button 7)
       objectReference: {fileID: 0}
     - target: {fileID: 288689213939881558, guid: befbe45e582f65545b027378a83951c3, type: 3}
       propertyPath: textToDisplay.Array.data[1]
