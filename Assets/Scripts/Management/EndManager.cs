@@ -7,6 +7,7 @@
 // This file is covered by the GNU GPL v3 license. Read LICENSE.md for more information.
 
 using UnityEngine;
+using System.Collections;
 
 public class EndManager : MonoBehaviour
 {
@@ -23,5 +24,12 @@ public class EndManager : MonoBehaviour
     {
         stop = true;
         endCanvas.enabled = true;
+        StartCoroutine(CloseGameDelayed());
+    }
+
+    private IEnumerator CloseGameDelayed()
+    {
+        yield return new WaitForSeconds(5);
+        Application.Quit();
     }
 }
