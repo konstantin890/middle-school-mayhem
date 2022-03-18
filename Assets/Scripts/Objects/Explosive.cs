@@ -7,7 +7,6 @@
 // This file is covered by the GNU GPL v3 license. Read LICENSE.md for more information.
 
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Explosive : MonoBehaviour
@@ -23,7 +22,7 @@ public class Explosive : MonoBehaviour
         StartCoroutine(StartExploding());
     }
 
-    IEnumerator StartExploding() 
+    IEnumerator StartExploding()
     {
         //ok, I know I hard-coded this shit and it is BAD!
         yield return new WaitForSeconds(0.1f);
@@ -44,12 +43,12 @@ public class Explosive : MonoBehaviour
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
         foreach (Collider2D hitCollider in hitColliders)
         {
-            if (hitCollider.gameObject.CompareTag("EnterArea")) 
+            if (hitCollider.gameObject.CompareTag("EnterArea"))
             {
                 ClassroomDoor classroomDoor = hitCollider.gameObject.GetComponent<ClassroomDoor>();
                 classroomDoor.UnBarDoor();
                 SceneHandler.instance.UnlockDoor(hitCollider.transform.position);
-                if (classroomDoor.isFocused) 
+                if (classroomDoor.isFocused)
                     StudentLeader.instance.inventory.SetPopupText("Enter room?");
             }
         }

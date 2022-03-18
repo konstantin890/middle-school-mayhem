@@ -15,6 +15,6 @@ public class SortingOrderAssigner : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sortingOrder =  Mathf.RoundToInt(-(transform.position.y - (spriteRenderer.bounds.size.y/2)) * 100);
+        spriteRenderer.sortingOrder = Mathf.RoundToInt(-(transform.position.y - (spriteRenderer.bounds.size.y / 2)) * 100);
     }
 }

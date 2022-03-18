@@ -6,8 +6,6 @@
 // The following script has been written by either konstantin890 or Nikos (nikoskon2003) or both.
 // This file is covered by the GNU GPL v3 license. Read LICENSE.md for more information.
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerSounds : MonoBehaviour
@@ -19,7 +17,7 @@ public class PlayerSounds : MonoBehaviour
     public AudioClip followerGained;
     public AudioClip collectChemical;
 
-    public void CraftAction() 
+    public void CraftAction()
     {
         soundSrc.clip = craft;
         soundSrc.Play();
@@ -31,13 +29,13 @@ public class PlayerSounds : MonoBehaviour
         soundSrc.Play();
     }
 
-    public void GainedFollower() 
+    public void GainedFollower()
     {
         soundSrc.clip = followerGained;
         soundSrc.Play();
     }
 
-    public void CollectChemical() 
+    public void CollectChemical()
     {
         soundSrc.clip = collectChemical;
         soundSrc.Play();

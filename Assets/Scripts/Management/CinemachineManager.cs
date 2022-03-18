@@ -7,8 +7,6 @@
 // This file is covered by the GNU GPL v3 license. Read LICENSE.md for more information.
 
 using Cinemachine;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CinemachineManager : MonoBehaviour

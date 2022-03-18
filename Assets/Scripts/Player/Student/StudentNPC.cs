@@ -42,7 +42,7 @@ public class StudentNPC : MonoBehaviour
     public List<TeacherNPC> teachersInRange = new List<TeacherNPC>();
 
     private float fearLevel;
-    public float FearLevel 
+    public float FearLevel
     {
         get => fearLevel;
         set
@@ -54,7 +54,7 @@ public class StudentNPC : MonoBehaviour
         }
     }
 
-    public bool IsShouting 
+    public bool IsShouting
     {
         get => isShouting;
         set
@@ -96,7 +96,7 @@ public class StudentNPC : MonoBehaviour
 
         animator.SetFloat("Speed", Mathf.Abs(aiPath.desiredVelocity.x) + Mathf.Abs(aiPath.desiredVelocity.y));
 
-        spriteRenderer.sortingOrder = Mathf.RoundToInt(-(transform.position.y - (spriteRenderer.bounds.size.y/2)) * 100);
+        spriteRenderer.sortingOrder = Mathf.RoundToInt(-(transform.position.y - (spriteRenderer.bounds.size.y / 2)) * 100);
 
         if (teachersInRange.Count > 0)
         {
@@ -172,10 +172,10 @@ public class StudentNPC : MonoBehaviour
         {
             TeacherNPC detectedTeacher = collision.GetComponent<TeacherNPC>();
 
-            if(!teachersInRange.Contains(detectedTeacher))
+            if (!teachersInRange.Contains(detectedTeacher))
             {
                 teachersInRange.Add(detectedTeacher);
-            } 
+            }
         }
 
         if (collision.gameObject.CompareTag("Destructible"))

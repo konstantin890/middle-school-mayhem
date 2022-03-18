@@ -6,10 +6,8 @@
 // The following script has been written by either konstantin890 or Nikos (nikoskon2003) or both.
 // This file is covered by the GNU GPL v3 license. Read LICENSE.md for more information.
 
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
@@ -43,7 +41,7 @@ public class Inventory : MonoBehaviour
     public string[] itemNames = { "Small Explosive", "Itching Powder", "Stink Bomb" };
     //0: Small Explosive, 1: Itching Powder, 2: Stink Bomb
     //Vector2: Chemicals, Nerds
-    public Vector2Int[] craftingRecepies = { new Vector2Int(3,3), new Vector2Int(1, 2), new Vector2Int(1, 1) };
+    public Vector2Int[] craftingRecepies = { new Vector2Int(3, 3), new Vector2Int(1, 2), new Vector2Int(1, 1) };
 
     [HideInInspector]
     public StudentLeader studentLeader;
@@ -55,7 +53,7 @@ public class Inventory : MonoBehaviour
             Debug.LogError("Inventory needs StudentLeader to work properly.");
     }
 
-    public void MaybeCraftItems() 
+    public void MaybeCraftItems()
     {
         if (!canCraftItems)
             return;
@@ -63,7 +61,7 @@ public class Inventory : MonoBehaviour
         //should not change in an instant...
         int nerds = studentLeader.studentManager.GetStudentCountByClass(StudentClass.Nerd);
         int craftingStation = studentLeader.GetToucingCraftingStation();
-        
+
         if (craftingStation < 0)
             return;
 

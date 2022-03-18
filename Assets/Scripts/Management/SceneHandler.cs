@@ -11,7 +11,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class SceneHandler : MonoBehaviour
 {
@@ -91,7 +90,7 @@ public class SceneHandler : MonoBehaviour
         // Post-load set-up
 
         StinkBomb[] bombs = FindObjectsOfType<StinkBomb>();
-        foreach(StinkBomb bomb in bombs)
+        foreach (StinkBomb bomb in bombs)
         {
             Destroy(bomb.gameObject);
         }
@@ -108,7 +107,7 @@ public class SceneHandler : MonoBehaviour
         if (!removedTeachers.ContainsKey(currentlyLoadedLevelName))
             removedTeachers.Add(currentlyLoadedLevelName, new List<Vector2>());
 
-        if (CurrentLevelHasBeenLoadedBefore()) 
+        if (CurrentLevelHasBeenLoadedBefore())
             StartCoroutine(DestroyClass());
 
         studentLeader.GetComponent<StudentLeader>().UnpausePlayer();
@@ -181,9 +180,9 @@ public class SceneHandler : MonoBehaviour
         objects = GameObject.FindGameObjectsWithTag("Chemical");
         foreach (GameObject go in objects)
         {
-            foreach (Vector2 pos in pickedUpChemicals[currentlyLoadedLevelName]) 
+            foreach (Vector2 pos in pickedUpChemicals[currentlyLoadedLevelName])
             {
-                if(Vector2.Distance(go.transform.position, pos) < 0.05f) 
+                if (Vector2.Distance(go.transform.position, pos) < 0.05f)
                 {
                     Destroy(go);
                     break;
@@ -206,20 +205,20 @@ public class SceneHandler : MonoBehaviour
 
     }
 
-    public void PickUpChemicalOnScene(Vector2 pos) 
+    public void PickUpChemicalOnScene(Vector2 pos)
     {
         if (!pickedUpChemicals.ContainsKey(currentlyLoadedLevelName))
             pickedUpChemicals.Add(currentlyLoadedLevelName, new List<Vector2>());
 
-        pickedUpChemicals[currentlyLoadedLevelName].Add(pos); 
+        pickedUpChemicals[currentlyLoadedLevelName].Add(pos);
     }
 
-    public void PickUpStudent(Vector2 pos) 
+    public void PickUpStudent(Vector2 pos)
     {
         if (!pickedUpStudents.ContainsKey(currentlyLoadedLevelName))
             pickedUpStudents.Add(currentlyLoadedLevelName, new List<Vector2>());
 
-        pickedUpStudents[currentlyLoadedLevelName].Add(pos); 
+        pickedUpStudents[currentlyLoadedLevelName].Add(pos);
     }
 
     public void UnlockDoor(Vector2 pos) //TODO: Probably not needed anymore since the door design has been changed

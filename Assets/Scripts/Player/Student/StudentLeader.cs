@@ -7,9 +7,7 @@
 // This file is covered by the GNU GPL v3 license. Read LICENSE.md for more information.
 
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class StudentLeader : MonoBehaviour
 {
@@ -50,7 +48,7 @@ public class StudentLeader : MonoBehaviour
 
         callout = transform.GetChild(0).gameObject; //hopefully this is not null....
 
-        playerSounds = GetComponent<PlayerSounds>(); 
+        playerSounds = GetComponent<PlayerSounds>();
     }
 
     public void InitiateStudent()
@@ -77,20 +75,20 @@ public class StudentLeader : MonoBehaviour
                 transform.localScale = new Vector3(-1f, 1f, 1f);
 
             rigidBody.MovePosition(rigidBody.position + movementAxis * speed * Time.fixedDeltaTime);
-            spriteRenderer.sortingOrder = Mathf.RoundToInt(-(transform.position.y - (spriteRenderer.bounds.size.y/2)) * 100);
+            spriteRenderer.sortingOrder = Mathf.RoundToInt(-(transform.position.y - (spriteRenderer.bounds.size.y / 2)) * 100);
         }
     }
 
     public int GetToucingCraftingStation() => touchingCraftingStation;
 
-    public void MaybeShowNextText() 
+    public void MaybeShowNextText()
     {
         if (textShown == null)
             return;
 
         string text = textShown.GetNextText();
 
-        if (text == "") 
+        if (text == "")
         {
             UnpausePlayer();
             inventory.SetPopupText("");
@@ -118,7 +116,7 @@ public class StudentLeader : MonoBehaviour
         }
 
         StudentNPC collStudent = collision.gameObject.GetComponent<StudentNPC>();
-        if (collStudent != null) 
+        if (collStudent != null)
         {
             if (!collStudent.IsAttracted())
             {
@@ -135,7 +133,7 @@ public class StudentLeader : MonoBehaviour
         if (collText != null)
         {
             string text = collText.GetFirstText();
-            
+
             if (text == "")
                 return;
 
@@ -184,7 +182,7 @@ public class StudentLeader : MonoBehaviour
         }
 
         TextArea collText = collision.gameObject.GetComponent<TextArea>();
-        if (collText != null && collText == textShown) 
+        if (collText != null && collText == textShown)
         {
             textShown = null;
             inventory.SetPopupText("");
@@ -211,7 +209,7 @@ public class StudentLeader : MonoBehaviour
             ForcePausePlayer();
     }
 
-    public void ForcePausePlayer() 
+    public void ForcePausePlayer()
     {
         canPlayerMove = false;
         animator.SetFloat("Speed", 0f);

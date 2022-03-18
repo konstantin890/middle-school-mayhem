@@ -10,7 +10,6 @@ using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public enum TeacherClass { HallMonitor, Substitute, Science, Principal }
 
@@ -72,7 +71,7 @@ public class TeacherNPC : MonoBehaviour
     public bool IsAngry
     {
         get { return isAngry; }
-        set 
+        set
         {
             animator.SetBool("IsAngry", value); // used for angry walk
             isAngry = value;
@@ -90,7 +89,7 @@ public class TeacherNPC : MonoBehaviour
         }
     }
 
-    public float PatianceLevel 
+    public float PatianceLevel
     {
         get => initialPatianceLevel;
         set
@@ -130,7 +129,7 @@ public class TeacherNPC : MonoBehaviour
     private void Update()
     {
         animator.SetFloat("Speed", Mathf.Abs(aiPath.desiredVelocity.x) + Mathf.Abs(aiPath.desiredVelocity.y));
-        spriteRenderer.sortingOrder = Mathf.RoundToInt(-(transform.position.y - (spriteRenderer.bounds.size.y/2)) * 100);
+        spriteRenderer.sortingOrder = Mathf.RoundToInt(-(transform.position.y - (spriteRenderer.bounds.size.y / 2)) * 100);
     }
 
     public void ExecuteAttackLoop()
@@ -236,8 +235,8 @@ public class TeacherNPC : MonoBehaviour
                 thrownPrism = Instantiate(prismPrefab, transform.position, Quaternion.identity);
                 Rigidbody2D prismRb = thrownPrism.GetComponent<Rigidbody2D>();
                 Transform target = StudentManager.instance.GetRandomStudent();
-                if(target == null) 
-                { 
+                if (target == null)
+                {
                     //idk, do something to stop the dude from attacking
                 }
 
@@ -435,13 +434,13 @@ public class TeacherNPC : MonoBehaviour
         }
     }
 
-    private Quaternion GetProjectileRotation(Vector2 teacherPos, Vector2 studentPos) 
+    private Quaternion GetProjectileRotation(Vector2 teacherPos, Vector2 studentPos)
     {
         Vector3 angleOutput = Vector3.zero;
 
-        if(teacherPos.x == studentPos.x) 
+        if (teacherPos.x == studentPos.x)
             angleOutput.z = (teacherPos.y < studentPos.y) ? 90f : 270f;
-        else 
+        else
             angleOutput.z = Mathf.Atan2(teacherPos.y - studentPos.y, teacherPos.x - studentPos.x) * Mathf.Rad2Deg;
 
         angleOutput.z += 90f; //Because of the model lmao
