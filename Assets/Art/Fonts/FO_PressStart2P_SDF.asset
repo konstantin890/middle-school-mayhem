@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: PressStart2P SDF
+  m_Name: FO_PressStart2P_SDF
   m_EditorClassIdentifier: 
   hashCode: -161044332
   material: {fileID: 4733605490443616104}

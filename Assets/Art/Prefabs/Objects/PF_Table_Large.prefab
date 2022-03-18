@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 517967998868398022}
   - component: {fileID: -9012539489495482929}
   m_Layer: 0
-  m_Name: Table_Large
+  m_Name: PF_Table_Large
   m_TagString: Destructible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
