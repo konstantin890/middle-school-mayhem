@@ -112,7 +112,7 @@ public class StudentNPC : MonoBehaviour
 
     private IEnumerator AttackLoop()
     {
-        while (true)
+        while (isAttracted)
         {
             float randomDelay = Random.Range(minTimeBetweenAttack, maxTimeBetweenAttack);
 
