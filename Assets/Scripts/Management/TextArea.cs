@@ -10,6 +10,7 @@ using UnityEngine;
 
 public class TextArea : MonoBehaviour
 {
+    [TextArea]
     public string[] textToDisplay;
     public bool pauseOnEnter;
     public bool canPauseMultipleTimes;

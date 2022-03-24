@@ -259,7 +259,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press c to go back \n(or Positive button on Xbox controller)
+  m_text: Press c to go back \n(or Menu button on Xbox controller)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cd8912bbd5e49f245be38316a63f8a47, type: 2}
   m_sharedMaterial: {fileID: 4733605490443616104, guid: cd8912bbd5e49f245be38316a63f8a47, type: 2}
@@ -4464,7 +4464,7 @@ PrefabInstance:
     - target: {fileID: 288689213939881558, guid: befbe45e582f65545b027378a83951c3, type: 3}
       propertyPath: textToDisplay.Array.data[0]
       value: PRESS SPACE TO START<br>(or A on Xbox controller)<br>or press C to open
-        credits (Joycon Button 7)
+        Credits (Menu Button 7)
       objectReference: {fileID: 0}
     - target: {fileID: 288689213939881558, guid: befbe45e582f65545b027378a83951c3, type: 3}
       propertyPath: textToDisplay.Array.data[1]
