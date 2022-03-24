@@ -24,6 +24,7 @@ public class EndManager : MonoBehaviour
     {
         stop = true;
         endCanvas.enabled = true;
+        StudentLeader.instance.gameObject.SetActive(false);
         StartCoroutine(CloseGameDelayed());
     }
 
