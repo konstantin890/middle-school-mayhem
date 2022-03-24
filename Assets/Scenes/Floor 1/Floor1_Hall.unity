@@ -5239,6 +5239,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8564890229547080953, guid: cb3a37d39bae5fd44b4839c165c11a42, type: 3}
+      propertyPath: openedDoor
+      value: 
+      objectReference: {fileID: 2769245279486809966, guid: 9b9ee62850ff74d42813b29b6f2a50f3, type: 3}
+    - target: {fileID: 8564890229547080953, guid: cb3a37d39bae5fd44b4839c165c11a42, type: 3}
       propertyPath: sceneNameEnter
       value: Floor2_Hall
       objectReference: {fileID: 0}
