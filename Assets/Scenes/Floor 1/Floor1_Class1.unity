@@ -259,7 +259,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press c to go back \n(or Menu button on Xbox controller)
+  m_text: Press c to go back \n(Menu button on Xbox controller)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cd8912bbd5e49f245be38316a63f8a47, type: 2}
   m_sharedMaterial: {fileID: 4733605490443616104, guid: cd8912bbd5e49f245be38316a63f8a47, type: 2}
