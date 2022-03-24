@@ -240,6 +240,7 @@ public class SceneHandler : MonoBehaviour
     public void GameOver()
     {
         GameOverGO.SetActive(true);
+        StudentLeader.instance.gameObject.SetActive(false);
         StartCoroutine(GameOverCountdown());
     }
 
@@ -251,6 +252,8 @@ public class SceneHandler : MonoBehaviour
         yield return new WaitForSeconds(1f);
         gameOverText.text = "Restarting in 1..";
         yield return new WaitForSeconds(1f);
+
+        StudentLeader.instance.gameObject.SetActive(true);
 
         AsyncOperation asyncOperation = SceneManager.UnloadSceneAsync(currentlyLoadedLevelName);
         if (asyncOperation != null)
