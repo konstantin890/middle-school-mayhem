@@ -41,6 +41,8 @@ public class StudentNPC : MonoBehaviour
 
     public List<TeacherNPC> teachersInRange = new List<TeacherNPC>();
 
+    public System.Guid uniqueness;
+
     private float fearLevel;
     public float FearLevel
     {
@@ -131,6 +133,7 @@ public class StudentNPC : MonoBehaviour
     {
         isAttracted = true;
         aiTargetter.target = leader;
+        uniqueness = System.Guid.NewGuid();
         DontDestroyOnLoad(this);
         StartCoroutine(AttackLoop());
     }

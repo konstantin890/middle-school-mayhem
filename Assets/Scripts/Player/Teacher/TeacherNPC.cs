@@ -66,6 +66,7 @@ public class TeacherNPC : MonoBehaviour
 
     [HideInInspector]
     public Vector2 initialPoition;
+    public System.Guid uniqueness;
 
     private bool isAngry;
     public bool IsAngry
@@ -115,6 +116,8 @@ public class TeacherNPC : MonoBehaviour
     private void Awake()
     {
         instance = this;
+
+        uniqueness = System.Guid.NewGuid();
 
         // Attack loop
         ExecuteAttackLoop();
