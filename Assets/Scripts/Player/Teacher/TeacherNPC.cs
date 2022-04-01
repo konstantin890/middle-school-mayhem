@@ -166,7 +166,7 @@ public class TeacherNPC : MonoBehaviour
     {
         while (PatianceLevel != 0)
         {
-            yield return new WaitUntil(() => studentsInsideArea.Count > 1);
+            yield return new WaitUntil(() => studentsInsideArea.Count >= 1);
             yield return new WaitForSeconds(Random.Range(hallSecondsBetweenYellAttackMin, hallSecondsBetweenYellAttackMax));
 
             //soundSrc.clip = scoldSounds[Random.Range(0, 2)]; //2 is exclusive, so 0 or 1
@@ -186,7 +186,7 @@ public class TeacherNPC : MonoBehaviour
     {
         while (PatianceLevel != 0)
         {
-            yield return new WaitUntil(() => studentsInsideArea.Count > 1);
+            yield return new WaitUntil(() => studentsInsideArea.Count >= 1);
             int attackID = Random.Range(0, 2);
             if (attackID == 0)
             {
@@ -227,7 +227,7 @@ public class TeacherNPC : MonoBehaviour
     {
         while (PatianceLevel != 0)
         {
-            yield return new WaitUntil(() => studentsInsideArea.Count > 1);
+            yield return new WaitUntil(() => studentsInsideArea.Count >= 1);
             int attackID = Random.Range(0, 2);
             if (attackID == 0)
             {
@@ -284,7 +284,7 @@ public class TeacherNPC : MonoBehaviour
     {
         while (PatianceLevel != 0)
         {
-            yield return new WaitUntil(() => studentsInsideArea.Count > 1);
+            yield return new WaitUntil(() => studentsInsideArea.Count >= 1);
 
             int attackID = Random.Range(0, 3);
             if (attackID == 0) // scold/yell
