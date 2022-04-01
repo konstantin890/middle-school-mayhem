@@ -457,5 +457,10 @@ public class TeacherNPC : MonoBehaviour
             if (studentsInsideArea[i] == null)
                 studentsInsideArea.RemoveAt(i);
         }
+
+        // if target is dead, switch target student
+        if (!aiPathSetter.target.TryGetComponent(out StudentNPC snpc))
+            if (studentsInsideArea.Count >= 1)
+                aiPathSetter.target = studentsInsideArea[Random.Range(0, studentsInsideArea.Count - 1)].transform;
     }
 }
