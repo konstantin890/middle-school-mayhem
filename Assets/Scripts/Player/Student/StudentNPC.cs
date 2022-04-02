@@ -100,13 +100,16 @@ public class StudentNPC : MonoBehaviour
 
         spriteRenderer.sortingOrder = Mathf.RoundToInt(-(transform.position.y - (spriteRenderer.bounds.size.y / 2)) * 100);
 
-        if (teachersInRange.Count > 0)
+        if (isAttracted)
         {
-            IsShouting = true;
-        }
-        else
-        {
-            IsShouting = false;
+            if (teachersInRange.Count > 0)
+            {
+                IsShouting = true;
+            }
+            else
+            {
+                IsShouting = false;
+            }
         }
     }
 
@@ -144,6 +147,7 @@ public class StudentNPC : MonoBehaviour
     public void LeaveGroup()
     {
         isAttracted = false;
+        IsShouting = false;
 
         Destroy(aiTargetter);
         Destroy(aiPath);
