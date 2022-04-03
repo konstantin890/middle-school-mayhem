@@ -10,11 +10,16 @@ This repository is covered by the **GNU GPL v3 license**, you can read more abou
 
 The latest released version of the game can be played [here](https://konstantin890.itch.io/middle-school-mayhem).
 
+The latest Game Design document can be seen [here](https://docs.google.com/document/d/1DllwcWYLOqMZQ1HEUpGKeBd2NRvdYlN2u0L4sgm_heM/edit?usp=sharing).
+
 ## Repository & Project status
 Currently, the project is under active development and is expected to complete by the end of October. The game will remain free-to-play and open-source.
+The project is considered completed and is in End of Life (EoL). The latest version 1.1 contains the final features and improvements. There could be future releases which address critical bugs that break the game completely (if any).
+
+More about the project state can be read in the [Game Design Document (GDD)](https://docs.google.com/document/d/1DllwcWYLOqMZQ1HEUpGKeBd2NRvdYlN2u0L4sgm_heM/edit?usp=sharing).
 
 ## Technical Details
-The game is built with Unity 2021.1 using Cinemachine and some 2D packages (2D IK, Animation, Sprite, Sprite Shape, and others).
+The game is built with Unity 2021.2 using Cinemachine and some 2D packages (2D IK, Animation, Sprite, Sprite Shape, and others).
 
 The game also features a custom Level Streaming system for faster scene loading and better overall performance. 
 
