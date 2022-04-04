@@ -13,7 +13,6 @@ The latest released version of the game can be played [here](https://konstantin8
 The latest Game Design document can be seen [here](https://docs.google.com/document/d/1DllwcWYLOqMZQ1HEUpGKeBd2NRvdYlN2u0L4sgm_heM/edit?usp=sharing).
 
 ## Repository & Project status
-Currently, the project is under active development and is expected to complete by the end of October. The game will remain free-to-play and open-source.
 The project is considered completed and is in End of Life (EoL). The latest version 1.1 contains the final features and improvements. There could be future releases which address critical bugs that break the game completely (if any).
 
 More about the project state can be read in the [Game Design Document (GDD)](https://docs.google.com/document/d/1DllwcWYLOqMZQ1HEUpGKeBd2NRvdYlN2u0L4sgm_heM/edit?usp=sharing).
@@ -34,7 +33,6 @@ The game is developed by **TerraStudios** and a collective of amazing developers
 
 ## Libraries and third-party scripts used
 - [Astar Pathfinding](https://arongranberg.com/astar/front)
-- [Multi Scene](https://github.com/Madgvox/unity-scene-groups)
 
 ## Enquiries
 For official communication, please send an email to milev109@gmail.com, otherwise DM me on Discord (Kosio#9955).
