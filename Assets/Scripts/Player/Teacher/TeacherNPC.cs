@@ -247,8 +247,9 @@ public class TeacherNPC : MonoBehaviour
                 {
                     thrownPrism.transform.rotation = GetProjectileRotation(transform.position, target.position);
                     prismRb.AddForce((target.position - transform.position) * prismSpeed, ForceMode2D.Impulse);
-                    StartCoroutine(LateDestroy(thrownPrism.gameObject, 3f));
                 }
+
+                StartCoroutine(LateDestroy(thrownPrism.gameObject, 3f));
 
                 soundSrc.clip = throwChalkSound;
                 soundSrc.Play();
@@ -274,8 +275,9 @@ public class TeacherNPC : MonoBehaviour
                 {
                     thrownFPaper.transform.rotation = GetProjectileRotation(transform.position, target.position);
                     paperRb.AddForce((target.position - transform.position) * fPaperSpeed, ForceMode2D.Impulse);
-                    StartCoroutine(LateDestroy(thrownFPaper.gameObject, 3f));
                 }
+
+                StartCoroutine(LateDestroy(thrownFPaper.gameObject, 3f));
 
                 soundSrc.clip = throwChalkSound;
                 soundSrc.Play();

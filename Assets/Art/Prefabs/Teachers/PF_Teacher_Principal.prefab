@@ -266,12 +266,12 @@ MonoBehaviour:
   canePrefab: {fileID: 7496346267371224233, guid: f262afb263e3f5048a85571a54cfc6df, type: 3}
   principalSecondsBetweenCaneAttackMin: 1
   principalSecondsBetweenCaneAttackMax: 2
-  principalSecondsBetweenYellAttackMin: 0
-  principalSecondsBetweenYellAttackMax: 0
+  principalSecondsBetweenYellAttackMin: 1
+  principalSecondsBetweenYellAttackMax: 2
   principalSecondsBetweenSummonAttackMin: 1
-  principalSecondsBetweenSummonAttackMax: 2
+  principalSecondsBetweenSummonAttackMax: 1
   fearValue: 20
-  initialPatianceLevel: 200
+  initialPatianceLevel: 450
   initialPoition: {x: 0, y: 0}
   throwChalkSound: {fileID: 8300000, guid: be5331b505f23c24e8a8901d8e136903, type: 3}
   giveupSound: {fileID: 8300000, guid: ff4fc4da566be0e45b1a225769f044a5, type: 3}
